@@ -639,6 +639,13 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
             sa = gh_anchor(subtitle)
             lines.append(f"  - [{subtitle}](#{sa}) ({len(all_papers.get(fname, []))})")
     lines.append("")
+    lines.append(
+        "> [!TIP]\n"
+        "> Every paper table below starts expanded. Click the :arrow_forward: arrow "
+        "next to a table to fold it away to its heading, which makes scrolling "
+        "through the catalog much easier."
+    )
+    lines.append("")
 
     for title, _route, blurb, items in SECTIONS:
         lines.append(f"## {title}")
@@ -652,12 +659,22 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
             papers = all_papers.get(fname, [])
             lines.append(f"### {subtitle}")
             lines.append("")
-            lines.append(f"_{len(papers)} entries from [`bib/{fname}`](bib/{fname})._")
+            # Open by default, so the catalog reads normally; the arrow folds the
+            # table away to its heading, which makes the README scrollable.
+            lines.append("<details open>")
+            lines.append(
+                f"<summary><b>{len(papers)} entries</b> from "
+                f"<code>bib/{fname}</code> &nbsp;<sub>(click to collapse)</sub></summary>"
+            )
+            lines.append("")
+            lines.append(f"_Source: [`bib/{fname}`](bib/{fname})._")
             lines.append("")
             lines.append("| Paper | Year | Venue | Code |")
             lines.append("|:------|:-----|:------|:-----|")
             for p in papers:
                 lines.append(table_row(p))
+            lines.append("")
+            lines.append("</details>")
             lines.append("")
 
     lines.append("## Contributing")
