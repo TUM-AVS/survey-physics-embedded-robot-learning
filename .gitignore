@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# LaTeX build output from the figure generator (the figures themselves are
+# committed: the README embeds them and the manuscript includes them).
+figures/*.aux
+figures/*.log
+figures/*.out

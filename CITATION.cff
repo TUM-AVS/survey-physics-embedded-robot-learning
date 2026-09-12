@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this catalog, please cite the survey."
+title: "Embedding Physics Priors in Robot Learning: A Survey"
+abstract: >-
+  A living catalog of robot-learning methods that embed physics priors,
+  classified by how physics is embedded: physics-guided inputs, data and
+  representations; physics-encoded model architectures; and physics-informed
+  training losses.
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/TUM-AVS/survey-physics-embedded-robot-learning"
+keywords:
+  - robot learning
+  - physics priors
+  - physics-informed machine learning
+  - scientific machine learning
+  - robotics
+authors:
+  - family-names: Piccinini
+    given-names: Mattia
+  - family-names: Schulze
+    given-names: Lucas
+  - family-names: Plebe
+    given-names: Alice
+  - family-names: Saveriano
+    given-names: Matteo
+  - family-names: Beckers
+    given-names: Thomas
+  - family-names: Gao
+    given-names: Yuan
+  - family-names: Arenz
+    given-names: Oleg
+  - family-names: Zarrouki
+    given-names: Baha
+  - family-names: Wang
+    given-names: Dingrui
+  - family-names: Schäfer
+    given-names: Finn Rasmus
+  - family-names: Peters
+    given-names: Jan
+  - family-names: Betz
+    given-names: Johannes
+  - family-names: Rosati Papini
+    given-names: Gastone Pietro

@@ -1,0 +1,7 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question about the taxonomy
+    url: https://github.com/TUM-AVS/survey-physics-embedded-robot-learning/discussions
+    about: >
+      Not sure which route a paper belongs to, or think a category is wrong?
+      Start a discussion — feedback on the taxonomy is genuinely useful to us.

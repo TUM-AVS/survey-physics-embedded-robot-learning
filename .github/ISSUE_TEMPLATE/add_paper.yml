@@ -1,0 +1,105 @@
+name: Add a paper
+description: Suggest a paper for the physics-embedded robot learning catalog
+title: "[paper] "
+labels: ["new paper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the catalog current — **including your own work**.
+
+        Fill in what you know. If you are unsure about the classification, leave
+        the dropdowns alone and say so at the bottom; we will work it out.
+
+  - type: textarea
+    id: bibtex
+    attributes:
+      label: BibTeX entry
+      description: >
+        Paste it straight from the publisher, Google Scholar, DBLP, or arXiv.
+        Please include a DOI, URL, or arXiv ID so the catalog can link it.
+      render: bibtex
+      placeholder: |
+        @inproceedings{lastname2026keyword,
+          title     = {...},
+          author    = {...},
+          booktitle = {...},
+          year      = {2026},
+          doi       = {10.0000/example},
+        }
+    validations:
+      required: true
+
+  - type: dropdown
+    id: route
+    attributes:
+      label: How does the paper embed physics?
+      description: >
+        Pick every route that applies. Quick test — if you removed the physics at
+        test time and the network still ran unchanged, it is physics-informed
+        (loss only); if the inputs change but the architecture does not, it is
+        physics-guided; if the architecture itself enforces the physics, it is
+        physics-encoded.
+      multiple: true
+      options:
+        - physics-guided
+        - physics-encoded
+        - physics-informed
+
+  - type: dropdown
+    id: application
+    attributes:
+      label: Robotics application
+      multiple: true
+      options:
+        - dynamics-learning
+        - planning-and-prediction
+        - control
+        - estimation
+        - other
+
+  - type: dropdown
+    id: robot
+    attributes:
+      label: Robot platform used in the experiments
+      description: What the paper actually reports results on, not what it could apply to.
+      multiple: true
+      options:
+        - manipulators
+        - mobile-robots
+        - vehicles
+        - legged-robots
+        - aerial-robots
+        - underwater-robots
+        - soft-and-continuum-robots
+        - collaborative-robots
+        - canonical-mechanical-systems
+        - other
+        - none
+
+  - type: input
+    id: code
+    attributes:
+      label: Code repository (optional)
+      placeholder: https://github.com/...
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: >
+        Which physics prior does it use, and why does it belong in the survey?
+        Tell us here if you are unsure about any of the labels above.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: >
+            The paper embeds physics priors specific to a robotic or mechanical
+            system (not only generic mathematical structure), and is evaluated on
+            such a system.
+          required: true
+        - label: I searched the README and this paper is not already listed.
+          required: true

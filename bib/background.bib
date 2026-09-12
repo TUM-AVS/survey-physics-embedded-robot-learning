@@ -1,0 +1,429 @@
+% --------------------------------------------------------------------------
+% Background and Historical References
+%
+% Source of truth for the public catalog.  Bibliographic fields come from the
+% publisher; survey_* fields are the survey's own labels (see CONTRIBUTING.md).
+% --------------------------------------------------------------------------
+
+@article{cmac_1979,
+    author = {Albus, J. S.},
+    title = {Data Storage in the Cerebellar Model Articulation Controller (CMAC)},
+    journal = {Journal of Dynamic Systems, Measurement, and Control},
+    volume = {97},
+    number = {3},
+    pages = {228-233},
+    year = {1975},
+    month = {09},
+    abstract = {The storage of manipulator control functions in the CM AC memory is accomplished by an iterative process which, if the control function is sufficiently smooth, will converge. There are several different techniques for loading the CM AC memory depending on the amount of data which has already been stored and the degree of accuracy which is desired. The CM AC system lends itself to a “natural” partitioning of the control problem into manageable subproblems. At each level the CM AC controller translates commands from the next higher level into sequences of instructions to the next lower level. Data storage, or training, is accomplished first at the lowest level and must be completed, or nearly so, at each level before it can be initiated at the next higher level.},
+    issn = {0022-0434},
+    doi = {10.1115/1.3426923},
+    eprint = {https://asmedigitalcollection.asme.org/dynamicsystems/article-pdf/97/3/228/5631738/228_1.pdf},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{cmac_manipulator_1987,
+author = {Miller, III, W Thomas and Glanz, Filson H and Kraft, III, L Gordon},
+title ={Application of a General Learning Algorithm to the Control of Robotic Manipulators},
+journal = {The International Journal of Robotics Research},
+volume = {6},
+number = {2},
+pages = {84-98},
+year = {1987},
+doi = {10.1177/027836498700600207},
+eprint = { 
+        https://doi.org/10.1177/027836498700600207
+},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@inproceedings{Pomerleau_alvinn,
+ author = {Pomerleau, Dean A.},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {D. Touretzky},
+ publisher = {Morgan-Kaufmann},
+ title = {ALVINN: An Autonomous Land Vehicle in a Neural Network},
+ volume = {1},
+ year = {1988},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Broomhead1988MultivariableFI,
+  title={Multivariable Functional Interpolation and Adaptive Networks},
+  author={David S. Broomhead and David Lowe},
+  journal={Complex Syst.},
+  year={1988},
+  volume={2},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@ARTICLE{sanner_slotine_stable_1995,
+  author={Sanner, Robert M. and Slotine, Jean-Jacques E.},
+  journal={Neural Computation}, 
+  title={Stable Adaptive Control of Robot Manipulators Using “Neural” Networks}, 
+  year={1995},
+  volume={7},
+  number={4},
+  pages={753-790},
+  keywords={},
+  doi={10.1162/neco.1995.7.4.753},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@incollection{MILLER199717_dynamic_walk,
+title = {2 - Dynamic Balance of a Biped Walking Robot: Adaptive Gait Modulation Using CMAC Neural Networks},
+editor = {Omid Omidvar and Patrick {van der Smagt}},
+booktitle = {Neural Systems for Robotics},
+publisher = {Academic Press},
+address = {Boston},
+pages = {17-35},
+year = {1997},
+isbn = {978-0-08-092509-7},
+doi = {https://doi.org/10.1016/B978-0-08-092509-7.50006-3},
+author = {W. Thomas Miller and Andrew L. Kun},
+abstract = {ABSTRACT
+This chapter presents an example of the application of online neural network learning to the problem of biped walking with dynamic balance. The experimental biped robot had 10 actuators, 10 joint position sensors, 8 foot force sensors, and 2 body accelerometers. The control architecture was centered around a gait oscillator which generated basic walking motions phase-locked via sensory triggers to the natural dynamics of the biped. These primitive walking patterns were then modulated by neural network learning. Separate CMAC neural networks were responsible for the adaptive control of side-to-side and front-to-back balance, as well as for maintaining good foot contact. Qualitative and quantitative test results showed that biped performance improved with neural network training. Following approximately one hour of training, the biped was able to start and stop on demand, and to walk with continuous motion on flat surfaces at a rate of up to 100 steps per minute, with up to 6-cm step lengths.},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{cisek2007cortical,
+  title={Cortical mechanisms of action selection: the affordance competition hypothesis},
+  author={Cisek, Paul},
+  journal={Philosophical Transactions of the Royal Society B: Biological Sciences},
+  volume={362},
+  number={1485},
+  pages={1585--1599},
+  year={2007},
+  publisher={The Royal Society},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{friston2010free,
+  title={The free-energy principle: a unified brain theory?},
+  author={Friston, Karl},
+  journal={Nature reviews neuroscience},
+  volume={11},
+  number={2},
+  pages={127--138},
+  year={2010},
+  publisher={Nature publishing group},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@inproceedings{NIPS2012_c399862d,
+ author = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {F. Pereira and C.J. Burges and L. Bottou and K. Weinberger},
+ publisher = {Curran Associates, Inc.},
+ title = {ImageNet Classification with Deep Convolutional Neural Networks},
+ volume = {25},
+ year = {2012},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@INPROCEEDINGS{He2016-yr,
+  title           = "Deep residual learning for image recognition",
+  booktitle       = "2016 {IEEE} Conference on Computer Vision and Pattern
+                     Recognition ({CVPR})",
+  author          = "He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun,
+                     Jian",
+  publisher       = "IEEE",
+  pages           = "770--778",
+  month           =  jun,
+  year            =  2016,
+  conference      = "2016 IEEE Conference on Computer Vision and Pattern
+                     Recognition (CVPR)",
+  location        = "Las Vegas, NV, USA",
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{jmlr_e2e_deep_levine,
+  author  = {Sergey Levine and Chelsea Finn and Trevor Darrell and Pieter Abbeel},
+  title   = {End-to-End Training of Deep Visuomotor Policies},
+  journal = {Journal of Machine Learning Research},
+  year    = {2016},
+  volume  = {17},
+  number  = {39},
+  pages   = {1--40},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@book{SicilianoKhatib2016,
+  editor    = {Bruno Siciliano and Oussama Khatib},
+  title     = {Springer Handbook of Robotics},
+  edition   = {2nd},
+  publisher = {Springer International Publishing},
+  address   = {Cham},
+  year      = {2016},
+  isbn      = {978-3-319-32552-1},
+  doi       = {10.1007/978-3-319-32552-1},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Weinan_resnet_as_dyn_sys_2017,
+  title={A Proposal on Machine Learning via Dynamical Systems},
+  author={Weinan E},
+  journal={Communications in Mathematics and Statistics},
+  year={2017},
+  volume={5},
+  pages={1 - 11},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@inproceedings{Vaswani2017Attention,
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  title     = {Attention is All you Need},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS 2017)},
+  editor    = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+  pages     = {5998--6008},
+  year      = {2017},
+  publisher = {Curran Associates, Inc.},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Haber2018,
+  title = {Learning Across Scales---Multiscale Methods for Convolution Neural Networks},
+  volume = {32},
+  ISSN = {2159-5399},
+  DOI = {10.1609/aaai.v32i1.11680},
+  number = {1},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  publisher = {Association for the Advancement of Artificial Intelligence (AAAI)},
+  author = {Haber,  Eldad and Ruthotto,  Lars and Holtham,  Elliot and Jun,  Seong-Hwan},
+  year = {2018},
+  month = Apr,
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@book{Guiggiani2018,
+	author = {Guiggiani, M.},
+	isbn = {9783030103354},
+	publisher = {Springer},
+	title = {The Science of Vehicle Dynamics: Handling, Braking, and Ride of Road and Race Cars},
+	year = {2018},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Vinyals2019,
+  author  = {Oriol Vinyals and Igor Babuschkin and Wojciech M. Czarnecki and
+             Michaël Mathieu and Andrew Dudzik and Junyoung Chung and
+             David H. Choi and Richard Powell and Timo Ewalds and
+             Petko Georgiev and Junhyuk Oh and Dan Horgan and
+             Manuel Kroiss and Ivo Danihelka and Aja Huang and
+             Laurent Sifre and Trevor Cai and John P. Agapiou and
+             Max Jaderberg and Alexander S. Vezhnevets and Rémi Leblond and
+             Tobias Pohlen and Valentin Dalibard and David Budden and
+             Yury Sulsky and James Molloy and Tom L. Paine and
+             Caglar Gulcehre and Ziyu Wang and Tobias Pfaff and
+             Yuhuai Wu and Roman Ring and Dani Yogatama and
+             Dario Wünsch and Katrina McKinney and Oliver Smith and
+             Tom Schaul and Timothy Lillicrap and Koray Kavukcuoglu and
+             Demis Hassabis and Chris Apps and David Silver},
+  title   = {Grandmaster Level in {StarCraft II} Using Multi-Agent Reinforcement Learning},
+  journal = {Nature},
+  year    = {2019},
+  volume  = {575},
+  number  = {7782},
+  pages   = {350--354},
+  doi     = {10.1038/s41586-019-1724-z},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@misc{openai2019solvingrubikscuberobot,
+      title={Solving Rubik's Cube with a Robot Hand}, 
+      author={OpenAI and Ilge Akkaya and Marcin Andrychowicz and Maciek Chociej and Mateusz Litwin and Bob McGrew and Arthur Petron and Alex Paino and Matthias Plappert and Glenn Powell and Raphael Ribas and Jonas Schneider and Nikolas Tezak and Jerry Tworek and Peter Welinder and Lilian Weng and Qiming Yuan and Wojciech Zaremba and Lei Zhang},
+      year={2019},
+      eprint={1910.07113},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/1910.07113},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@inproceedings{Brown2020_GPT3,
+ author = {Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and Herbert-Voss, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel and Wu, Jeffrey and Winter, Clemens and Hesse, Chris and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Larochelle and M. Ranzato and R. Hadsell and M.F. Balcan and H. Lin},
+ pages = {1877--1901},
+ publisher = {Curran Associates, Inc.},
+ title = {Language Models are Few-Shot Learners},
+ volume = {33},
+ year = {2020},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Schrittwieser2020,
+  author  = {Julian Schrittwieser and Ioannis Antonoglou and Thomas Hubert and
+             Karen Simonyan and Laurent Sifre and Simon Schmitt and
+             Arthur Guez and Edward Lockhart and Demis Hassabis and
+             Thore Graepel and Timothy Lillicrap and David Silver},
+  title   = {Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model},
+  journal = {Nature},
+  year    = {2020},
+  volume  = {588},
+  number  = {7839},
+  pages   = {604--609},
+  doi     = {10.1038/s41586-020-03051-4},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{plebe2020road,
+  title={On the road with 16 neurons: Towards interpretable and manipulable latent representations for visual predictions in driving scenarios},
+  author={Plebe, Alice and Da~Lio, Mauro},
+  journal={IEEE Access},
+  volume={8},
+  pages={179716--179734},
+  year={2020},
+  publisher={IEEE},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Jumper2021,
+  author   = {Jumper, John and Evans, Richard and Pritzel, Alexander and Green, Tim and Figurnov, Michael and Ronneberger, Olaf and Tunyasuvunakool, Kathryn and Bates, Russ and {\v{Z}}{\'{i}}dek, Augustin and Potapenko, Anna and Bridgland, Alex and Meyer, Clemens and Kohl, Simon A. A. and Ballard, Andrew J. and Cowie, Andrew and Romera-Paredes, Bernardino and Nikolov, Stanislav and Jain, Rishub and Adler, Jonas and Back, Trevor and Petersen, Stig and Reiman, David and Clancy, Ellen and Zielinski, Michal and Steinegger, Martin and Pacholska, Michalina and Berghammer, Tamas and Bodenstein, Sebastian and Silver, David and Vinyals, Oriol and Senior, Andrew W. and Kavukcuoglu, Koray and Kohli, Pushmeet and Hassabis, Demis},
+  title    = {Highly accurate protein structure prediction with {AlphaFold}},
+  journal  = {Nature},
+  year     = {2021},
+  volume   = {596},
+  number   = {7873},
+  pages    = {583--589},
+  month    = {aug},
+  issn     = {1476-4687},
+  doi      = {10.1038/s41586-021-03819-2},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@inproceedings{plebe2021occupancy,
+  title={Occupancy grid mapping with cognitive plausibility for autonomous driving applications},
+  author={Plebe, Alice and Kooij, Julian FP and Rosati~Papini, Gastone Pietro and Da~Lio, Mauro},
+  booktitle={Proceedings of the IEEE/CVF international conference on computer vision},
+  pages={2934--2941},
+  year={2021},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{dalio2021biasing,
+  title={The biasing of action selection produces emergent human-robot interactions in autonomous driving},
+  author={Da~Lio, Mauro and Don{\`a}, Riccardo and Rosati~Papini, Gastone Pietro and Plebe, Alice},
+  journal={IEEE Robotics and Automation Letters},
+  volume={7},
+  number={2},
+  pages={1254--1261},
+  year={2021},
+  publisher={IEEE},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{plebe2023bio,
+  title={Bio-inspired circular latent spaces to estimate objects' rotations},
+  author={Plebe, Alice and Da Lio, Mauro},
+  journal={Frontiers in Computational Neuroscience},
+  volume={17},
+  pages={1268116},
+  year={2023},
+  publisher={Frontiers Media SA},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{dalio2023complex,
+  title={Complex self-driving behaviors emerging from affordance competition in layered control architectures},
+  author={Da~Lio, Mauro and Cherubini, Antonello and Rosati~Papini, Gastone Pietro and Plebe, Alice},
+  journal={Cognitive Systems Research},
+  volume={79},
+  pages={4--14},
+  year={2023},
+  publisher={Elsevier},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@INPROCEEDINGS{diffusion_policy_2023, 
+    AUTHOR    = {Cheng Chi AND Siyuan Feng AND Yilun Du AND Zhenjia Xu AND Eric Cousineau AND Benjamin CM Burchfiel AND Shuran Song}, 
+    TITLE     = {{Diffusion Policy: Visuomotor Policy Learning via Action Diffusion}}, 
+    BOOKTITLE = {Proceedings of Robotics: Science and Systems}, 
+    YEAR      = {2023}, 
+    ADDRESS   = {Daegu, Republic of Korea}, 
+    MONTH     = {July}, 
+    DOI       = {10.15607/RSS.2023.XIX.026},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Billard2025,
+  author   = {Billard, Aude and Albu-Sch{\"a}ffer, Alin and Beetz, Michael and Burgard, Wolfram and Corke, Peter and Ciocarlie, Matei and Dahiya, Ravinder and Kragic, Danica and Goldberg, Ken and Nagai, Yukie and Scaramuzza, Davide},
+  title    = {A roadmap for {AI} in robotics},
+  journal  = {Nature Machine Intelligence},
+  year     = {2025},
+  volume   = {7},
+  number   = {6},
+  pages    = {818--824},
+  month    = {jun},
+  issn     = {2522-5839},
+  doi      = {10.1038/s42256-025-01050-6},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Goldberg2025DataGap,
+author = {Ken Goldberg},
+title = {Good old-fashioned engineering can close the 100,000-year “data gap” in robotics},
+journal = {Science Robotics},
+volume = {10},
+number = {105},
+pages = {eaea7390},
+year = {2025},
+doi = {10.1126/scirobotics.aea7390},
+eprint = {https://www.science.org/doi/pdf/10.1126/scirobotics.aea7390},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Amato2025,
+author = {Nancy M. Amato  and Seth Hutchinson  and Animesh Garg  and Aude Billard  and Daniela Rus  and Russ Tedrake  and Frank Park  and Ken Goldberg },
+title = {“Data will solve robotics and automation: True or false?”: A debate},
+journal = {Science Robotics},
+volume = {10},
+number = {105},
+pages = {eaea7897},
+year = {2025},
+doi = {10.1126/scirobotics.aea7897},
+eprint = {https://www.science.org/doi/pdf/10.1126/scirobotics.aea7897},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@ARTICLE{Jahncke2026,
+  author={Jahncke, Felix and Zarrouki, Baha and Piccinini, Mattia and D'sa, Jovin and Isele, David and Bae, Sangjae and Betz, Johannes},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Differentiable Weights-Varying Nonlinear MPC via Gradient-Based Policy Learning: An Autonomous Vehicle Guidance Example}, 
+  year={2026},
+  volume={11},
+  number={3},
+  pages={3724-3731},
+  doi={10.1109/LRA.2026.3662644},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
