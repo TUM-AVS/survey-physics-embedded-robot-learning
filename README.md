@@ -1,24 +1,28 @@
 # Embedding Physics Priors in Robot Learning: A Survey
 
-This repository ([github.com/TUM-AVS/survey-physics-embedded-robot-learning](https://github.com/TUM-AVS/survey-physics-embedded-robot-learning)) hosts the survey *Embedding Physics Priors in Robot Learning: A Survey*, with a living catalog of the reviewed papers, classification and search methods, summary tables, and open-source software list. 
+This repository hosts the review paper *Embedding Physics Priors in Robot Learning: A Survey*, with a living catalog of the reviewed papers, classification and search methods, summary tables, and open-source software list. 
 We welcome contributions from the **whole community** to keep this survey up to date!  
 
-The catalog mirrors the taxonomy of the survey: **physics-guided** inputs / data / representations, **physics-encoded** model architectures, and **physics-informed** training losses. Within each route, the survey groups papers by application: *dynamics learning*, *trajectory planning & prediction*, *control*, *estimation*.
+The catalog mirrors the taxonomy of the survey: 
+- **physics-guided** inputs / data / representations,
+- **physics-encoded** model architectures,
+- **physics-informed** training losses. 
+
+Within each route, the survey groups papers by application: *dynamics learning*, *trajectory planning & prediction*, *control*, *estimation*.
 
 ## :fire: Updates
 
 - **Sep. 2026** – Repository initialized from the survey bibliography: all **329** references cited in the manuscript.
 - Of these, **232** are physics-embedded robot learning methods (the rest are related surveys, software, and background references).
 - By taxonomy route (each method counted once, under its primary route): **16%** physics-guided (36), **71%** physics-encoded (165), **13%** physics-informed (31).
-- By bibliography group: 184 physics-encoded, 19 physics-informed loss, 16 physics-guided inputs/data, 30 generative models, 37 software, 12 related surveys, 31 background.
 
 ## :page_with_curl: Introduction
 
-Robot learning is constrained by scarce real-world data, complex contact dynamics, and safety requirements. **Physics priors** act as robotics-specific inductive biases that complement rather than replace data-driven learning. This repository collects the papers reviewed in the survey, grouped by *how* physics is embedded.
+Robot learning is constrained by scarce real-world data, complex contact dynamics, and safety requirements. **Physics priors** can act as robotics-specific inductive biases that complement rather than replace data-driven learning. This repository collects the papers reviewed in the survey, grouped by *how* physics is embedded.
 
 ### Types of physics priors
 
-The survey considers five non-mutually-exclusive families of physics priors (Sec. *Scope of the Considered Literature*):
+The survey considers the following non-mutually-exclusive families of physics priors:
 
 1. **Governing equations** — Newton–Euler, Euler–Lagrange, Hamiltonian and port-Hamiltonian formulations, together with the ODEs and PDEs describing rigid-body and continuum systems.
 2. **Conservation laws, symmetries, and invariances** — conservation of energy, momentum, and power, together with symmetry, invariance, and equivariance principles (e.g. SE(3), SO(3), and morphological symmetries).
@@ -30,18 +34,18 @@ The survey considers five non-mutually-exclusive families of physics priors (Sec
 
 ### Robotics applications and platforms
 
-The survey groups the reviewed methods into four application categories (Sec. *Scope of the Considered Literature*):
+The survey groups the reviewed methods into four application categories:
 
 1. **Dynamics learning** — forward and inverse dynamics, rigid-, soft- and multi-body system identification, friction and contact modelling, continuum-robot shape learning, and equation or governing-law discovery.
 2. **Trajectory planning and prediction** — path and motion planning, motion and video prediction, trajectory imitation, planning-oriented policy generation, geometric planning on manifolds, and generative action prediction.
 3. **Control** — trajectory and path tracking, inverse-dynamics control, and energy-shaping and passivity-based control.
 4. **Estimation** — state and parameter estimation, localization, disturbance and force estimation, fault detection, and condition monitoring.
 
-Robot platforms include manipulators, mobile robots, vehicles, legged robots (quadrupeds and humanoids), soft and continuum robots, collaborative robots, and underwater and aerial robots. *Canonical mechanical systems* — pendulums, cart-poles, acrobots and mechanical oscillators — are reported separately, since they are standard benchmarks rather than robot platforms.
+Robot platforms include manipulators, mobile robots, vehicles, legged robots (quadrupeds and humanoids), soft and continuum robots, collaborative robots, and underwater and aerial robots. *Canonical mechanical systems* (including pendulums, cart-poles, acrobots and mechanical oscillators) are reported separately.
 
 ### Machine learning models and methods
 
-Most reviewed works employ **neural networks**. The survey also covers **Gaussian process regression** and **kernel methods**, **sparse identification** and **symbolic regression**, **equation learning**, **Koopman models**, **neural operators**, **variational integrator networks**, and **generative models** (diffusion models, vision-language-action models, and video world models) — whenever they employ mechanisms to embed physics priors.
+While many reviewed works employ **neural networks**, our survey also covers **Gaussian process regression**, **kernel methods**, **sparse identification** and **symbolic regression**, **equation learning**, **Koopman models**, **neural operators**, **variational integrator networks**, and **generative models** (diffusion models, vision-language-action models, and video world models), whenever they employ mechanisms to embed physics priors.
 
 **Reinforcement learning** is *excluded* when physics is incorporated exclusively through RL-specific mechanisms (state or action space design, exploration strategies, safety constraints, and simulator or environment augmentation), which are reviewed by Banerjee et al. RL methods are *included* whenever physics is embedded through one of the three taxonomy routes below.
 
@@ -55,7 +59,7 @@ Three complementary routes (adapted from Faroughi et al., 2024, specialised to r
 
 1. **Physics-guided** — physics priors select, pre-process, or compute input features, generate or curate training data, or enforce physically consistent representations. Applied at data curation, or as a pre-processing module whose learnable parts are pre-trained or frozen; may stay in the pipeline at training and inference.
 2. **Physics-encoded** — the model architecture itself enforces physics via tailored structures, layers, topologies, energy or conservation principles, symmetries, or architectural constraints. Active during both training and inference.
-3. **Physics-informed** — the training objective penalises violations of governing equations, typically through residual or regularization terms. Active **only during training**: no effect at inference, since it is part of neither the architecture nor the inputs.
+3. **Physics-informed** — the training objective penalises violations of governing equations, typically through residual or regularization terms. Formally active only during training: no effect at inference, since it is part of neither the architecture nor the inputs.
 
 Most existing works use a single route. Jointly using complementary routes may enable a richer exploitation of prior physical knowledge, but systematic comparisons remain limited.
 
@@ -63,21 +67,25 @@ Most existing works use a single route. Jointly using complementary routes may e
 
 [![Lifecycle of physics priors](figures/lifecycle.png)](figures/lifecycle.pdf)
 
-*Physics-guided components act during data curation or as pre-processing modules; physics-encoded priors stay active at training **and** inference; physics-informed losses act **only** during training. Vector version: [`lifecycle.pdf`](figures/lifecycle.pdf).*
+*Physics-guided components act during data curation or as pre-processing modules; physics-encoded priors stay active at training and inference; physics-informed losses act only during training. Vector version: [`lifecycle.pdf`](figures/lifecycle.pdf).*
 
 ## :twisted_rightwards_arrows: Classification flow
 
-The decision flow below is the one used in the survey. The three labels are **not mutually exclusive**: evaluate every criterion in sequence and keep each *Yes*, so a paper may be guided **and** encoded **and** informed.
+The decision flow below mirrors the one in the survey (Fig. *Decision flow to classify physics-embedded robot learning approaches*). A **scope gate** comes first: a method that embeds only generic mathematical structure, or that is not applied to a robotic system, falls outside the survey. The three labels are then **not mutually exclusive** — every criterion is evaluated in sequence and each *Yes* is kept, so a paper may be physics-guided **and** physics-encoded **and** physics-informed.
 
 ```mermaid
 flowchart TD
-  Q1["Are physics priors used to transform, curate, enrich, or select input features, data or representations, before training the main model?"]
+  Q0["Does the method embed physics priors that express specific physical knowledge of a robotic system, rather than generic mathematical structure?"]
+  OUT["Outside the scope of this survey"]
+  Q1["Are any physics priors used to transform, enrich, curate, select, or correct the inputs, data, or representations provided to/by the learning model, either before training or as pre- or post-processing guidance at inference?"]
   PG["Physics-Guided"]
-  Q2["Are physics priors encoded in the learning model architecture, remaining active during inference?"]
+  Q2["Are any physics priors encoded in learning model architectures, remaining active during inference?"]
   PE["Physics-Encoded"]
-  Q3["Are physics priors incorporated into the training loss, and only active during training?"]
+  Q3["Are any physics priors incorporated into the training loss, and only active during training?"]
   PI["Physics-Informed"]
   F["Final classification: Physics-Guided, Physics-Encoded, and/or Physics-Informed"]
+  Q0 -->|Yes| Q1
+  Q0 -->|No| OUT
   Q1 -->|Yes| PG
   PG -->|Continue| Q2
   Q1 -->|No| Q2
@@ -87,6 +95,14 @@ flowchart TD
   Q3 -->|Yes| PI
   PI -->|Continue| F
   Q3 -->|No| F
+  classDef guided fill:#87e087,stroke:#008000,color:#008000,stroke-width:2px;
+  classDef encoded fill:#f2a97c,stroke:#d45500,color:#7a3200,stroke-width:2px;
+  classDef informed fill:#9aa8f5,stroke:#0000ff,color:#0000ff,stroke-width:2px;
+  classDef out fill:#f2f2f2,stroke:#999,color:#555,stroke-dasharray:4 3;
+  class PG guided;
+  class PE encoded;
+  class PI informed;
+  class OUT out;
 ```
 
 ## :chart_with_upwards_trend: Publication Timeline
@@ -200,7 +216,7 @@ The terms below are grouped by the aspect of physics embedding they target. They
 
 **Out of scope:** reinforcement learning in which physics enters *only* through RL-specific mechanisms — state or action space design, exploration strategies, safety constraints, simulator or environment augmentation — which is reviewed by Banerjee et al.; and physics-embedded learning outside robotics (fluid, solid and continuum mechanics), which is covered by the related surveys below.
 
-To classify a new paper, walk the [classification flow](#twisted_rightwards_arrows-classification-flow) above: does physics enter via **inputs/data**, via **architecture**, via **loss**, or a combination? Then open a pull request with the `.bib` entry in the matching file under [`bib/`](bib/).
+To classify a new paper, walk the [classification flow](#twisted_rightwards_arrows-classification-flow) above. First the scope gate: does the method embed physics priors specific to a robotic system, rather than generic mathematical structure? If so, does physics enter via **inputs/data**, via **architecture**, via **loss**, or a combination? Then open a pull request with the `.bib` entry in the matching file under [`bib/`](bib/).
 
 ## Table of contents
 

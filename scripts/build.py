@@ -305,17 +305,18 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append(f"# {SURVEY_TITLE}")
     lines.append("")
     lines.append(
-        f"This repository ([{REPO_URL.replace('https://', '')}]({REPO_URL})) hosts the survey "
+        "This repository hosts the review paper "
         f"*{SURVEY_TITLE}*, with a living catalog of the reviewed papers, "
         "classification and search methods, summary tables, and open-source software list. \n"
         "We welcome contributions from the **whole community** to keep this survey up to date!  "
     )
     lines.append("")
+    lines.append("The catalog mirrors the taxonomy of the survey: ")
+    lines.append("- **physics-guided** inputs / data / representations,")
+    lines.append("- **physics-encoded** model architectures,")
+    lines.append("- **physics-informed** training losses. ")
+    lines.append("")
     lines.append(
-        "The catalog mirrors the taxonomy of the survey: "
-        "**physics-guided** inputs / data / representations, "
-        "**physics-encoded** model architectures, and "
-        "**physics-informed** training losses. "
         "Within each route, the survey groups papers by application: "
         # "Planning & Prediction" reads better spelled out in prose.
         + ", ".join(f"*{PROSE_APPLICATION.get(a, a.lower())}*"
@@ -343,17 +344,12 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         )
         + "."
     )
-    lines.append(
-        f"- By bibliography group: {n_encoded} physics-encoded, {n_informed} physics-informed loss, "
-        f"{n_guided} physics-guided inputs/data, {n_gen} generative models, "
-        f"{n_soft} software, {n_surv} related surveys, {n_oth} background."
-    )
     lines.append("")
     lines.append("## :page_with_curl: Introduction")
     lines.append("")
     lines.append(
         "Robot learning is constrained by scarce real-world data, complex contact dynamics, "
-        "and safety requirements. **Physics priors** act as robotics-specific inductive biases "
+        "and safety requirements. **Physics priors** can act as robotics-specific inductive biases "
         "that complement rather than replace data-driven learning. This repository collects the "
         "papers reviewed in the survey, grouped by *how* physics is embedded."
     )
@@ -361,8 +357,8 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("### Types of physics priors")
     lines.append("")
     lines.append(
-        "The survey considers five non-mutually-exclusive families of physics priors "
-        "(Sec. *Scope of the Considered Literature*):"
+        "The survey considers the following non-mutually-exclusive families of "
+        "physics priors:"
     )
     lines.append("")
     lines.append(
@@ -399,8 +395,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("### Robotics applications and platforms")
     lines.append("")
     lines.append(
-        "The survey groups the reviewed methods into four application categories "
-        "(Sec. *Scope of the Considered Literature*):"
+        "The survey groups the reviewed methods into four application categories:"
     )
     lines.append("")
     lines.append(
@@ -425,19 +420,18 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append(
         "Robot platforms include manipulators, mobile robots, vehicles, legged robots "
         "(quadrupeds and humanoids), soft and continuum robots, collaborative robots, and "
-        "underwater and aerial robots. *Canonical mechanical systems* — pendulums, "
-        "cart-poles, acrobots and mechanical oscillators — are reported separately, since "
-        "they are standard benchmarks rather than robot platforms."
+        "underwater and aerial robots. *Canonical mechanical systems* (including pendulums, "
+        "cart-poles, acrobots and mechanical oscillators) are reported separately."
     )
     lines.append("")
     lines.append("### Machine learning models and methods")
     lines.append("")
     lines.append(
-        "Most reviewed works employ **neural networks**. The survey also covers **Gaussian "
-        "process regression** and **kernel methods**, **sparse identification** and **symbolic "
+        "While many reviewed works employ **neural networks**, our survey also covers **Gaussian "
+        "process regression**, **kernel methods**, **sparse identification** and **symbolic "
         "regression**, **equation learning**, **Koopman models**, **neural operators**, "
         "**variational integrator networks**, and **generative models** (diffusion models, "
-        "vision-language-action models, and video world models) — whenever they employ "
+        "vision-language-action models, and video world models), whenever they employ "
         "mechanisms to embed physics priors."
     )
     lines.append("")
@@ -474,8 +468,8 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     )
     lines.append(
         "3. **Physics-informed** — the training objective penalises violations of governing "
-        "equations, typically through residual or regularization terms. Active **only during "
-        "training**: no effect at inference, since it is part of neither the architecture nor "
+        "equations, typically through residual or regularization terms. Formally active only "
+        "during training: no effect at inference, since it is part of neither the architecture nor "
         "the inputs."
     )
     lines.append("")
@@ -489,37 +483,49 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.extend(_figure(
         "lifecycle", "Lifecycle of physics priors",
         "Physics-guided components act during data curation or as pre-processing modules; "
-        "physics-encoded priors stay active at training **and** inference; physics-informed "
-        "losses act **only** during training.",
+        "physics-encoded priors stay active at training and inference; physics-informed "
+        "losses act only during training.",
     ))
     lines.append(f"## {FLOW_HEADING}")
     lines.append("")
     lines.append(
-        "The decision flow below is the one used in the survey. The three labels are "
-        "**not mutually exclusive**: evaluate every criterion in sequence and keep each *Yes*, "
-        "so a paper may be guided **and** encoded **and** informed."
+        "The decision flow below mirrors the one in the survey "
+        "(Fig. *Decision flow to classify physics-embedded robot learning approaches*). "
+        "A **scope gate** comes first: a method that embeds only generic mathematical "
+        "structure, or that is not applied to a robotic system, falls outside the survey. "
+        "The three labels are then **not mutually exclusive** — every criterion is "
+        "evaluated in sequence and each *Yes* is kept, so a paper may be physics-guided "
+        "**and** physics-encoded **and** physics-informed."
     )
     lines.append("")
     lines.append("```mermaid")
     lines.append("flowchart TD")
     lines.append(
-        '  Q1["Are physics priors used to transform, curate, enrich, or select input features,'
-        ' data or representations, before training the main model?"]'
+        '  Q0["Does the method embed physics priors that express specific physical'
+        ' knowledge of a robotic system, rather than generic mathematical structure?"]'
+    )
+    lines.append('  OUT["Outside the scope of this survey"]')
+    lines.append(
+        '  Q1["Are any physics priors used to transform, enrich, curate, select, or correct'
+        ' the inputs, data, or representations provided to/by the learning model, either'
+        ' before training or as pre- or post-processing guidance at inference?"]'
     )
     lines.append('  PG["Physics-Guided"]')
     lines.append(
-        '  Q2["Are physics priors encoded in the learning model architecture,'
+        '  Q2["Are any physics priors encoded in learning model architectures,'
         ' remaining active during inference?"]'
     )
     lines.append('  PE["Physics-Encoded"]')
     lines.append(
-        '  Q3["Are physics priors incorporated into the training loss,'
+        '  Q3["Are any physics priors incorporated into the training loss,'
         ' and only active during training?"]'
     )
     lines.append('  PI["Physics-Informed"]')
     lines.append(
         '  F["Final classification: Physics-Guided, Physics-Encoded, and/or Physics-Informed"]'
     )
+    lines.append("  Q0 -->|Yes| Q1")
+    lines.append("  Q0 -->|No| OUT")
     lines.append("  Q1 -->|Yes| PG")
     lines.append("  PG -->|Continue| Q2")
     lines.append("  Q1 -->|No| Q2")
@@ -529,6 +535,27 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("  Q3 -->|Yes| PI")
     lines.append("  PI -->|Continue| F")
     lines.append("  Q3 -->|No| F")
+    # Route colours match the survey figure and every generated plot.
+    lines.append(
+        f'  classDef guided fill:{classify.ROUTE_FILLS["guided"]},'
+        f'stroke:{classify.ROUTE_COLORS["guided"]},'
+        f'color:{classify.ROUTE_COLORS["guided"]},stroke-width:2px;'
+    )
+    lines.append(
+        f'  classDef encoded fill:{classify.ROUTE_FILLS["encoded"]},'
+        f'stroke:{classify.ROUTE_COLORS["encoded"]},'
+        f'color:#7a3200,stroke-width:2px;'
+    )
+    lines.append(
+        f'  classDef informed fill:{classify.ROUTE_FILLS["informed"]},'
+        f'stroke:{classify.ROUTE_COLORS["informed"]},'
+        f'color:{classify.ROUTE_COLORS["informed"]},stroke-width:2px;'
+    )
+    lines.append("  classDef out fill:#f2f2f2,stroke:#999,color:#555,stroke-dasharray:4 3;")
+    lines.append("  class PG guided;")
+    lines.append("  class PE encoded;")
+    lines.append("  class PI informed;")
+    lines.append("  class OUT out;")
     lines.append("```")
     lines.append("")
     lines.append("## :chart_with_upwards_trend: Publication Timeline")
@@ -623,9 +650,11 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("")
     lines.append(
         f"To classify a new paper, walk the [classification flow](#{gh_anchor(FLOW_HEADING)}) "
-        "above: does physics enter via **inputs/data**, via **architecture**, via **loss**, "
-        "or a combination? Then open a pull request with the `.bib` entry in the matching "
-        "file under [`bib/`](bib/)."
+        "above. First the scope gate: does the method embed physics priors specific to a "
+        "robotic system, rather than generic mathematical structure? If so, does physics "
+        "enter via **inputs/data**, via **architecture**, via **loss**, or a combination? "
+        "Then open a pull request with the `.bib` entry in the matching file under "
+        "[`bib/`](bib/)."
     )
     lines.append("")
     lines.append("## Table of contents")
