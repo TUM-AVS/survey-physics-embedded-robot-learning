@@ -243,8 +243,7 @@ def table_row(p: dict) -> str:
         paper = title
     year = str(p["year"] or p["year_raw"] or "—")
     venue = md_escape(p["venue"])
-    code = f"[GitHub]({p['code']})" if p["code"] else "—"
-    return f"| {paper} | {year} | {venue} | {code} |"
+    return f"| {paper} | {year} | {venue} |"
 
 
 def _figure(name: str, alt: str, caption: str) -> list[str]:
@@ -669,8 +668,8 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
             lines.append("")
             lines.append(f"_Source: [`bib/{fname}`](bib/{fname})._")
             lines.append("")
-            lines.append("| Paper | Year | Venue | Code |")
-            lines.append("|:------|:-----|:------|:-----|")
+            lines.append("| Paper | Year | Venue |")
+            lines.append("|:------|:-----|:------|")
             for p in papers:
                 lines.append(table_row(p))
             lines.append("")
