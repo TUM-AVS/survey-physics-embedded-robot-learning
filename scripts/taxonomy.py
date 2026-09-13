@@ -36,11 +36,13 @@ ROUTE_HELP = {
     "guided": "Physics shapes the inputs, data, or representations the model sees "
               "(structured features, geometric coordinates, spectra, curated or "
               "simulated data, frozen physics pre-processing, inference-time guidance).",
-    "encoded": "Physics is built into the function class itself: layers, energies, "
-               "kernels, topologies, or integrators that stay active during both "
-               "training and inference.",
-    "informed": "Physics enters only through the training objective, as a residual, "
-                "energy, or consistency penalty. The architecture and inputs stay generic.",
+    "encoded": "Physics is incorporated in the internal architecture, through tailored "
+               "internal structures, layers, topologies, equations, architectural "
+               "constraints, energy, invariance and symmetry principles, extending or "
+               "augmenting physics-based models with robotics domain knowledge. These "
+               "elements stay active during both training and inference.",
+    "informed": "Physics enters only through the training loss function, as a residual, "
+                "energy, or consistency penalty.",
 }
 
 # ----------------------------------------------------------------- applications ---
@@ -65,9 +67,10 @@ APPLICATION_HELP = {
     "dynamics-learning": "Forward/inverse dynamics, rigid-, soft-, and multi-body models, "
                          "contact and friction, residual dynamics, system identification.",
     "planning-and-prediction": "Motion and trajectory planning, motion primitives, "
-                               "trajectory forecasting, world models, generative planning.",
-    "control": "Model-based and learning-based control, MPC, policy learning, "
-               "stability- and passivity-aware control.",
+                               "trajectory prediction, world model-based planning, "
+                               "generative planning.",
+    "control": "Model-based and learning-based control, trajectory or path tracking, "
+               "policy learning for control, stability- and passivity-aware control.",
     "estimation": "State and parameter estimation, filtering, observers, "
                   "sensor fusion, virtual sensing.",
     "other": "Anything the four categories above do not cover.",

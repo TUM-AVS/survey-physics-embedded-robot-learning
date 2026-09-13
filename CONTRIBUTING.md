@@ -94,13 +94,10 @@ one.
 | value | meaning |
 | --- | --- |
 | `physics-guided` | Physics shapes the inputs, data, or representations the model sees (structured features, geometric coordinates, spectra, curated or simulated data, frozen physics pre-processing, inference-time guidance). |
-| `physics-encoded` | Physics is built into the function class itself: layers, energies, kernels, topologies, or integrators that stay active during both training and inference. |
-| `physics-informed` | Physics enters only through the training objective, as a residual, energy, or consistency penalty. The architecture and inputs stay generic. |
+| `physics-encoded` | Physics is incorporated in the internal architecture, through tailored internal structures, layers, topologies, equations, architectural constraints, energy, invariance and symmetry principles, extending or augmenting physics-based models with robotics domain knowledge. These elements stay active during both training and inference. |
+| `physics-informed` | Physics enters only through the training loss function, as a residual, energy, or consistency penalty. |
 
-Not sure? A quick test: if you deleted the physics at test time and the network
-still ran unchanged, it was physics-informed (loss only). If the inputs change
-but the architecture does not, it is physics-guided. If the architecture itself
-enforces the physics, it is physics-encoded.
+Not sure? Let's work it out together — open an issue and ask.
 
 ### `survey_application` (required for methods)
 
@@ -109,8 +106,8 @@ What the method is *for*. Several values are allowed.
 | value | meaning |
 | --- | --- |
 | `dynamics-learning` | Forward/inverse dynamics, rigid-, soft-, and multi-body models, contact and friction, residual dynamics, system identification. |
-| `planning-and-prediction` | Motion and trajectory planning, motion primitives, trajectory forecasting, world models, generative planning. |
-| `control` | Model-based and learning-based control, MPC, policy learning, stability- and passivity-aware control. |
+| `planning-and-prediction` | Motion and trajectory planning, motion primitives, trajectory prediction, world model-based planning, generative planning. |
+| `control` | Model-based and learning-based control, trajectory or path tracking, policy learning for control, stability- and passivity-aware control. |
 | `estimation` | State and parameter estimation, filtering, observers, sensor fusion, virtual sensing. |
 | `other` | Anything the four categories above do not cover. |
 
@@ -188,9 +185,4 @@ as a robotics benchmark. Purely computational-physics work with no robotics
 application is out of scope, however good it is.
 
 If you are unsure whether a paper is in scope, open an issue and ask — that is
-genuinely useful feedback on the taxonomy itself.
-
-## Code of conduct
-
-Be decent to each other. Discussions about whether a paper belongs in a category
-are welcome and expected; the taxonomy is a proposal, not a verdict.
+useful feedback on the taxonomy itself.

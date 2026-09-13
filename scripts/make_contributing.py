@@ -119,10 +119,7 @@ one.
 
 {routes}
 
-Not sure? A quick test: if you deleted the physics at test time and the network
-still ran unchanged, it was physics-informed (loss only). If the inputs change
-but the architecture does not, it is physics-guided. If the architecture itself
-enforces the physics, it is physics-encoded.
+Not sure? Let's work it out together — open an issue and ask.
 
 ### `survey_application` (required for methods)
 
@@ -192,12 +189,7 @@ as a robotics benchmark. Purely computational-physics work with no robotics
 application is out of scope, however good it is.
 
 If you are unsure whether a paper is in scope, open an issue and ask — that is
-genuinely useful feedback on the taxonomy itself.
-
-## Code of conduct
-
-Be decent to each other. Discussions about whether a paper belongs in a category
-are welcome and expected; the taxonomy is a proposal, not a verdict.
+useful feedback on the taxonomy itself.
 """
 
 

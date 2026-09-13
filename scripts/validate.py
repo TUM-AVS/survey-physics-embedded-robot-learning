@@ -61,6 +61,29 @@ def check(all_papers: dict[str, list[dict]]) -> tuple[list[str], list[str]]:
     return errors, warnings
 
 
+ISSUE_FORM = Path(__file__).resolve().parent.parent / ".github/ISSUE_TEMPLATE/add_paper.yml"
+
+
+def check_issue_form() -> list[str]:
+    """The issue form's dropdowns are hand-maintained; keep them honest.
+
+    A contributor picking a value the validator would reject is a bad first
+    experience, so the form's options must match the vocabulary exactly.
+    """
+    if not ISSUE_FORM.exists():
+        return []
+    text = ISSUE_FORM.read_text(encoding="utf-8")
+    listed = set(re.findall(r"^\s*- ([a-z][a-z0-9-]*)$", text, re.M))
+    expected = (set(taxonomy.ROUTE_SLUG) | set(taxonomy.APPLICATION_SLUG)
+                | set(taxonomy.ROBOT_SLUG) | {"none"})
+    out = []
+    for slug in sorted(listed - expected):
+        out.append(f"{ISSUE_FORM.name}: offers '{slug}', which taxonomy.py does not allow")
+    for slug in sorted(expected - listed):
+        out.append(f"{ISSUE_FORM.name}: missing '{slug}' from its dropdowns")
+    return out
+
+
 def summarize(all_papers: dict[str, list[dict]]) -> None:
     methods = catalog.methods(all_papers)
     n = len(methods)
@@ -84,7 +107,7 @@ def main() -> int:
 
     all_papers, problems = catalog.load()
     errors, warnings = check(all_papers)
-    errors = problems + errors
+    errors = problems + errors + check_issue_form()
 
     if warnings:
         if args.warnings:

@@ -35,11 +35,9 @@ body:
     attributes:
       label: How does the paper embed physics?
       description: >
-        Pick every route that applies. Quick test — if you removed the physics at
-        test time and the network still ran unchanged, it is physics-informed
-        (loss only); if the inputs change but the architecture does not, it is
-        physics-guided; if the architecture itself enforces the physics, it is
-        physics-encoded.
+        Pick every route that applies. CONTRIBUTING.md describes each one; if you
+        are not sure, leave this blank and say so below — we will work it out
+        together.
       multiple: true
       options:
         - physics-guided
