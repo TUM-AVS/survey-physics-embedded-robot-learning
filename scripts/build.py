@@ -43,9 +43,11 @@ SECTIONS = [
     (
         "Physics-Encoded Architectures",
         "encoded",
-        "Physics enters through the *function class*: layers, energies, kernels, topologies, "
-        "or integrators that enforce physical structure. Physics-encoded components stay active "
-        "during **both training and inference**. Survey Sec. *Physics-Encoded Architectures* — "
+        "Physics-encoded architectures incorporate physical insights through tailored internal "
+        "structures, layers, topologies, equations, architectural constraints, energy, invariance "
+        "and symmetry principles, extending or augmenting physics-based models with robotics "
+        "domain knowledge. \n"
+        "Survey Sec. *Physics-Encoded Architectures* — "
         "the largest body of work, and therefore reviewed first.",
         [
             ("Lagrangian Learning Models (DeLaN / LNN)", "lagrangian.bib"),
@@ -228,8 +230,7 @@ PROSE_APPLICATION = {"Planning & Prediction": "trajectory planning & prediction"
 SECTION_FIGURES = {
     "Physics-Encoded Architectures": (
         "physics_encoded",
-        "Sub-categories of physics-encoded robot learning architectures "
-        "(Fig. 4 of the survey).",
+        "Sub-categories of physics-encoded robot learning architectures.",
     ),
 }
 
@@ -264,7 +265,10 @@ def _timeline_md(figs: dict) -> str:
     rows = []
     for i, year in enumerate(figs["years"]):
         vals = [figs["series"][r][i] for r in classify.ROUTES]
-        rows.append(f"| {year} | " + " | ".join(str(v) for v in vals)
+        # The final year is only partially covered by the literature cut-off.
+        label = (f"{year} (up to {CUTOFF.split()[0]})"
+                 if year == timeline.PDF_PARTIAL_YEAR else str(year))
+        rows.append(f"| {label} | " + " | ".join(str(v) for v in vals)
                     + f" | **{sum(vals)}** | {figs['cumulative'][i]} |")
     return "\n".join([head, rule, *rows])
 
@@ -592,13 +596,12 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append(_matrix_md(figs["robots"], "Robot platform"))
     lines.append("")
     lines.append(
-        "*__Canonical mechanical systems__ are the low-DoF textbook testbeds used in place of a "
-        "robot: pendulum, double pendulum, cart-pole, cart-pendulum, acrobot, inverted pendulum, "
-        "and mechanical oscillators. __Other__ covers platforms outside every listed class: "
+        "*__Canonical mechanical systems__ include pendulum, double pendulum, cart-pole, "
+        "cart-pendulum, acrobot, inverted pendulum, and mechanical oscillators, which can be "
+        "used to model simple robotic systems. "
+        "__Other__ covers platforms outside every listed class: "
         "linear-motor and stepper-motor stages, slider-crank mechanisms, generic rigid multi-body "
-        "systems, human motion, lower-limb prosthetics, and PDE-solving benchmarks. Methodology "
-        "papers with no robot platform (`Brunton2016`, `Clawson2014`, `Chen2021_physics`, "
-        "`Zolman2025`) are excluded from this figure but retained in the application figure.*"
+        "systems, human motion, lower-limb prosthetics, and PDE-solving benchmarks.*"
     )
     lines.append("")
     lines.append(
@@ -617,14 +620,13 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         f"physics embedding, complemented by backward and forward citation tracking from "
         f"the works found and by the authors' knowledge of the field. We include "
         f"peer-reviewed journal and conference contributions, plus a few arXiv preprints "
-        f"that are not yet peer-reviewed but contribute significantly to the state of the art."
+        f"that may not yet be peer-reviewed but contribute significantly to the state of the art."
     )
     lines.append("")
     lines.append(
-        "The terms below are grouped by the aspect of physics embedding they target. They "
-        "are the vocabulary of this literature, and are published here so that the search "
-        "can be reproduced and extended: **they retrieve 74% of the reviewed methods by "
-        "title alone**, and more once abstracts and full text are matched. Combine them "
+        "The terms and keywords below are grouped by the aspect of physics embedding they "
+        "target. They are the vocabulary of this literature, and are published here so that "
+        "the search can be reproduced and extended. Combine them "
         "with a platform or application term to narrow a query."
     )
     lines.append("")
@@ -641,19 +643,11 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     )
     lines.append("")
     lines.append(
-        "**Out of scope:** reinforcement learning in which physics enters *only* through "
-        "RL-specific mechanisms — state or action space design, exploration strategies, "
-        "safety constraints, simulator or environment augmentation — which is reviewed by "
-        "Banerjee et al.; and physics-embedded learning outside robotics (fluid, solid and "
-        "continuum mechanics), which is covered by the related surveys below."
-    )
-    lines.append("")
-    lines.append(
         f"To classify a new paper, walk the [classification flow](#{gh_anchor(FLOW_HEADING)}) "
         "above. First the scope gate: does the method embed physics priors specific to a "
         "robotic system, rather than generic mathematical structure? If so, does physics "
         "enter via **inputs/data**, via **architecture**, via **loss**, or a combination? "
-        "Then open a pull request with the `.bib` entry in the matching file under "
+        "Then **open a pull request** with the `.bib` entry in the matching file under "
         "[`bib/`](bib/)."
     )
     lines.append("")

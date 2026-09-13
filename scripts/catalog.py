@@ -122,6 +122,12 @@ def parse_fields(body: str) -> dict[str, str]:
 ARXIV_ID_RE = re.compile(r"^(?:arXiv:)?(\d{4}\.\d{4,5}(?:v\d+)?|[a-z\-]+/\d{7})$", re.I)
 DOI_RE = re.compile(r"10\.\d{4,9}/[^\s]+")
 
+# Some publisher exports title-case the whole venue, turning acronyms into
+# "Ieee Access" or "Acm Transactions". Restore them wherever no rule above fired.
+ACRONYM_CASE_RE = re.compile(
+    r"\b(IEEE|ACM|IFAC|ASME|SIAM|AIAA|RSS|ICRA|IROS|CoRL|PMLR|NeurIPS|IJCAI|IET)\b",
+    re.I)
+
 VENUE_RULES: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"arxiv|corr\b", re.I), "arXiv"),
     (re.compile(r"Learning for Dynamics and Control", re.I), "L4DC"),
@@ -129,7 +135,7 @@ VENUE_RULES: list[tuple[re.Pattern[str], str]] = [
     (re.compile(r"Robotics:? Science and Systems", re.I), "RSS"),
     (re.compile(r"Intelligent Robots and Systems", re.I), "IROS"),
     (re.compile(r"International Conference on Robotics and Automation", re.I), "ICRA"),
-    (re.compile(r"Robotics and Automation Letters", re.I), "RA-L"),
+    (re.compile(r"Robotics and Automation Letters", re.I), "IEEE RA-L"),
     (re.compile(r"Transactions on Robotics", re.I), "T-RO"),
     (re.compile(r"International Journal of Robotics Research", re.I), "IJRR"),
     (re.compile(r"Neural Information Processing Systems", re.I), "NeurIPS"),
@@ -236,9 +242,21 @@ def venue(fields: dict[str, str]) -> str:
         or fields.get("publisher")
         or fields.get("howpublished")
         or fields.get("school")
+        or fields.get("institution")      # @techreport
         or ""
     )
     if not v:
+        # Preprints often carry no venue field at all. Their identifier says where
+        # they live, which is the honest answer for an unpublished paper.
+        blob = " ".join(strip_tex(fields.get(k, "")) for k in ("doi", "url", "eprint")).lower()
+        if arxiv_id(fields):
+            return "arXiv"
+        if "techrxiv" in blob or "10.36227" in blob:
+            return "TechRxiv"
+        if "openreview.net" in blob:
+            return "OpenReview"
+        if "ssrn" in blob:
+            return "SSRN"
         return "—"
     if v.startswith("http"):
         if "github.com" in v:
@@ -247,6 +265,7 @@ def venue(fields: dict[str, str]) -> str:
     for pat, short in VENUE_RULES:
         if pat.search(v):
             return short
+    v = ACRONYM_CASE_RE.sub(lambda m: m.group(0).upper(), v)
     if len(v) > 56:
         v = v[:53] + "…"
     return v
