@@ -47,28 +47,27 @@ SECTIONS = [
         "structures, layers, topologies, equations, architectural constraints, energy, invariance "
         "and symmetry principles, extending or augmenting physics-based models with robotics "
         "domain knowledge. \n"
-        "Survey Sec. *Physics-Encoded Architectures* — "
-        "the largest body of work, and therefore reviewed first.",
+        "The largest body of work, and therefore reviewed first.",
         [
-            ("Lagrangian Learning Models (DeLaN / LNN)", "lagrangian.bib"),
-            ("Hamiltonian Learning Models (HNN / port-Hamiltonian / symplectic)", "hamiltonian.bib"),
-            ("Model-Structured Learning Architectures (MSNNs)", "model-structured.bib"),
+            ("Lagrangian Learning Models", "lagrangian.bib"),
+            ("Hamiltonian Learning Models", "hamiltonian.bib"),
+            ("Model-Structured Learning Architectures", "model-structured.bib"),
             ("Neural ODEs and Variational Integrator Networks", "neural-ode.bib"),
-            ("Non-NN Physics-Structured Models (GPR / RKHS / kernels)", "non-nn.bib"),
+            ("Non-NN Physics-Encoded Models (including GPR / RKHS / kernels)", "non-nn.bib"),
             ("Hybrid Physics-Learning Architectures", "hybrid-physics.bib"),
-            ("Physics-Encoded Topology Learning (SINDy / equation learners)", "topology-learning.bib"),
-            ("Neural Operators (Koopman / DeepONet / FNO / PINO)", "neural-operators.bib"),
+            ("Physics-Encoded Topology Learning", "topology-learning.bib"),
+            ("Neural Operators", "neural-operators.bib"),
             ("Other Types of Physics-Encoded Architectures", "other-encoded.bib"),
         ],
     ),
     (
         "Physics-Informed Loss Functions",
         "informed",
-        "A generic model is trained with a residual / energy / consistency penalty derived from "
-        "governing equations. Physics-informed components are active **only during training**: "
-        "they are part of neither the architecture nor the inputs. Survey Sec. "
-        "*Physics-Informed Loss Functions* (PINNs, physics-informed neural operators, "
-        "other loss and reward functions).",
+        "Physics-informed approaches provide a flexible and data-efficient framework for "
+        "solving forward and inverse problems governed by differential equations, by embedding "
+        "physical laws as soft constraints in the training loss functions. Physics-informed "
+        "components are active **only during training**: they are part of neither the "
+        "architecture nor the inputs.",
         [
             ("Physics-Informed Neural Networks and Losses", "physics-informed-losses.bib"),
         ],
@@ -76,11 +75,12 @@ SECTIONS = [
     (
         "Physics-Guided Inputs, Data, and Representations",
         "guided",
-        "Physics shapes the features, coordinates, spectra, representations, or training data that "
-        "the model sees — either at data curation, or as a pre-trained / frozen pre-processing module. "
-        "Survey Sec. *Physics-Guided Inputs, Data, and Representations* (structured inputs, "
-        "physics-guided features and data, geometric learning, frequency-domain learning, "
-        "physically consistent world representations, diffusion-based generation, neural operators).",
+        "Physics-guided learning exploits physics priors to transform, enrich, curate, select, "
+        "or correct input features, training data, and learned representations. Rather than "
+        "modifying the model architecture or training objective, these methods embed physical "
+        "knowledge into the inputs, data, or representations before training or as pre- or "
+        "post-processing guidance at inference, while preserving the flexibility of standard "
+        "ML models.",
         [
             ("Structured Inputs, Geometric, Frequency-Domain, and World Representations", "physics-guided-inputs.bib"),
         ],
@@ -88,10 +88,9 @@ SECTIONS = [
     (
         "Generative Models with Physics Priors (Cross-Cutting)",
         "generative",
-        "Diffusion policies, video world models, and VLAs are **not a fourth route**: they are "
-        "reviewed throughout the survey and may embed physics via any of the three routes. "
-        "See the survey table *Summary of generative-model approaches*, which marks P.E. / P.I. / P.G. "
-        "per paper.",
+        "Diffusion policies, video world models, and VLAs are reviewed throughout the survey "
+        "and may embed physics via any of the three routes (physics-encoded architectures, "
+        "physics-informed losses, or physics-guided inputs).",
         [
             ("Diffusion, World Models, and VLAs", "generative-models.bib"),
         ],
@@ -99,34 +98,17 @@ SECTIONS = [
     (
         "Software, Simulators, and Libraries",
         "software",
-        "Open-source tools used to build physics-embedded robot-learning models. "
-        "Survey Sec. *Software Tools* (physics-informed ML frameworks, neural differential "
-        "equations, equation discovery and system identification, differentiable simulators, "
-        "model-structured and hybrid physics-neural frameworks).",
+        "Open-source tools used to build physics-embedded robot-learning models.",
         [
             ("Libraries and Differentiable Simulators", "software.bib"),
         ],
     ),
-    (
-        "Related Surveys",
-        "surveys",
-        "Neighbouring reviews (physics-informed ML, structured models, world models, PI-RL), "
-        "compared against this survey in Sec. *Related Surveys*.",
-        [
-            ("Surveys", "surveys.bib"),
-        ],
-    ),
-    (
-        "Background and Historical References",
-        "background",
-        "Textbooks, deep-learning primers, and historical NN/robotics citations used in the survey "
-        "narrative and in Sec. *Historical Perspective: From Analytical Models to "
-        "Physics-Embedded Learning*.",
-        [
-            ("Other references", "background.bib"),
-        ],
-    ),
 ]
+
+# Cited, but deliberately not tabulated in the README: related surveys and the
+# background/historical citations are part of the manuscript's narrative rather
+# than the catalog of reviewed methods. They stay in bib/ and in every count.
+UNLISTED_BIB = ("surveys.bib", "background.bib")
 
 SEARCH_KEYWORDS = {
     "Core physics-embedding terms": [
@@ -702,7 +684,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("## Contributing")
     lines.append("")
     lines.append(
-        "**New papers are very welcome** — including your own. You do not need to "
+        "**New papers are very welcome**!. You do not need to "
         "install anything, and you do not need to understand the tooling."
     )
     lines.append("")
@@ -827,7 +809,8 @@ def main() -> int:
             print(f"  ... and {len(problems) - 10} more")
         return 1
 
-    unlisted = sorted(set(all_papers) - {f for _t, _r, _b, it in SECTIONS for _s, f in it})
+    unlisted = sorted(set(all_papers) - {f for _t, _r, _b, it in SECTIONS for _s, f in it}
+                      - set(UNLISTED_BIB))
     if unlisted:
         print("WARNING: bib files with no README section (add them to SECTIONS):")
         for fname in unlisted:

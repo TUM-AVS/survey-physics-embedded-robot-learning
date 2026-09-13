@@ -219,14 +219,14 @@ To classify a new paper, walk the [classification flow](#twisted_rightwards_arro
 ## Table of contents
 
 - [Physics-Encoded Architectures](#physics-encoded-architectures) (182)
-  - [Lagrangian Learning Models (DeLaN / LNN)](#lagrangian-learning-models-delan--lnn) (24)
-  - [Hamiltonian Learning Models (HNN / port-Hamiltonian / symplectic)](#hamiltonian-learning-models-hnn--port-hamiltonian--symplectic) (10)
-  - [Model-Structured Learning Architectures (MSNNs)](#model-structured-learning-architectures-msnns) (22)
+  - [Lagrangian Learning Models](#lagrangian-learning-models) (24)
+  - [Hamiltonian Learning Models](#hamiltonian-learning-models) (10)
+  - [Model-Structured Learning Architectures](#model-structured-learning-architectures) (22)
   - [Neural ODEs and Variational Integrator Networks](#neural-odes-and-variational-integrator-networks) (10)
-  - [Non-NN Physics-Structured Models (GPR / RKHS / kernels)](#non-nn-physics-structured-models-gpr--rkhs--kernels) (15)
+  - [Non-NN Physics-Encoded Models (including GPR / RKHS / kernels)](#non-nn-physics-encoded-models-including-gpr--rkhs--kernels) (15)
   - [Hybrid Physics-Learning Architectures](#hybrid-physics-learning-architectures) (38)
-  - [Physics-Encoded Topology Learning (SINDy / equation learners)](#physics-encoded-topology-learning-sindy--equation-learners) (21)
-  - [Neural Operators (Koopman / DeepONet / FNO / PINO)](#neural-operators-koopman--deeponet--fno--pino) (24)
+  - [Physics-Encoded Topology Learning](#physics-encoded-topology-learning) (21)
+  - [Neural Operators](#neural-operators) (24)
   - [Other Types of Physics-Encoded Architectures](#other-types-of-physics-encoded-architectures) (18)
 - [Physics-Informed Loss Functions](#physics-informed-loss-functions) (19)
   - [Physics-Informed Neural Networks and Losses](#physics-informed-neural-networks-and-losses) (19)
@@ -236,10 +236,6 @@ To classify a new paper, walk the [classification flow](#twisted_rightwards_arro
   - [Diffusion, World Models, and VLAs](#diffusion-world-models-and-vlas) (30)
 - [Software, Simulators, and Libraries](#software-simulators-and-libraries) (37)
   - [Libraries and Differentiable Simulators](#libraries-and-differentiable-simulators) (37)
-- [Related Surveys](#related-surveys) (12)
-  - [Surveys](#surveys) (12)
-- [Background and Historical References](#background-and-historical-references) (33)
-  - [Other references](#other-references) (33)
 
 > [!TIP]
 > Every paper table below starts expanded. Click the :arrow_forward: arrow next to a table to fold it away to its heading, which makes scrolling through the catalog much easier.
@@ -247,13 +243,13 @@ To classify a new paper, walk the [classification flow](#twisted_rightwards_arro
 ## Physics-Encoded Architectures
 
 Physics-encoded architectures incorporate physical insights through tailored internal structures, layers, topologies, equations, architectural constraints, energy, invariance and symmetry principles, extending or augmenting physics-based models with robotics domain knowledge. 
-Survey Sec. *Physics-Encoded Architectures* — the largest body of work, and therefore reviewed first.
+The largest body of work, and therefore reviewed first.
 
 [![Physics-encoded architecture map](figures/physics_encoded.png)](figures/physics_encoded.pdf)
 
 *Sub-categories of physics-encoded robot learning architectures. Vector version: [`physics_encoded.pdf`](figures/physics_encoded.pdf).*
 
-### Lagrangian Learning Models (DeLaN / LNN)
+### Lagrangian Learning Models
 
 <details open>
 <summary><b>24 entries</b> from <code>bib/lagrangian.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -289,7 +285,7 @@ _Source: [`bib/lagrangian.bib`](bib/lagrangian.bib)._
 
 </details>
 
-### Hamiltonian Learning Models (HNN / port-Hamiltonian / symplectic)
+### Hamiltonian Learning Models
 
 <details open>
 <summary><b>10 entries</b> from <code>bib/hamiltonian.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -311,7 +307,7 @@ _Source: [`bib/hamiltonian.bib`](bib/hamiltonian.bib)._
 
 </details>
 
-### Model-Structured Learning Architectures (MSNNs)
+### Model-Structured Learning Architectures
 
 <details open>
 <summary><b>22 entries</b> from <code>bib/model-structured.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -367,7 +363,7 @@ _Source: [`bib/neural-ode.bib`](bib/neural-ode.bib)._
 
 </details>
 
-### Non-NN Physics-Structured Models (GPR / RKHS / kernels)
+### Non-NN Physics-Encoded Models (including GPR / RKHS / kernels)
 
 <details open>
 <summary><b>15 entries</b> from <code>bib/non-nn.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -444,7 +440,7 @@ _Source: [`bib/hybrid-physics.bib`](bib/hybrid-physics.bib)._
 
 </details>
 
-### Physics-Encoded Topology Learning (SINDy / equation learners)
+### Physics-Encoded Topology Learning
 
 <details open>
 <summary><b>21 entries</b> from <code>bib/topology-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -477,7 +473,7 @@ _Source: [`bib/topology-learning.bib`](bib/topology-learning.bib)._
 
 </details>
 
-### Neural Operators (Koopman / DeepONet / FNO / PINO)
+### Neural Operators
 
 <details open>
 <summary><b>24 entries</b> from <code>bib/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -545,7 +541,7 @@ _Source: [`bib/other-encoded.bib`](bib/other-encoded.bib)._
 
 ## Physics-Informed Loss Functions
 
-A generic model is trained with a residual / energy / consistency penalty derived from governing equations. Physics-informed components are active **only during training**: they are part of neither the architecture nor the inputs. Survey Sec. *Physics-Informed Loss Functions* (PINNs, physics-informed neural operators, other loss and reward functions).
+Physics-informed approaches provide a flexible and data-efficient framework for solving forward and inverse problems governed by differential equations, by embedding physical laws as soft constraints in the training loss functions. Physics-informed components are active **only during training**: they are part of neither the architecture nor the inputs.
 
 ### Physics-Informed Neural Networks and Losses
 
@@ -580,7 +576,7 @@ _Source: [`bib/physics-informed-losses.bib`](bib/physics-informed-losses.bib)._
 
 ## Physics-Guided Inputs, Data, and Representations
 
-Physics shapes the features, coordinates, spectra, representations, or training data that the model sees — either at data curation, or as a pre-trained / frozen pre-processing module. Survey Sec. *Physics-Guided Inputs, Data, and Representations* (structured inputs, physics-guided features and data, geometric learning, frequency-domain learning, physically consistent world representations, diffusion-based generation, neural operators).
+Physics-guided learning exploits physics priors to transform, enrich, curate, select, or correct input features, training data, and learned representations. Rather than modifying the model architecture or training objective, these methods embed physical knowledge into the inputs, data, or representations before training or as pre- or post-processing guidance at inference, while preserving the flexibility of standard ML models.
 
 ### Structured Inputs, Geometric, Frequency-Domain, and World Representations
 
@@ -612,7 +608,7 @@ _Source: [`bib/physics-guided-inputs.bib`](bib/physics-guided-inputs.bib)._
 
 ## Generative Models with Physics Priors (Cross-Cutting)
 
-Diffusion policies, video world models, and VLAs are **not a fourth route**: they are reviewed throughout the survey and may embed physics via any of the three routes. See the survey table *Summary of generative-model approaches*, which marks P.E. / P.I. / P.G. per paper.
+Diffusion policies, video world models, and VLAs are reviewed throughout the survey and may embed physics via any of the three routes (physics-encoded architectures, physics-informed losses, or physics-guided inputs).
 
 ### Diffusion, World Models, and VLAs
 
@@ -658,7 +654,7 @@ _Source: [`bib/generative-models.bib`](bib/generative-models.bib)._
 
 ## Software, Simulators, and Libraries
 
-Open-source tools used to build physics-embedded robot-learning models. Survey Sec. *Software Tools* (physics-informed ML frameworks, neural differential equations, equation discovery and system identification, differentiable simulators, model-structured and hybrid physics-neural frameworks).
+Open-source tools used to build physics-embedded robot-learning models.
 
 ### Libraries and Differentiable Simulators
 
@@ -709,86 +705,9 @@ _Source: [`bib/software.bib`](bib/software.bib)._
 
 </details>
 
-## Related Surveys
-
-Neighbouring reviews (physics-informed ML, structured models, world models, PI-RL), compared against this survey in Sec. *Related Surveys*.
-
-### Surveys
-
-<details open>
-<summary><b>12 entries</b> from <code>bib/surveys.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
-
-_Source: [`bib/surveys.bib`](bib/surveys.bib)._
-
-| Paper | Year | Venue |
-|:------|:-----|:------|
-| [Physics-informed machine learning](https://doi.org/10.1038/s42254-021-00314-5) | 2021 | Nature Reviews Physics |
-| [Structured learning of rigid-body dynamics: A survey and unified view from a robotics perspective](https://doi.org/10.1002/gamm.202100009) | 2021 | GAMM-Mitteilungen |
-| [Robot Learning From Randomized Simulations: A Review](https://doi.org/10.3389/frobt.2022.799893) | 2022 | Frontiers in Robotics and AI |
-| [Scientific Machine Learning Through Physics–Informed Neural Networks: Where we are and What's Next](https://doi.org/10.1007/s10915-022-01939-z) | 2022 | Journal of Scientific Computing |
-| [Model-based deep learning](https://doi.org/10.1561/9781638282655) | 2023 | Proceedings of the IEEE |
-| [Physics-Informed Deep Neural Operator Networks](https://doi.org/10.1007/978-3-031-36644-4_6) | 2023 | Machine Learning in Modeling and Simulation: Methods … |
-| [Physics-Guided, Physics-Informed, and Physics-Encoded Neural Networks and Operators in Scientific Computing: Fluid and Solid Mechanics](https://doi.org/10.1115/1.4064449) | 2024 | Journal of Computing and Information Science in Engin… |
-| [A survey on physics informed reinforcement learning: Review and open problems](https://doi.org/10.1016/j.eswa.2025.128166) | 2025 | Expert Systems with Applications |
-| [Machine Learning with Physics Knowledge for Prediction: A Survey](https://arxiv.org/abs/2408.09840) | 2025 | Transactions on Machine Learning Research |
-| [Physics-Informed Neural Networks in Robotics: A Review](https://ssrn.com/abstract=5125543) | 2025 | Preprint available at SSRN |
-| [A Comprehensive Survey on World Models for Embodied AI](https://arxiv.org/abs/2510.16732) | 2026 | arXiv |
-| [A survey on imitation learning for contact-rich tasks in robotics](https://doi.org/10.1177/02783649261417694) | 2026 | IJRR |
-
-</details>
-
-## Background and Historical References
-
-Textbooks, deep-learning primers, and historical NN/robotics citations used in the survey narrative and in Sec. *Historical Perspective: From Analytical Models to Physics-Embedded Learning*.
-
-### Other references
-
-<details open>
-<summary><b>33 entries</b> from <code>bib/background.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
-
-_Source: [`bib/background.bib`](bib/background.bib)._
-
-| Paper | Year | Venue |
-|:------|:-----|:------|
-| [Data Storage in the Cerebellar Model Articulation Controller (CMAC)](https://doi.org/10.1115/1.3426923) | 1975 | Journal of Dynamic Systems, Measurement, and Control |
-| [Application of a General Learning Algorithm to the Control of Robotic Manipulators](https://doi.org/10.1177/027836498700600207) | 1987 | IJRR |
-| [ALVINN: An Autonomous Land Vehicle in a Neural Network](https://proceedings.neurips.cc/paper/1988/file/812b4ba287f5ee0bc9d43bbf5bbe87fb-Paper.pdf) | 1988 | NeurIPS |
-| [Multivariable Functional Interpolation and Adaptive Networks](https://content.wolfram.com/sites/13/2018/02/02-3-5.pdf) | 1988 | Complex Syst |
-| [Stable Adaptive Control of Robot Manipulators Using “Neural” Networks](https://doi.org/10.1162/neco.1995.7.4.753) | 1995 | Neural Computation |
-| [Theory of Robot Control](https://doi.org/10.1007/978-1-4471-1501-4) | 1996 | Springer |
-| [2 - Dynamic Balance of a Biped Walking Robot: Adaptive Gait Modulation Using CMAC Neural Networks](https://doi.org/10.1016/B978-0-08-092509-7.50006-3) | 1997 | Neural Systems for Robotics |
-| [Cortical mechanisms of action selection: the affordance competition hypothesis](https://doi.org/10.1098/rstb.2007.2054) | 2007 | Philosophical Transactions of the Royal Society B: Bi… |
-| [Vehicle Handling Dynamics: Theory and Application](https://books.google.it/books?id=JLR8ObJp77cC) | 2009 | Elsevier Science |
-| [The free-energy principle: a unified brain theory?](https://doi.org/10.1038/nrn2787) | 2010 | Nature reviews neuroscience |
-| [ImageNet Classification with Deep Convolutional Neural Networks](https://doi.org/10.1145/3065386) | 2012 | NeurIPS |
-| [Deep residual learning for image recognition](https://doi.org/10.1109/cvpr.2016.90) | 2016 | CVPR |
-| [End-to-End Training of Deep Visuomotor Policies](https://arxiv.org/abs/1504.00702) | 2016 | Journal of Machine Learning Research |
-| [Springer Handbook of Robotics](https://doi.org/10.1007/978-3-319-32552-1) | 2016 | Springer International Publishing |
-| [A Proposal on Machine Learning via Dynamical Systems](https://doi.org/10.1007/s40304-017-0103-z) | 2017 | Communications in Mathematics and Statistics |
-| [Attention is All you Need](https://arxiv.org/abs/1706.03762) | 2017 | NeurIPS |
-| [Learning Across Scales—Multiscale Methods for Convolution Neural Networks](https://doi.org/10.1609/aaai.v32i1.11680) | 2018 | AAAI |
-| [The Science of Vehicle Dynamics: Handling, Braking, and Ride of Road and Race Cars](https://doi.org/10.1007/978-3-319-73220-6) | 2018 | Springer |
-| [Grandmaster Level in StarCraft II Using Multi-Agent Reinforcement Learning](https://doi.org/10.1038/s41586-019-1724-z) | 2019 | Nature |
-| [Solving Rubik's Cube with a Robot Hand](https://arxiv.org/abs/1910.07113) | 2019 | arXiv |
-| [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165) | 2020 | NeurIPS |
-| [Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model](https://doi.org/10.1038/s41586-020-03051-4) | 2020 | Nature |
-| [On the road with 16 neurons: Towards interpretable and manipulable latent representations for visual predictions in driving scenarios](https://doi.org/10.1109/access.2020.3028185) | 2020 | IEEE Access |
-| [Highly accurate protein structure prediction with AlphaFold](https://doi.org/10.1038/s41586-021-03819-2) | 2021 | Nature |
-| [Occupancy grid mapping with cognitive plausibility for autonomous driving applications](https://doi.org/10.1109/iccvw54120.2021.00328) | 2021 | Proceedings of the IEEE/CVF international conference … |
-| [The biasing of action selection produces emergent human-robot interactions in autonomous driving](https://doi.org/10.1109/lra.2021.3136646) | 2021 | IEEE RA-L |
-| [Bio-inspired circular latent spaces to estimate objects' rotations](https://doi.org/10.3389/fncom.2023.1268116) | 2023 | Frontiers in Computational Neuroscience |
-| [Complex self-driving behaviors emerging from affordance competition in layered control architectures](https://doi.org/10.1016/j.cogsys.2022.12.007) | 2023 | Cognitive Systems Research |
-| [Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://doi.org/10.15607/RSS.2023.XIX.026) | 2023 | RSS |
-| [A roadmap for AI in robotics](https://doi.org/10.1038/s42256-025-01050-6) | 2025 | Nature Machine Intelligence |
-| [Good old-fashioned engineering can close the 100,000-year “data gap” in robotics](https://doi.org/10.1126/scirobotics.aea7390) | 2025 | Science Robotics |
-| [“Data will solve robotics and automation: True or false?”: A debate](https://doi.org/10.1126/scirobotics.aea7897) | 2025 | Science Robotics |
-| [Differentiable Weights-Varying Nonlinear MPC via Gradient-Based Policy Learning: An Autonomous Vehicle Guidance Example](https://doi.org/10.1109/LRA.2026.3662644) | 2026 | IEEE RA-L |
-
-</details>
-
 ## Contributing
 
-**New papers are very welcome** — including your own. You do not need to install anything, and you do not need to understand the tooling.
+**New papers are very welcome**!. You do not need to install anything, and you do not need to understand the tooling.
 
 - **Easiest:** [open an *Add a paper* issue](https://github.com/TUM-AVS/survey-physics-embedded-robot-learning/issues/new?template=add_paper.yml) and fill in the form. A maintainer takes it from there.
 - **Pull request:** add one BibTeX entry to the matching file in [`bib/`](bib/), with the four `survey_*` annotation fields. [CONTRIBUTING.md](CONTRIBUTING.md) shows a copy-paste template and lists every allowed label; automated checks then tell you if anything is off.
