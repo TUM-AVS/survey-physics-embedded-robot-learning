@@ -1,7 +1,8 @@
 # Embedding Physics Priors in Robot Learning: A Survey
 
 This repository hosts the review paper *Embedding Physics Priors in Robot Learning: A Survey*, with a living catalog of the reviewed papers, classification and search methods, summary tables, and open-source software list. 
-We welcome contributions from the **whole community** to keep this survey up to date!  
+
+We welcome contributions from the **whole community** to keep this survey up to date! See [**how to contribute**](#contributing).  
 
 The catalog mirrors the taxonomy of the survey: 
 - **physics-guided** inputs / data / representations,
@@ -707,7 +708,7 @@ _Source: [`bib/software.bib`](bib/software.bib)._
 
 ## Contributing
 
-**New papers are very welcome**!. You do not need to install anything, and you do not need to understand the tooling.
+**New papers are very welcome**! You do not need to install anything, and you do not need to understand the tooling.
 
 - **Easiest:** [open an *Add a paper* issue](https://github.com/TUM-AVS/survey-physics-embedded-robot-learning/issues/new?template=add_paper.yml) and fill in the form. A maintainer takes it from there.
 - **Pull request:** add one BibTeX entry to the matching file in [`bib/`](bib/), with the four `survey_*` annotation fields. [CONTRIBUTING.md](CONTRIBUTING.md) shows a copy-paste template and lists every allowed label; automated checks then tell you if anything is off.

@@ -38,6 +38,8 @@ CUTOFF = "August 2026"
 # Heading of the decision-flow section, which the survey (Sec. "Classification
 # Flow" and Sec. "Scope of the Considered Literature") promises this repo hosts.
 FLOW_HEADING = ":twisted_rightwards_arrows: Classification flow"
+# Linked from the very first lines, so a reader sees how to contribute immediately.
+CONTRIB_HEADING = "Contributing"
 
 SECTIONS = [
     (
@@ -294,7 +296,9 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "This repository hosts the review paper "
         f"*{SURVEY_TITLE}*, with a living catalog of the reviewed papers, "
         "classification and search methods, summary tables, and open-source software list. \n"
-        "We welcome contributions from the **whole community** to keep this survey up to date!  "
+        "\n"
+        "We welcome contributions from the **whole community** to keep this survey up to date! "
+        f"See [**how to contribute**](#{gh_anchor(CONTRIB_HEADING)}).  "
     )
     lines.append("")
     lines.append("The catalog mirrors the taxonomy of the survey: ")
@@ -681,10 +685,10 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
             lines.append("</details>")
             lines.append("")
 
-    lines.append("## Contributing")
+    lines.append(f"## {CONTRIB_HEADING}")
     lines.append("")
     lines.append(
-        "**New papers are very welcome**!. You do not need to "
+        "**New papers are very welcome**! You do not need to "
         "install anything, and you do not need to understand the tooling."
     )
     lines.append("")
