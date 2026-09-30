@@ -164,6 +164,24 @@ FAMILIES = {
 }
 
 
+# ------------------------------------------------------------------- groups ---
+# Two survey subsections are split further in the paper; the catalog mirrors that
+# with a `survey_group` field. {family: [(slug, heading), ...]} in paper order.
+GROUPS = {
+    "physics-encoded/hybrid-physics-learning": [
+        ("learning-complex-subsystems", "Learning Complex Subsystems"),
+        ("residual-learning", "Residual Learning"),
+        ("sensor-pre-processing", "Learning-Based Sensor Pre-Processing for Physics-Based Models"),
+    ],
+    "physics-encoded/other-architectures": [
+        ("motion-planning", "Architectures for Robot Motion Planning"),
+        ("bio-inspired", "Bio-inspired Architectures"),
+        ("symmetry-aware", "Symmetry-Aware Architectures"),
+    ],
+}
+GROUP_SLUGS = {s for v in GROUPS.values() for s, _ in v}
+
+
 def primary_route(paper: dict) -> str | None:
     """Single route per paper, for counts whose parts must sum to the total.
 

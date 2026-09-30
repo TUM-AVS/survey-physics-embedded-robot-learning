@@ -392,6 +392,15 @@ def annotate(paper: dict, fields: dict[str, str], problems: list[str]) -> dict:
             if fields.get(f):
                 bad(f"{f} is only meaningful for survey_kind = {{method}}")
 
+    group = strip_tex(fields.get("survey_group", "")).strip().lower()
+    allowed = {g for g, _ in taxonomy.GROUPS.get(family, [])}
+    if group and group not in allowed:
+        bad(f"survey_group = {{{group}}} is not one of: " + (", ".join(sorted(allowed)) or "(none)"))
+        group = ""
+    elif allowed and not group:
+        bad(f"survey_family = {{{family}}} is split into subsections; "
+            "survey_group is required (one of: " + ", ".join(sorted(allowed)) + ")")
+
     if not paper.get("code"):
         code = strip_tex(fields.get("survey_code", "")).strip()
         if code:
@@ -400,6 +409,7 @@ def annotate(paper: dict, fields: dict[str, str], problems: list[str]) -> dict:
     paper.update(
         kind=kind,
         family=family,
+        group=group,
         routes=routes,
         apps=apps,
         robots=robots,

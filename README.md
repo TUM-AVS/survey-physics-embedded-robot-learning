@@ -14,8 +14,8 @@ Within each route, the survey groups papers by application: *dynamics learning*,
 ## :fire: Updates
 
 - **Sep. 2026** – Repository initialized from the survey bibliography: all **329** references cited in the manuscript.
-- Of these, **232** are physics-embedded robot learning methods (the rest are related surveys, software, and background references).
-- By taxonomy route (each method counted once, under its primary route): **16%** physics-guided (36), **71%** physics-encoded (165), **13%** physics-informed (31).
+- Of these, **237** are physics-embedded robot learning methods (the rest are related surveys, software, and background references).
+- By taxonomy route (each method counted once, under its primary route): **15%** physics-guided (36), **72%** physics-encoded (170), **13%** physics-informed (31).
 
 ## :page_with_curl: Introduction
 
@@ -112,7 +112,7 @@ How the reviewed literature evolved over time, by taxonomy route.
 
 [![Paper counts by year and route](figures/paper_timeline.png)](figures/paper_timeline.pdf)
 
-*2016–2026, 228 of the 232 reviewed methods (4 earlier ones are listed in the tables below). Each paper is counted once, under its primary route. \*2026 covers publications up to August 2026 only. Vector version: [`paper_timeline.pdf`](figures/paper_timeline.pdf).*
+*2016–2026, 233 of the 237 reviewed methods (4 earlier ones are listed in the tables below). Each paper is counted once, under its primary route. \*2026 covers publications up to August 2026 only. Vector version: [`paper_timeline.pdf`](figures/paper_timeline.pdf).*
 
 | Year | Physics-guided | Physics-encoded | Physics-informed | Total | Cumulative |
 |:---|---:|---:|---:|---:|---:|
@@ -120,17 +120,17 @@ How the reviewed literature evolved over time, by taxonomy route.
 | 2017 | 0 | 3 | 0 | **3** | 8 |
 | 2018 | 1 | 6 | 0 | **7** | 15 |
 | 2019 | 1 | 10 | 0 | **11** | 26 |
-| 2020 | 0 | 14 | 0 | **14** | 40 |
-| 2021 | 2 | 12 | 0 | **14** | 54 |
-| 2022 | 4 | 11 | 2 | **17** | 71 |
-| 2023 | 5 | 23 | 2 | **30** | 101 |
-| 2024 | 4 | 34 | 10 | **48** | 149 |
-| 2025 | 10 | 29 | 8 | **47** | 196 |
-| 2026 (up to August) | 8 | 15 | 9 | **32** | 228 |
+| 2020 | 0 | 15 | 0 | **15** | 41 |
+| 2021 | 2 | 14 | 0 | **16** | 57 |
+| 2022 | 4 | 11 | 2 | **17** | 74 |
+| 2023 | 5 | 25 | 2 | **32** | 106 |
+| 2024 | 4 | 34 | 10 | **48** | 154 |
+| 2025 | 10 | 29 | 8 | **47** | 201 |
+| 2026 (up to August) | 8 | 15 | 9 | **32** | 233 |
 
 ## :bar_chart: Coverage by application and platform
 
-The tables below break the 232 reviewed methods down by application category and by robot platform. Unlike the timeline, a paper that embeds physics through several routes is counted in **each** matching column, which is why row totals can exceed the number of distinct papers.
+The tables below break the 237 reviewed methods down by application category and by robot platform. Unlike the timeline, a paper that embeds physics through several routes is counted in **each** matching column, which is why row totals can exceed the number of distinct papers.
 
 [![Papers by application and robot platform](figures/papers_by_application_and_robot.png)](figures/papers_by_application_and_robot.pdf)
 
@@ -139,16 +139,16 @@ The tables below break the 232 reviewed methods down by application category and
 | Application | Physics-guided | Physics-encoded | Physics-informed | Total |
 |:---|---:|---:|---:|---:|
 | Dynamics Learning | 5 | 62 | 11 | **78** |
-| Planning & Prediction | 16 | 24 | 9 | **49** |
-| Control | 11 | 64 | 9 | **84** |
-| Estimation | 8 | 16 | 8 | **32** |
+| Planning & Prediction | 16 | 27 | 9 | **52** |
+| Control | 11 | 65 | 9 | **85** |
+| Estimation | 8 | 18 | 8 | **34** |
 | Others | 1 | 0 | 0 | **1** |
 
 | Robot platform | Physics-guided | Physics-encoded | Physics-informed | Total |
 |:---|---:|---:|---:|---:|
 | Manipulators | 17 | 54 | 10 | **81** |
 | Mobile robots | 2 | 7 | 1 | **10** |
-| Vehicles | 7 | 51 | 11 | **69** |
+| Vehicles | 7 | 55 | 11 | **73** |
 | Legged robots | 3 | 11 | 2 | **16** |
 | Aerial robots | 3 | 10 | 10 | **23** |
 | Underwater robots | 1 | 3 | 0 | **4** |
@@ -219,7 +219,7 @@ To classify a new paper, walk the [classification flow](#twisted_rightwards_arro
 
 ## Table of contents
 
-- [Physics-Encoded Architectures](#physics-encoded-architectures) (175)
+- [Physics-Encoded Architectures](#physics-encoded-architectures) (180)
   - [Lagrangian Learning Models](#lagrangian-learning-models) (29)
   - [Hamiltonian Learning Models](#hamiltonian-learning-models) (15)
   - [Model-Structured Learning Architectures](#model-structured-learning-architectures) (25)
@@ -227,7 +227,7 @@ To classify a new paper, walk the [classification flow](#twisted_rightwards_arro
   - [Hybrid Physics-Learning Architectures](#hybrid-physics-learning-architectures) (41)
   - [Physics-Encoded Topology Learning](#physics-encoded-topology-learning) (21)
   - [Physics-Encoded Neural Operators](#physics-encoded-neural-operators) (11)
-  - [Other Types of Physics-Encoded Architectures](#other-types-of-physics-encoded-architectures) (21)
+  - [Other Types of Physics-Encoded Architectures](#other-types-of-physics-encoded-architectures) (26)
 - [Physics-Informed Loss Functions](#physics-informed-loss-functions) (36)
   - [Physics-Informed Neural Networks](#physics-informed-neural-networks) (22)
   - [Physics-Informed Neural Operators](#physics-informed-neural-operators) (8)
@@ -256,6 +256,8 @@ The largest body of work, and therefore reviewed first.
 *Sub-categories of physics-encoded robot learning architectures. Vector version: [`physics_encoded.pdf`](figures/physics_encoded.pdf).*
 
 ### Lagrangian Learning Models
+
+Methods that build the Euler-Lagrange equations into the model, learning the Lagrangian (or its inertia and potential terms) rather than the dynamics directly. A positive-definite inertia matrix and other properties can be enforced by construction.
 
 <details open>
 <summary><b>29 entries</b> from <code>bib/physics-encoded/lagrangian-learning-models.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -298,6 +300,8 @@ _Source: [`bib/physics-encoded/lagrangian-learning-models.bib`](bib/physics-enco
 
 ### Hamiltonian Learning Models
 
+The Hamiltonian counterpart: the model learns the total energy as a function of generalized coordinates and momenta, and symplectic or port-Hamiltonian structure supplies energy conservation, passivity, and interconnection with external ports.
+
 <details open>
 <summary><b>15 entries</b> from <code>bib/physics-encoded/hamiltonian-learning-models.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -324,6 +328,8 @@ _Source: [`bib/physics-encoded/hamiltonian-learning-models.bib`](bib/physics-enc
 </details>
 
 ### Model-Structured Learning Architectures
+
+Learning architectures whose layers, internal connections, or constraints are derived from physical principles.
 
 <details open>
 <summary><b>25 entries</b> from <code>bib/physics-encoded/model-structured-architectures.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -362,6 +368,8 @@ _Source: [`bib/physics-encoded/model-structured-architectures.bib`](bib/physics-
 
 ### Neural ODEs and Variational Integrator Networks
 
+Continuous-time models that treat the network as the right-hand side of an ODE, and discrete-time models whose update rule is a variational integrator, preserving the geometry of the underlying flow.
+
 <details open>
 <summary><b>12 entries</b> from <code>bib/physics-encoded/neural-odes-and-variational-integrators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -386,8 +394,42 @@ _Source: [`bib/physics-encoded/neural-odes-and-variational-integrators.bib`](bib
 
 ### Hybrid Physics-Learning Architectures
 
+Modular combinations in which a physics-based model and a learned component remain separate: the learned part supplies a subsystem, a residual, or pre-processed sensor input, while the physics model is used unchanged.
+
+#### Learning Complex Subsystems
+
+A learned model replaces one hard-to-parameterize subsystem (e.g., tire forces, friction, contact), while the rest of the system keeps its analytical description.
+
 <details open>
-<summary><b>41 entries</b> from <code>bib/physics-encoded/hybrid-physics-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>14 entries</b> from <code>bib/physics-encoded/hybrid-physics-learning.bib &middot; Learning Complex Subsystems</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-encoded/hybrid-physics-learning.bib`](bib/physics-encoded/hybrid-physics-learning.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Tire and Vehicle Dynamics Ed. 3](https://doi.org/10.1016/C2010-0-68548-8) | 2012 | Elsevier Science |
+| [Teaching a vehicle to autonomously drift: A data-based approach using Neural Networks](https://doi.org/10.1016/j.knosys.2018.04.015) | 2018 | Knowledge-Based Systems |
+| [Tire lateral force estimation and grip potential identification using Neural Networks, Extended Kalman Filter, and Recursive Least Squares](https://doi.org/10.1007/s00521-017-2932-9) | 2018 | Neural Computing and Applications |
+| [On tyre force virtual sensing for future Automated Vehicle-Based Objective Tyre Testing (AVBOTT)](https://doi.org/10.1080/00423114.2018.1552364) | 2019 | Vehicle System Dynamics |
+| [Vehicle state and tyre force estimation: demonstrations and guidelines](https://doi.org/10.1080/00423114.2020.1714672) | 2021 | Vehicle System Dynamics |
+| [Physics Embedded Neural Network Vehicle Model and Applications in Risk-Aware Autonomous Driving Using Latent Features](https://doi.org/10.1109/IROS47612.2022.9981303) | 2022 | IROS |
+| [Autonomous drifting with 3 minutes of data via learned tire models](https://doi.org/10.1109/icra48891.2023.10161370) | 2023 | ICRA |
+| [How to Learn and Generalize From Three Minutes of Data: Physics-Constrained and Uncertainty-Aware Neural Stochastic Differential Equations](https://arxiv.org/abs/2306.06335) | 2023 | CoRL |
+| [Physics-Informed Neural Network for Model Prediction and Dynamics Parameter Identification of Collaborative Robot Joints](https://doi.org/10.1109/LRA.2023.3329620) | 2023 | IEEE RA-L |
+| [Learning dynamics models for velocity estimation in autonomous racing](https://doi.org/10.1109/iros58592.2024.10802481) | 2024 | IROS |
+| [Trajectory Tracking Control for Autonomous Vehicles with Physics-informed Neural Network Vehicle Model](https://doi.org/10.1109/DDCLS61622.2024.10606892) | 2024 | Proceedings of the 2024 IEEE 13th Data Driven Control… |
+| [Vehicle lateral dynamics-inspired hybrid model using neural network for parameter identification and error characterization](https://doi.org/10.1109/tvt.2024.3416317) | 2024 | IEEE Transactions on Vehicular Technology |
+| [Hybrid of Neural Network and Physics-Based Estimator for Vehicle Longitudinal Dynamics Modeling Using Limited Driving Data](https://doi.org/10.1109/TITS.2025.3585346) | 2025 | IEEE Transactions on Intelligent Transportation Systems |
+| [One Model to Drift Them All: Physics-Informed Conditional Diffusion Model for Driving at the Limits](https://proceedings.mlr.press/v270/djeumou25a.html) | 2025 | CoRL |
+
+</details>
+
+#### Residual Learning
+
+A learned term is added on top of a physics-based model to absorb unmodeled dynamics, parameter error, and simplifying assumptions.
+
+<details open>
+<summary><b>20 entries</b> from <code>bib/physics-encoded/hybrid-physics-learning.bib &middot; Residual Learning</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
 _Source: [`bib/physics-encoded/hybrid-physics-learning.bib`](bib/physics-encoded/hybrid-physics-learning.bib)._
 
@@ -395,49 +437,51 @@ _Source: [`bib/physics-encoded/hybrid-physics-learning.bib`](bib/physics-encoded
 |:------|:-----|:------|
 | [Using model knowledge for learning inverse dynamics](https://doi.org/10.1109/ROBOT.2010.5509858) | 2010 | ICRA |
 | [Hybrid Modeling of Non-Linear Mechanical Systems: The Case of a Vehicle Shock Absorber](https://doi.org/10.1115/DETC2011-48108) | 2011 | ASME 2011 International Design Engineering Technical … |
-| [Tire and Vehicle Dynamics Ed. 3](https://doi.org/10.1016/C2010-0-68548-8) | 2012 | Elsevier Science |
 | [Discovering governing equations from data by sparse identification of nonlinear dynamical systems](https://doi.org/10.1073/pnas.1517384113) | 2016 | Proceedings of the National Academy of Sciences |
 | [Incremental semiparametric inverse dynamics learning](https://doi.org/10.1109/ICRA.2016.7487177) | 2016 | ICRA |
-| [Vehicle sideslip angle measurement based on sensor data fusion using an integrated ANFIS and an Unscented Kalman Filter algorithm](https://doi.org/10.1016/j.ymssp.2015.11.003) | 2016 | Mechanical Systems and Signal Processing |
 | [Stable model-based control with Gaussian process regression for robot manipulators](https://doi.org/10.1016/j.ifacol.2017.08.359) | 2017 | IFAC-PapersOnLine |
 | [Cautious NMPC with Gaussian Process Dynamics for Autonomous Miniature Race Cars](https://doi.org/10.23919/ECC.2018.8550162) | 2018 | Proceedings of the 2018 European Control Conference (… |
-| [Teaching a vehicle to autonomously drift: A data-based approach using Neural Networks](https://doi.org/10.1016/j.knosys.2018.04.015) | 2018 | Knowledge-Based Systems |
-| [Tire lateral force estimation and grip potential identification using Neural Networks, Extended Kalman Filter, and Recursive Least Squares](https://doi.org/10.1007/s00521-017-2932-9) | 2018 | Neural Computing and Applications |
-| [An integrated artificial neural network-unscented Kalman filter vehicle sideslip angle estimation based on inertial measurement unit measurements](https://doi.org/10.1177/0954407018790646) | 2019 | Proceedings of the Institution of Mechanical Engineer… |
 | [Learning-Based Model Predictive Control for Autonomous Racing](https://doi.org/10.1109/lra.2019.2926677) | 2019 | IEEE RA-L |
-| [On tyre force virtual sensing for future Automated Vehicle-Based Objective Tyre Testing (AVBOTT)](https://doi.org/10.1080/00423114.2018.1552364) | 2019 | Vehicle System Dynamics |
 | [Stable Gaussian process based tracking control of Euler–Lagrange systems](https://doi.org/10.1016/j.automatica.2019.01.023) | 2019 | Automatica |
 | [TossingBot: Learning to Throw Arbitrary Objects with Residual Physics](https://doi.org/10.15607/rss.2019.xv.004) | 2019 | RSS |
-| [Vehicle sideslip angle estimation using deep ensemble-based adaptive Kalman filter](https://doi.org/10.1016/j.ymssp.2020.106862) | 2020 | Mechanical Systems and Signal Processing |
-| [An Integrated Deep Ensemble-Unscented Kalman Filter for Sideslip Angle Estimation With Sensor Filtering Network](https://doi.org/10.1109/ACCESS.2021.3125351) | 2021 | IEEE Access |
 | [Structural identification with physics-informed neural ordinary differential equations](https://doi.org/10.1016/j.jsv.2021.116196) | 2021 | Journal of Sound and Vibration |
-| [Vehicle state and tyre force estimation: demonstrations and guidelines](https://doi.org/10.1080/00423114.2020.1714672) | 2021 | Vehicle System Dynamics |
 | [Generalized feedforward control using physics—informed neural networks](https://doi.org/10.1016/j.ifacol.2022.09.015) | 2022 | IFAC-PapersOnLine |
-| [Physics Embedded Neural Network Vehicle Model and Applications in Risk-Aware Autonomous Driving Using Latent Features](https://doi.org/10.1109/IROS47612.2022.9981303) | 2022 | IROS |
-| [Autonomous drifting with 3 minutes of data via learned tire models](https://doi.org/10.1109/icra48891.2023.10161370) | 2023 | ICRA |
-| [How to Learn and Generalize From Three Minutes of Data: Physics-Constrained and Uncertainty-Aware Neural Stochastic Differential Equations](https://arxiv.org/abs/2306.06335) | 2023 | CoRL |
 | [Online learning of MPC for autonomous racing](https://doi.org/10.1016/j.robot.2023.104469) | 2023 | Robotics and Autonomous Systems |
-| [Physics-Informed Neural Network for Model Prediction and Dynamics Parameter Identification of Collaborative Robot Joints](https://doi.org/10.1109/LRA.2023.3329620) | 2023 | IEEE RA-L |
 | [Physics–guided neural networks for inversion–based feedforward control applied to hybrid stepper motors*](https://doi.org/10.1109/CCTA54093.2023.10252460) | 2023 | 2023 IEEE Conference on Control Technology and Applic… |
-| [A Hybrid Model for Vehicle Sideslip Angle Estimation Based on Attention Regression](https://doi.org/10.1109/ACCESS.2024.3467911) | 2024 | IEEE Access |
-| [An Unscented Kalman Filter-Informed Neural Network for Vehicle Sideslip Angle Estimation](https://doi.org/10.1109/TVT.2024.3389493) | 2024 | IEEE Transactions on Vehicular Technology |
 | [Hybrid physics and neural network model for lateral vehicle dynamic state prediction](https://doi.org/10.1177/09544070221127785) | 2024 | Proceedings of the Institution of Mechanical Engineer… |
-| [Learning dynamics models for velocity estimation in autonomous racing](https://doi.org/10.1109/iros58592.2024.10802481) | 2024 | IROS |
 | [Learning Model Predictive Control with Error Dynamics Regression for Autonomous Racing](https://doi.org/10.1109/ICRA57147.2024.10611628) | 2024 | ICRA |
 | [Physics-guided neural networks for feedforward control with input-to-state-stability guarantees](https://doi.org/10.1016/j.conengprac.2024.105851) | 2024 | Control Engineering Practice |
-| [Trajectory Tracking Control for Autonomous Vehicles with Physics-informed Neural Network Vehicle Model](https://doi.org/10.1109/DDCLS61622.2024.10606892) | 2024 | Proceedings of the 2024 IEEE 13th Data Driven Control… |
-| [Vehicle lateral dynamics-inspired hybrid model using neural network for parameter identification and error characterization](https://doi.org/10.1109/tvt.2024.3416317) | 2024 | IEEE Transactions on Vehicular Technology |
 | [Combining off-white and sparse black models in multi-step physics-based systems identification](https://doi.org/10.1016/j.automatica.2025.112409) | 2025 | Automatica |
-| [Hybrid of Neural Network and Physics-Based Estimator for Vehicle Longitudinal Dynamics Modeling Using Limited Driving Data](https://doi.org/10.1109/TITS.2025.3585346) | 2025 | IEEE Transactions on Intelligent Transportation Systems |
 | [Learning-based on-track system identification for scaled autonomous racing in under a minute](https://doi.org/10.1109/lra.2025.3527336) | 2025 | IEEE RA-L |
-| [One Model to Drift Them All: Physics-Informed Conditional Diffusion Model for Driving at the Limits](https://proceedings.mlr.press/v270/djeumou25a.html) | 2025 | CoRL |
-| [Physics encoded blocks in residual neural network architectures for digital twin models](https://doi.org/10.1007/s10994-025-06808-y) | 2025 | Machine Learning |
 | [Residual Learning towards High-fidelity Vehicle Dynamics Modeling with Transformer](https://doi.org/10.1109/lra.2025.3575637) | 2025 | IEEE RA-L |
 | [ActivePusher: Active Learning and Planning with Residual Physics for Nonprehensile Manipulation](https://arxiv.org/abs/2506.04646) | 2026 | ICRA |
 
 </details>
 
+#### Learning-Based Sensor Pre-Processing for Physics-Based Models
+
+A network pre-processes raw sensor measurements, and its output feeds a physics-based model. The learned pre-processing can denoise, filter, or extract features from the raw measurements, while the physics model is used unchanged.
+
+<details open>
+<summary><b>7 entries</b> from <code>bib/physics-encoded/hybrid-physics-learning.bib &middot; Learning-Based Sensor Pre-Processing for Physics-Based Models</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-encoded/hybrid-physics-learning.bib`](bib/physics-encoded/hybrid-physics-learning.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Vehicle sideslip angle measurement based on sensor data fusion using an integrated ANFIS and an Unscented Kalman Filter algorithm](https://doi.org/10.1016/j.ymssp.2015.11.003) | 2016 | Mechanical Systems and Signal Processing |
+| [An integrated artificial neural network-unscented Kalman filter vehicle sideslip angle estimation based on inertial measurement unit measurements](https://doi.org/10.1177/0954407018790646) | 2019 | Proceedings of the Institution of Mechanical Engineer… |
+| [Vehicle sideslip angle estimation using deep ensemble-based adaptive Kalman filter](https://doi.org/10.1016/j.ymssp.2020.106862) | 2020 | Mechanical Systems and Signal Processing |
+| [An Integrated Deep Ensemble-Unscented Kalman Filter for Sideslip Angle Estimation With Sensor Filtering Network](https://doi.org/10.1109/ACCESS.2021.3125351) | 2021 | IEEE Access |
+| [A Hybrid Model for Vehicle Sideslip Angle Estimation Based on Attention Regression](https://doi.org/10.1109/ACCESS.2024.3467911) | 2024 | IEEE Access |
+| [An Unscented Kalman Filter-Informed Neural Network for Vehicle Sideslip Angle Estimation](https://doi.org/10.1109/TVT.2024.3389493) | 2024 | IEEE Transactions on Vehicular Technology |
+| [Physics encoded blocks in residual neural network architectures for digital twin models](https://doi.org/10.1007/s10994-025-06808-y) | 2025 | Machine Learning |
+
+</details>
+
 ### Physics-Encoded Topology Learning
+
+Methods that learn the *structure* of the model (which terms, operators, or connections appear) by assembling a library of candidate primitives under sparsity or physical constraints, as in SINDy and equation learners.
 
 <details open>
 <summary><b>21 entries</b> from <code>bib/physics-encoded/topology-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -472,6 +516,8 @@ _Source: [`bib/physics-encoded/topology-learning.bib`](bib/physics-encoded/topol
 
 ### Physics-Encoded Neural Operators
 
+Operators between function spaces, rather than fixed-dimensional maps, with governing equations or physical structure built into the operator itself (Koopman lifting, DeepONet, FNO, and others).
+
 <details open>
 <summary><b>11 entries</b> from <code>bib/physics-encoded/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -495,8 +541,14 @@ _Source: [`bib/physics-encoded/neural-operators.bib`](bib/physics-encoded/neural
 
 ### Other Types of Physics-Encoded Architectures
 
+Architectures that embed physics or domain knowledge in ways the categories above do not cover: motion planning-specific output layers, bio-inspired structure, and symmetry groups as inductive biases.
+
+#### Architectures for Robot Motion Planning
+
+Network architectures tailored to motion planning and prediction tasks.
+
 <details open>
-<summary><b>21 entries</b> from <code>bib/physics-encoded/other-architectures.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>10 entries</b> from <code>bib/physics-encoded/other-architectures.bib &middot; Architectures for Robot Motion Planning</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
 _Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/other-architectures.bib)._
 
@@ -507,20 +559,53 @@ _Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/oth
 | [MixNet: Physics Constrained Deep Neural Motion Prediction for Autonomous Racing](https://doi.org/10.1109/ACCESS.2023.3303841) | 2023 | IEEE Access |
 | [Modular Neural Network Policies for Learning In-Flight Object Catching with a Robot Hand-Arm System](https://doi.org/10.1109/IROS55552.2023.10341463) | 2023 | IROS |
 | [NTFields: Neural Time Fields for Physics-Informed Robot Motion Planning](https://arxiv.org/abs/2210.00120) | 2023 | ICLR |
-| [On discrete symmetries of robotics systems: A group-theoretic and data-driven analysis](https://doi.org/10.15607/rss.2023.xix.053) | 2023 | RSS |
 | [Progressive Learning for Physics-informed Neural Motion Planning](https://doi.org/10.15607/rss.2023.xix.063) | 2023 | RSS 2023 Workshop on Symmetries in Robot Learning |
 | [Computationally Efficient Minimum-Time Motion Primitives for Vehicle Trajectory Planning](https://doi.org/10.1109/OJITS.2024.3476540) | 2024 | IEEE Open Journal of Intelligent Transportation Systems |
+| [Input-to-State Stable Coupled Oscillator Networks for Closed-form Model-based Control in Latent Space](https://doi.org/10.52202/079017-2607) | 2024 | NeurIPS |
+| [Physics-Informed Neural Mapping and Motion Planning in Unknown Environments](https://doi.org/10.1109/TRO.2025.3548495) | 2025 | T-RO |
+| [Physics-informed Neural Time Fields for Prehensile Object Manipulation](https://doi.org/10.1109/IROS60139.2025.11246588) | 2025 | IROS |
+
+</details>
+
+#### Bio-inspired Architectures
+
+Architectures that borrow structure from biological perception, action selection, and neural representation.
+
+<details open>
+<summary><b>5 entries</b> from <code>bib/physics-encoded/other-architectures.bib &middot; Bio-inspired Architectures</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/other-architectures.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [On the road with 16 neurons: Towards interpretable and manipulable latent representations for visual predictions in driving scenarios](https://doi.org/10.1109/access.2020.3028185) | 2020 | IEEE Access |
+| [Occupancy grid mapping with cognitive plausibility for autonomous driving applications](https://doi.org/10.1109/iccvw54120.2021.00328) | 2021 | Proceedings of the IEEE/CVF international conference … |
+| [The biasing of action selection produces emergent human-robot interactions in autonomous driving](https://doi.org/10.1109/lra.2021.3136646) | 2021 | IEEE RA-L |
+| [Bio-inspired circular latent spaces to estimate objects' rotations](https://doi.org/10.3389/fncom.2023.1268116) | 2023 | Frontiers in Computational Neuroscience |
+| [Complex self-driving behaviors emerging from affordance competition in layered control architectures](https://doi.org/10.1016/j.cogsys.2022.12.007) | 2023 | Cognitive Systems Research |
+
+</details>
+
+#### Symmetry-Aware Architectures
+
+Architectures built around the symmetry groups of the robot, possibly linking invariance to conservation laws through Noether's theorem.
+
+<details open>
+<summary><b>11 entries</b> from <code>bib/physics-encoded/other-architectures.bib &middot; Symmetry-Aware Architectures</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/other-architectures.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [On discrete symmetries of robotics systems: A group-theoretic and data-driven analysis](https://doi.org/10.15607/rss.2023.xix.053) | 2023 | RSS |
 | [EquiBot: SIM(3)-Equivariant Diffusion Policy for Generalizable and Data Efficient Learning](https://arxiv.org/abs/2407.01479) | 2024 | CoRL |
 | [Equivariant Diffusion Policy](https://arxiv.org/abs/2407.01812) | 2024 | CoRL |
-| [Input-to-State Stable Coupled Oscillator Networks for Closed-form Model-based Control in Latent Space](https://doi.org/10.52202/079017-2607) | 2024 | NeurIPS |
 | [Leveraging Symmetry in RL-based Legged Locomotion Control](https://doi.org/10.1109/IROS58592.2024.10802439) | 2024 | IROS |
 | [EquiContact: A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-rich Tasks](https://arxiv.org/abs/2507.10961) | 2025 | Dexterous Manipulation: Learning and Control with Div… |
 | [ET-SEED: Efficient Trajectory-Level SE(3) Equivariant Diffusion Policy](https://arxiv.org/abs/2411.03990) | 2025 | ICLR |
 | [Morphological symmetries in robotics](https://doi.org/10.1177/02783649241282422) | 2025 | IJRR |
 | [Morphological-Symmetry-Equivariant Heterogeneous Graph Neural Network for Robotic Dynamics Learning](https://arxiv.org/abs/2412.01297) | 2025 | Proceedings of the 7th Annual Learning for Dynamics &… |
 | [Morphologically Symmetric Reinforcement Learning for Ambidextrous Bimanual Manipulation](https://arxiv.org/abs/2505.05287) | 2025 | CoRL |
-| [Physics-Informed Neural Mapping and Motion Planning in Unknown Environments](https://doi.org/10.1109/TRO.2025.3548495) | 2025 | T-RO |
-| [Physics-informed Neural Time Fields for Prehensile Object Manipulation](https://doi.org/10.1109/IROS60139.2025.11246588) | 2025 | IROS |
 | [SE(3)-Equivariant Diffusion Policy in Spherical Fourier Space](https://arxiv.org/abs/2507.01723) | 2025 | ICML |
 | [A physics-informed graph neural network conserving linear and angular momentum for dynamical systems](https://doi.org/10.1038/s41467-025-67802-5) | 2026 | Nature Communications |
 
@@ -528,9 +613,11 @@ _Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/oth
 
 ## Physics-Informed Loss Functions
 
-Physics-informed approaches provide a flexible and data-efficient framework for solving forward and inverse problems governed by differential equations, by embedding physical laws as soft constraints in the training loss functions. Physics-informed components are active **only during training**: they are part of neither the architecture nor the inputs.
+Physics-informed approaches provide a flexible and data-efficient framework for solving forward and inverse problems governed by differential equations, by embedding physical laws as soft constraints in the training loss functions. Physics-informed components are active **only during training**: they are part of neither the architecture nor the inputs of the model. 
 
 ### Physics-Informed Neural Networks
+
+Training with a residual loss derived from the governing ODEs or PDEs.
 
 <details open>
 <summary><b>22 entries</b> from <code>bib/physics-informed/neural-networks.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -566,6 +653,8 @@ _Source: [`bib/physics-informed/neural-networks.bib`](bib/physics-informed/neura
 
 ### Physics-Informed Neural Operators
 
+Neural operators trained with physics-based residual losses, used where measured data alone are too sparse to train the operator.
+
 <details open>
 <summary><b>8 entries</b> from <code>bib/physics-informed/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -585,6 +674,8 @@ _Source: [`bib/physics-informed/neural-operators.bib`](bib/physics-informed/neur
 </details>
 
 ### Other Types of Loss and Reward Functions
+
+Objectives other than PDE residuals that encode physical requirements (e.g., contact and friction consistency, stability, dynamic admissibility) including physics-shaped rewards in reinforcement learning.
 
 <details open>
 <summary><b>6 entries</b> from <code>bib/physics-informed/other-loss-and-reward-functions.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -608,6 +699,8 @@ Physics-guided learning exploits physics priors to transform, enrich, curate, se
 
 ### Physical Models as Structured Inputs to Learning Algorithms
 
+A physics-based model computes features that are fed to a downstream learner, so the ML model sees physically meaningful quantities instead of raw signals.
+
 <details open>
 <summary><b>4 entries</b> from <code>bib/physics-guided/structured-inputs.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -623,6 +716,8 @@ _Source: [`bib/physics-guided/structured-inputs.bib`](bib/physics-guided/structu
 </details>
 
 ### Physics-Guided Features & Training Data
+
+Physics priors employed to choose input features or to design and curate the training data itself, including excitation trajectories matched to the system's dynamics.
 
 <details open>
 <summary><b>5 entries</b> from <code>bib/physics-guided/features-and-data.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -641,6 +736,8 @@ _Source: [`bib/physics-guided/features-and-data.bib`](bib/physics-guided/feature
 
 ### Geometric Learning
 
+Inputs and outputs mapped so that the geometry of the data (e.g., rotations, manifolds, SPD matrices) is preserved through learning.
+
 <details open>
 <summary><b>5 entries</b> from <code>bib/physics-guided/geometric-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -658,6 +755,8 @@ _Source: [`bib/physics-guided/geometric-learning.bib`](bib/physics-guided/geomet
 
 ### Frequency-Domain Learning
 
+Transforming signals into the frequency domain, counted as physics-guided only when the retained components follow from known physical properties of the system.
+
 <details open>
 <summary><b>3 entries</b> from <code>bib/physics-guided/frequency-domain-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -672,6 +771,8 @@ _Source: [`bib/physics-guided/frequency-domain-learning.bib`](bib/physics-guided
 </details>
 
 ### Physically Consistent World Representations
+
+World and video generation models built with explicit mechanisms (e.g., occupancy, 3D structure, state conditioning) that keep the generated representation physically consistent.
 
 <details open>
 <summary><b>8 entries</b> from <code>bib/physics-guided/world-representations.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -693,6 +794,8 @@ _Source: [`bib/physics-guided/world-representations.bib`](bib/physics-guided/wor
 
 ### Physics-Guided Diffusion-based Generation
 
+Diffusion-based generation steered by physics: analytical kinematics, dynamic feasibility, or contact constraints applied as guidance during sampling.
+
 <details open>
 <summary><b>6 entries</b> from <code>bib/physics-guided/diffusion.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
@@ -710,6 +813,8 @@ _Source: [`bib/physics-guided/diffusion.bib`](bib/physics-guided/diffusion.bib).
 </details>
 
 ### Physics-Guided Neural Operators
+
+Koopman and related operators whose observables or lifted coordinates are constructed from first-principles knowledge rather than learned from scratch.
 
 <details open>
 <summary><b>5 entries</b> from <code>bib/physics-guided/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -731,6 +836,8 @@ _Source: [`bib/physics-guided/neural-operators.bib`](bib/physics-guided/neural-o
 Open-source tools used to build physics-embedded robot-learning models.
 
 ### Libraries, Frameworks, and Differentiable Simulators
+
+Libraries, frameworks, and differentiable simulators for building the methods reviewed above, covering model-structured and hybrid frameworks, neural differential equations, equation discovery and system identification, physics-informed machine learning, and differentiable simulation.
 
 <details open>
 <summary><b>37 entries</b> from <code>bib/software.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -804,7 +911,7 @@ _Source: [`bib/software.bib`](bib/software.bib)._
 
 Use the [classification flow](#twisted_rightwards_arrows-classification-flow) above to choose the route; a paper may carry more than one. `bib/*.bib` is the **only** source of truth: this README, `exports/papers.csv`, and the figures are all generated, so please do not edit them by hand.
 
-Maintainers regenerate everything with:
+Maintainers and contributors can regenerate everything with:
 
 ```bash
 python3 scripts/validate.py           # check the catalog
@@ -818,16 +925,12 @@ This repository is released under the [Apache 2.0 license](LICENSE).
 
 ## 🤝 Citation
 
-The survey manuscript *Embedding Physics Priors in Robot Learning: A Survey* is under submission. If you use this catalog, please cite:
+The survey manuscript *Embedding Physics Priors in Robot Learning: A Survey* is currently under review. Please cite as:
 
 ```BibTeX
 @article{piccinini2026physicspriors,
   title   = {Embedding Physics Priors in Robot Learning: A Survey},
-  author  = {Piccinini, Mattia and Schulze, Lucas and Plebe, Alice
-             and Saveriano, Matteo and Beckers, Thomas and Gao, Yuan
-             and Arenz, Oleg and Zarrouki, Baha and Wang, Dingrui
-             and Sch{\"a}fer, Finn Rasmus and Peters, Jan and Betz, Johannes
-             and Rosati Papini, Gastone Pietro},
+  author  = {Piccinini, Mattia and Schulze, Lucas and Plebe, Alice and Saveriano, Matteo and Beckers, Thomas and Gao, Yuan and Arenz, Oleg and Zarrouki, Baha and Wang, Dingrui and Sch{\"a}fer, Finn Rasmus and Peters, Jan and Betz, Johannes and Rosati Papini, Gastone Pietro},
   year    = {2026},
   note    = {Under review},
   url     = {https://github.com/TUM-AVS/survey-physics-embedded-robot-learning}

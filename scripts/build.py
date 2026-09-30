@@ -219,6 +219,103 @@ SECTION_FIGURES = {
 
 
 
+# One- or two-sentence description per subsection, condensed from the survey
+# section of the same name, so the catalog reads on its own.
+SUBSECTION_INTRO = {
+ "physics-encoded/lagrangian-learning-models":
+   "Methods that build the Euler-Lagrange equations into the model, learning the "
+   "Lagrangian (or its inertia and potential terms) rather than the dynamics directly. "
+   "Energy conservation and a positive-definite inertia matrix hold by construction.",
+ "physics-encoded/hamiltonian-learning-models":
+   "The Hamiltonian counterpart: the model learns the total energy as a function of "
+   "generalized coordinates and momenta, and symplectic or port-Hamiltonian structure "
+   "supplies energy conservation, passivity, and interconnection with external ports.",
+ "physics-encoded/model-structured-architectures":
+   "Architectures whose layers, internal connections, or constraints are derived from "
+   "physical principles, without committing to a full analytical-mechanics formalism. "
+   "The family also covers non-network models built the same way.",
+ "physics-encoded/neural-odes-and-variational-integrators":
+   "Continuous-time models that treat the network as the right-hand side of an ODE, and "
+   "discrete-time models whose update rule is a variational integrator, preserving the "
+   "geometry of the underlying flow.",
+ "physics-encoded/hybrid-physics-learning":
+   "Modular combinations in which a physics-based model and a learned component remain "
+   "separate: the learned part supplies a subsystem, a residual, or pre-processed sensor "
+   "input, while the physics model is used unchanged.",
+ "physics-encoded/topology-learning":
+   "Methods that learn the *structure* of the model - which terms, operators, or "
+   "connections appear - by assembling a library of candidate primitives under sparsity "
+   "or physical constraints, as in SINDy and equation learners.",
+ "physics-encoded/neural-operators":
+   "Operators between function spaces, rather than fixed-dimensional maps, with governing "
+   "equations or physical structure built into the operator itself (Koopman lifting, "
+   "DeepONet, FNO).",
+ "physics-encoded/other-architectures":
+   "Architectures that embed physics or domain knowledge in ways the categories above do "
+   "not cover: planning-specific output layers, bio-inspired structure, and symmetry "
+   "groups as inductive biases.",
+ "physics-informed/neural-networks":
+   "Conventional architectures trained with a residual loss derived from the governing "
+   "ODEs or PDEs. The physics constrains the optimization only: at inference the model is "
+   "an ordinary network.",
+ "physics-informed/neural-operators":
+   "Neural operators trained with physics-based residual losses, used where measured data "
+   "alone are too sparse to identify the operator.",
+ "physics-informed/other-loss-and-reward-functions":
+   "Objectives other than PDE residuals that encode physical requirements - contact and "
+   "friction consistency, stability, dynamic admissibility - including physics-shaped "
+   "rewards in reinforcement learning.",
+ "physics-guided/structured-inputs":
+   "A physics-based model computes features that are fed to a downstream learner, so the "
+   "network sees physically meaningful quantities instead of raw signals.",
+ "physics-guided/features-and-data":
+   "Physics priors used to choose input features or to design and curate the training "
+   "data itself, including excitation trajectories matched to the system's dynamics.",
+ "physics-guided/geometric-learning":
+   "Inputs and outputs mapped so that the non-Euclidean geometry of the data - rotations, "
+   "manifolds, SPD matrices - is preserved through learning.",
+ "physics-guided/frequency-domain-learning":
+   "Transforming signals into the frequency domain, counted as physics-guided only when "
+   "the retained components follow from known physical properties of the system.",
+ "physics-guided/world-representations":
+   "World and video models built with explicit mechanisms - occupancy, 3D structure, "
+   "state conditioning - that keep the generated representation physically consistent.",
+ "physics-guided/diffusion":
+   "Diffusion-based generation steered by physics: analytical kinematics, dynamic "
+   "feasibility, or contact constraints applied as guidance during sampling.",
+ "physics-guided/neural-operators":
+   "Koopman and related operators whose observables or lifted coordinates are constructed "
+   "from first-principles knowledge rather than learned from scratch.",
+ "software":
+   "Libraries, frameworks, and differentiable simulators for building the methods reviewed "
+   "above, covering model-structured and hybrid frameworks, neural differential equations, "
+   "equation discovery and system identification, physics-informed machine learning, and "
+   "differentiable simulation.",
+}
+
+# Descriptions for the subsubsections of the two subsections the survey splits.
+GROUP_INTRO = {
+ "learning-complex-subsystems":
+   "A learned model replaces one hard-to-parameterize subsystem - tire forces, friction, "
+   "contact - while the rest of the system keeps its analytical description.",
+ "residual-learning":
+   "A learned term is added on top of a physics-based model to absorb unmodeled dynamics, "
+   "parameter error, and simplifying assumptions.",
+ "sensor-pre-processing":
+   "A network pre-processes raw sensor measurements, and its output feeds a physics-based "
+   "estimator such as a Kalman filter.",
+ "motion-planning":
+   "Network architectures tailored to planning and prediction, with output layers that "
+   "enforce dynamic feasibility or smoothness of the generated trajectories.",
+ "bio-inspired":
+   "Architectures that borrow structure from biological perception, action selection, and "
+   "neural representation.",
+ "symmetry-aware":
+   "Architectures built around the symmetry groups of the robot, linking invariance to "
+   "conservation laws through Noether's theorem.",
+}
+
+
 def table_row(p: dict) -> str:
     title = md_escape(p["title"])
     if p["link"]:
@@ -664,25 +761,58 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
             lines.extend(_figure(name, "Physics-encoded architecture map", caption))
         for subtitle, fname in items:
             papers = all_papers.get(fname, [])
+            family = fname[:-4]
             lines.append(f"### {subtitle}")
             lines.append("")
-            # Open by default, so the catalog reads normally; the arrow folds the
-            # table away to its heading, which makes the README scrollable.
-            lines.append("<details open>")
-            lines.append(
-                f"<summary><b>{len(papers)} entries</b> from "
-                f"<code>bib/{fname}</code> &nbsp;<sub>(click to collapse)</sub></summary>"
-            )
-            lines.append("")
-            lines.append(f"_Source: [`bib/{fname}`](bib/{fname})._")
-            lines.append("")
-            lines.append("| Paper | Year | Venue |")
-            lines.append("|:------|:-----|:------|")
-            for p in papers:
-                lines.append(table_row(p))
-            lines.append("")
-            lines.append("</details>")
-            lines.append("")
+            if SUBSECTION_INTRO.get(family):
+                lines.append(SUBSECTION_INTRO[family])
+                lines.append("")
+
+            def table(rows: list[dict], label: str, source: str) -> None:
+                # Open by default, so the catalog reads normally; the arrow folds
+                # the table away to its heading, keeping the README scrollable.
+                lines.append("<details open>")
+                lines.append(
+                    f"<summary><b>{len(rows)} entries</b> from "
+                    f"<code>{label}</code> &nbsp;<sub>(click to collapse)</sub></summary>"
+                )
+                lines.append("")
+                lines.append(source)
+                lines.append("")
+                lines.append("| Paper | Year | Venue |")
+                lines.append("|:------|:-----|:------|")
+                for row in rows:
+                    lines.append(table_row(row))
+                lines.append("")
+                lines.append("</details>")
+                lines.append("")
+
+            src = f"_Source: [`bib/{fname}`](bib/{fname})._"
+            groups = classify.GROUPS.get(family)
+            if not groups:
+                table(papers, f"bib/{fname}", src)
+                continue
+            # The survey splits this subsection further; mirror its subsubsections.
+            # They are h4 so the table of contents, which lists h2/h3, stays short.
+            for slug, heading in groups:
+                rows = [x for x in papers if x.get("group") == slug]
+                lines.append(f"#### {heading}")
+                lines.append("")
+                if GROUP_INTRO.get(slug):
+                    lines.append(GROUP_INTRO[slug])
+                    lines.append("")
+                if rows:
+                    table(rows, f"bib/{fname} &middot; {heading}", src)
+                else:
+                    lines.append(
+                        "_No catalogued papers: the works discussed here are cited in the "
+                        "survey narrative and listed under background references._")
+                    lines.append("")
+            leftover = [x for x in papers if not x.get("group")]
+            if leftover:
+                lines.append("#### Other")
+                lines.append("")
+                table(leftover, f"bib/{fname} &middot; other", src)
 
     lines.append(f"## {CONTRIB_HEADING}")
     lines.append("")
