@@ -35,7 +35,7 @@ a plain bibliography if you want to cite the corpus yourself.
   year    = {2026},
   doi     = {10.0000/example},
   survey_kind        = {method},
-  survey_family      = {model-structured},
+  survey_family      = {physics-encoded/model-structured-architectures},
   survey_route       = {physics-encoded},
   survey_application = {dynamics-learning, control},
   survey_robot       = {manipulators},
@@ -51,24 +51,30 @@ README can link the paper.
 
 Pick the file under `bib/` matching the method family. The family only decides
 where the entry lives and which README section it appears under; the *route* is
-stated per entry, so a paper in `hybrid-physics.bib` can still be labelled
+stated per entry, so a paper in `hybrid-physics-learning.bib` can still be labelled
 physics-informed.
 
 | file in `bib/` | Method family |
 | --- | --- |
-| `lagrangian.bib` | Lagrangian Learning Models (DeLaN / LNN) |
-| `hamiltonian.bib` | Hamiltonian Learning Models (HNN / port-Hamiltonian) |
-| `model-structured.bib` | Model-Structured Learning Architectures (MSNNs) |
-| `neural-ode.bib` | Neural ODEs and Variational Integrator Networks |
-| `non-nn.bib` | Non-NN Physics-Structured Models (GPR / RKHS / kernels) |
-| `hybrid-physics.bib` | Hybrid Physics-Learning Architectures |
-| `topology-learning.bib` | Physics-Encoded Topology Learning (SINDy / equation learners) |
-| `neural-operators.bib` | Neural Operators (Koopman / DeepONet / FNO / PINO) |
-| `other-encoded.bib` | Other Types of Physics-Encoded Architectures |
-| `physics-informed-losses.bib` | Physics-Informed Neural Networks and Losses |
-| `physics-guided-inputs.bib` | Structured Inputs, Geometry, Frequency Domain, World Models |
-| `generative-models.bib` | Diffusion Models, World Models, and VLAs |
-| `software.bib` | Libraries and Differentiable Simulators |
+| `physics-encoded/lagrangian-learning-models.bib` | Lagrangian Learning Models |
+| `physics-encoded/hamiltonian-learning-models.bib` | Hamiltonian Learning Models |
+| `physics-encoded/model-structured-architectures.bib` | Model-Structured Learning Architectures |
+| `physics-encoded/neural-odes-and-variational-integrators.bib` | Neural ODEs and Variational Integrator Networks |
+| `physics-encoded/hybrid-physics-learning.bib` | Hybrid Physics-Learning Architectures |
+| `physics-encoded/topology-learning.bib` | Physics-Encoded Topology Learning |
+| `physics-encoded/neural-operators.bib` | Physics-Encoded Neural Operators |
+| `physics-encoded/other-architectures.bib` | Other Types of Physics-Encoded Architectures |
+| `physics-informed/neural-networks.bib` | Physics-Informed Neural Networks |
+| `physics-informed/neural-operators.bib` | Physics-Informed Neural Operators |
+| `physics-informed/other-loss-and-reward-functions.bib` | Other Types of Loss and Reward Functions |
+| `physics-guided/structured-inputs.bib` | Physical Models as Structured Inputs to Learning Algorithms |
+| `physics-guided/features-and-data.bib` | Physics-Guided Features & Training Data |
+| `physics-guided/geometric-learning.bib` | Geometric Learning |
+| `physics-guided/frequency-domain-learning.bib` | Frequency-Domain Learning |
+| `physics-guided/world-representations.bib` | Physically Consistent World Representations |
+| `physics-guided/diffusion.bib` | Physics-Guided Diffusion-based Generation |
+| `physics-guided/neural-operators.bib` | Physics-Guided Neural Operators |
+| `software.bib` | Software Tools |
 | `surveys.bib` | Related Surveys |
 | `background.bib` | Background and Historical References |
 
@@ -133,9 +139,34 @@ with no specific platform.
 
 ### `survey_family` (required)
 
-Must match the file name, e.g. `hybrid-physics` in `bib/hybrid-physics.bib`.
-It is stated explicitly so a misfiled entry is caught rather than silently
-counted under the wrong heading.
+Which file the entry lives in. Each file mirrors one subsection of the survey,
+so pick the subsection that would discuss the paper. It is stated explicitly in
+the entry as well, so a misfiled paper is caught rather than silently counted
+under the wrong heading.
+
+| File | Survey subsection |
+| --- | --- |
+| `physics-encoded/lagrangian-learning-models.bib` | Lagrangian Learning Models |
+| `physics-encoded/hamiltonian-learning-models.bib` | Hamiltonian Learning Models |
+| `physics-encoded/model-structured-architectures.bib` | Model-Structured Learning Architectures |
+| `physics-encoded/neural-odes-and-variational-integrators.bib` | Neural ODEs and Variational Integrator Networks |
+| `physics-encoded/hybrid-physics-learning.bib` | Hybrid Physics-Learning Architectures |
+| `physics-encoded/topology-learning.bib` | Physics-Encoded Topology Learning |
+| `physics-encoded/neural-operators.bib` | Physics-Encoded Neural Operators |
+| `physics-encoded/other-architectures.bib` | Other Types of Physics-Encoded Architectures |
+| `physics-informed/neural-networks.bib` | Physics-Informed Neural Networks |
+| `physics-informed/neural-operators.bib` | Physics-Informed Neural Operators |
+| `physics-informed/other-loss-and-reward-functions.bib` | Other Types of Loss and Reward Functions |
+| `physics-guided/structured-inputs.bib` | Physical Models as Structured Inputs to Learning Algorithms |
+| `physics-guided/features-and-data.bib` | Physics-Guided Features & Training Data |
+| `physics-guided/geometric-learning.bib` | Geometric Learning |
+| `physics-guided/frequency-domain-learning.bib` | Frequency-Domain Learning |
+| `physics-guided/world-representations.bib` | Physically Consistent World Representations |
+| `physics-guided/diffusion.bib` | Physics-Guided Diffusion-based Generation |
+| `physics-guided/neural-operators.bib` | Physics-Guided Neural Operators |
+| `software.bib` | Software Tools |
+| `surveys.bib` | Related Surveys |
+| `background.bib` | Background and Historical References |
 
 ### `survey_code` (optional)
 

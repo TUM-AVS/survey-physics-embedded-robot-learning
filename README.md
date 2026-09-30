@@ -219,24 +219,29 @@ To classify a new paper, walk the [classification flow](#twisted_rightwards_arro
 
 ## Table of contents
 
-- [Physics-Encoded Architectures](#physics-encoded-architectures) (182)
-  - [Lagrangian Learning Models](#lagrangian-learning-models) (24)
-  - [Hamiltonian Learning Models](#hamiltonian-learning-models) (10)
-  - [Model-Structured Learning Architectures](#model-structured-learning-architectures) (22)
-  - [Neural ODEs and Variational Integrator Networks](#neural-odes-and-variational-integrator-networks) (10)
-  - [Non-NN Physics-Encoded Models (including GPR / RKHS / kernels)](#non-nn-physics-encoded-models-including-gpr--rkhs--kernels) (15)
-  - [Hybrid Physics-Learning Architectures](#hybrid-physics-learning-architectures) (38)
+- [Physics-Encoded Architectures](#physics-encoded-architectures) (175)
+  - [Lagrangian Learning Models](#lagrangian-learning-models) (29)
+  - [Hamiltonian Learning Models](#hamiltonian-learning-models) (15)
+  - [Model-Structured Learning Architectures](#model-structured-learning-architectures) (25)
+  - [Neural ODEs and Variational Integrator Networks](#neural-odes-and-variational-integrator-networks) (12)
+  - [Hybrid Physics-Learning Architectures](#hybrid-physics-learning-architectures) (41)
   - [Physics-Encoded Topology Learning](#physics-encoded-topology-learning) (21)
-  - [Neural Operators](#neural-operators) (24)
-  - [Other Types of Physics-Encoded Architectures](#other-types-of-physics-encoded-architectures) (18)
-- [Physics-Informed Loss Functions](#physics-informed-loss-functions) (19)
-  - [Physics-Informed Neural Networks and Losses](#physics-informed-neural-networks-and-losses) (19)
-- [Physics-Guided Inputs, Data, and Representations](#physics-guided-inputs-data-and-representations) (16)
-  - [Structured Inputs, Geometric, Frequency-Domain, and World Representations](#structured-inputs-geometric-frequency-domain-and-world-representations) (16)
-- [Generative Models with Physics Priors (Cross-Cutting)](#generative-models-with-physics-priors-cross-cutting) (30)
-  - [Diffusion, World Models, and VLAs](#diffusion-world-models-and-vlas) (30)
-- [Software, Simulators, and Libraries](#software-simulators-and-libraries) (37)
-  - [Libraries and Differentiable Simulators](#libraries-and-differentiable-simulators) (37)
+  - [Physics-Encoded Neural Operators](#physics-encoded-neural-operators) (11)
+  - [Other Types of Physics-Encoded Architectures](#other-types-of-physics-encoded-architectures) (21)
+- [Physics-Informed Loss Functions](#physics-informed-loss-functions) (36)
+  - [Physics-Informed Neural Networks](#physics-informed-neural-networks) (22)
+  - [Physics-Informed Neural Operators](#physics-informed-neural-operators) (8)
+  - [Other Types of Loss and Reward Functions](#other-types-of-loss-and-reward-functions) (6)
+- [Physics-Guided Inputs, Data, and Representations](#physics-guided-inputs-data-and-representations) (36)
+  - [Physical Models as Structured Inputs to Learning Algorithms](#physical-models-as-structured-inputs-to-learning-algorithms) (4)
+  - [Physics-Guided Features & Training Data](#physics-guided-features--training-data) (5)
+  - [Geometric Learning](#geometric-learning) (5)
+  - [Frequency-Domain Learning](#frequency-domain-learning) (3)
+  - [Physically Consistent World Representations](#physically-consistent-world-representations) (8)
+  - [Physics-Guided Diffusion-based Generation](#physics-guided-diffusion-based-generation) (6)
+  - [Physics-Guided Neural Operators](#physics-guided-neural-operators) (5)
+- [Software Tools](#software-tools) (37)
+  - [Libraries, Frameworks, and Differentiable Simulators](#libraries-frameworks-and-differentiable-simulators) (37)
 
 > [!TIP]
 > Every paper table below starts expanded. Click the :arrow_forward: arrow next to a table to fold it away to its heading, which makes scrolling through the catalog much easier.
@@ -253,32 +258,37 @@ The largest body of work, and therefore reviewed first.
 ### Lagrangian Learning Models
 
 <details open>
-<summary><b>24 entries</b> from <code>bib/lagrangian.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>29 entries</b> from <code>bib/physics-encoded/lagrangian-learning-models.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/lagrangian.bib`](bib/lagrangian.bib)._
+_Source: [`bib/physics-encoded/lagrangian-learning-models.bib`](bib/physics-encoded/lagrangian-learning-models.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
 | [Efficient Factorization of the Joint-Space Inertia Matrix for Branched Kinematic Trees](https://doi.org/10.1177/0278364905054928) | 2005 | IJRR |
+| [Learning the Inverse Dynamics of Robotic Manipulators in Structured Reproducing Kernel Hilbert Space](https://doi.org/10.1109/TCYB.2015.2454334) | 2016 | IEEE Transactions on Cybernetics |
 | [A General Framework for Structured Learning of Mechanical Systems](http://arxiv.org/abs/1902.08705) | 2019 | arXiv |
 | [Deep Lagrangian Networks for end-to-end learning of energy-based control for under-actuated systems](https://doi.org/10.1109/iros40897.2019.8968268) | 2019 | IROS |
 | [Deep Lagrangian Networks: Using Physics as Model Prior for Deep Learning](https://arxiv.org/abs/1907.04490) | 2019 | ICLR |
+| [A Data-Efficient Geometrically Inspired Polynomial Kernel for Robot Inverse Dynamic](https://doi.org/10.1109/LRA.2019.2945240) | 2020 | IEEE RA-L |
 | [Lagrangian Neural Networks](https://arxiv.org/abs/2003.04630) | 2020 | ICLR |
-| [Simplifying Hamiltonian and Lagrangian Neural Networks via Explicit Constraints](https://arxiv.org/abs/2010.13581) | 2020 | NeurIPS |
 | [Structured Mechanical Models for Robot Learning and Control](https://arxiv.org/abs/2004.10301) | 2020 | L4DC |
 | [Combining Physics and Deep Learning to learn Continuous-Time Dynamics Models](https://arxiv.org/abs/2110.01894) | 2021 | arXiv |
+| [Advantages of a physics-embedding kernel for robot inverse dynamics identification](https://doi.org/10.1109/MED54222.2022.9837119) | 2022 | 2022 30th Mediterranean Conference on Control and Aut… |
+| [ModLaNets: Learning Generalisable Dynamics via Modularity and Physical Inductive Bias](https://arxiv.org/abs/2206.12325) | 2022 | ICML |
+| [Physically Consistent Learning of Conservative Lagrangian Systems with Gaussian Processes](https://doi.org/10.1109/CDC51059.2022.9993123) | 2022 | 2022 IEEE 61st Conference on Decision and Control (CDC) |
 | [Physics-Informed Model-Based Reinforcement Learning](https://arxiv.org/abs/2212.02179) | 2023 | L4DC |
+| [A Black-Box Physics-Informed Estimator Based on Gaussian Process Regression for Robot Inverse Dynamics Identification](https://doi.org/10.1109/TRO.2024.3474851) | 2024 | T-RO |
 | [A Deep Learning Framework for Non-Symmetrical Coulomb Friction Identification of Robotic Manipulators](https://doi.org/10.1109/ICRA57147.2024.10610737) | 2024 | ICRA |
 | [Deep Lagrangian Network Learning and Control of Robotic Exoskeleton Based on Multi-Sensor-Cyber Information Fusion](https://doi.org/10.1109/TICPS.2024.3437347) | 2024 | IEEE Transactions on Industrial Cyber-Physical Systems |
 | [Dynamic Modeling of Robotic Manipulator via an Augmented Deep Lagrangian Network](https://doi.org/10.26599/TST.2024.9010011) | 2024 | Tsinghua Science and Technology |
 | [Offline Reinforcement Learning of Robotic Control Using Deep Kinematics and Dynamics](https://doi.org/10.1109/TMECH.2023.3336316) | 2024 | T-Mech |
-| [Physics-Informed Neural Networks to Model and Control Robots: A Theoretical and Experimental Investigation](https://doi.org/10.1002/aisy.202300385) | 2024 | Advanced Intelligent Systems |
 | [Physics-informed neutral network with physically consistent and residual learning for excavator precision operation control](https://doi.org/10.1016/j.asoc.2024.112402) | 2024 | Applied Soft Computing |
 | [A PINN-Based Friction-Inclusive Dynamics Modeling Method for Industrial Robots](https://doi.org/10.1109/TIE.2024.3476977) | 2025 | TIE |
 | [Context-Aware Deep Lagrangian Networks for Model Predictive Control](https://doi.org/10.1109/IROS60139.2025.11246292) | 2025 | IROS |
 | [Dynamic Friction-Aware Lagrangian Network for Accurate GRF Estimation in Legged Robot](https://doi.org/10.23919/ICCAS66577.2025.11301124) | 2025 | 2025 25th International Conference on Control, Automa… |
 | [Inducing Matrix Sparsity Bias for Improved Dynamic Identification of Parallel Kinematic Manipulators using Deep Learning](https://doi.org/10.1109/ICRA55743.2025.11128257) | 2025 | ICRA |
 | [Investigating Lagrangian Neural Networks for Infinite Horizon Planning in Quadrupedal Locomotion](https://arxiv.org/abs/2506.16079) | 2025 | arXiv |
+| [Exponentially Stable Projector-Based Control of Lagrangian Systems With Gaussian Processes](https://doi.org/10.1109/TAC.2026.3662545) | 2026 | IEEE Transactions on Automatic Control |
 | [Floating-Base Deep Lagrangian Networks](https://arxiv.org/abs/2510.17270) | 2026 | arXiv |
 | [Physics-informed adaptive Kalman filter for contact force estimation in industrial robots considering model uncertainty](https://doi.org/10.1016/j.rcim.2026.103292) | 2026 | Robotics and Computer-Integrated Manufacturing |
 | [PILaN: Generating Task-Individual Independent Customized Assistive Control on a Hip-Knee Powered Exoskeleton](https://doi.org/10.1109/LRA.2026.3666397) | 2026 | IEEE RA-L |
@@ -289,34 +299,40 @@ _Source: [`bib/lagrangian.bib`](bib/lagrangian.bib)._
 ### Hamiltonian Learning Models
 
 <details open>
-<summary><b>10 entries</b> from <code>bib/hamiltonian.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>15 entries</b> from <code>bib/physics-encoded/hamiltonian-learning-models.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/hamiltonian.bib`](bib/hamiltonian.bib)._
+_Source: [`bib/physics-encoded/hamiltonian-learning-models.bib`](bib/physics-encoded/hamiltonian-learning-models.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
 | [Port-Hamiltonian Systems Theory: An Introductory Overview](https://doi.org/10.1561/2600000002) | 2014 | Foundations and Trends\textregistered in Systems and … |
 | [Hamiltonian Neural Networks](https://arxiv.org/abs/1906.01563) | 2019 | NeurIPS |
 | [Modern Quantum Mechanics](https://doi.org/10.1017/9781108587280) | 2020 | Cambridge University Press |
+| [Simplifying Hamiltonian and Lagrangian Neural Networks via Explicit Constraints](https://arxiv.org/abs/2010.13581) | 2020 | NeurIPS |
 | [Symplectic ODE-Net: Learning Hamiltonian Dynamics with Control](https://arxiv.org/abs/1909.12077) | 2020 | ICLR |
 | [Adaptive Control of SE(3) Hamiltonian Dynamics With Learned Disturbance Features](https://arxiv.org/abs/2109.09974) | 2021 | IEEE Control Systems Letters |
 | [Hamiltonian-based Neural ODE Networks on the SE(3) Manifold For Dynamics Learning and Control](https://doi.org/10.15607/RSS.2021.XVII.086) | 2021 | RSS |
-| [ModLaNets: Learning Generalisable Dynamics via Modularity and Physical Inductive Bias](https://arxiv.org/abs/2206.12325) | 2022 | ICML |
 | [Hamiltonian Dynamics Learning from Point Cloud Observations for Nonholonomic Mobile Robot Control](https://doi.org/10.1109/icra57147.2024.10610395) | 2023 | ICRA |
+| [Learning Switching Port-Hamiltonian Systems with Uncertainty Quantification](https://doi.org/10.1016/j.ifacol.2023.10.1621) | 2023 | IFAC-PapersOnLine |
+| [Learning Hamiltonian dynamics with reproducing kernel Hilbert spaces and random features](https://doi.org/10.1016/j.ejcon.2024.101128) | 2024 | European Journal of Control |
+| [Physics-Informed Neural Networks to Model and Control Robots: A Theoretical and Experimental Investigation](https://doi.org/10.1002/aisy.202300385) | 2024 | Advanced Intelligent Systems |
 | [Port-Hamiltonian Neural ODE Networks on Lie Groups for Robot Dynamics Learning and Control](https://doi.org/10.1109/TRO.2024.3428433) | 2024 | T-RO |
 | [Physics-Informed Dynamics Modeling: Accurate Long-Term Prediction of Underwater Vehicles with Hamiltonian Neural ODEs](https://doi.org/10.3390/jmse13112091) | 2025 | Journal of Marine Science and Engineering |
+| [Learning-Based Modeling of Soft Robots via Cosserat Rod Theory](https://arxiv.org/abs/2606.20958) | 2026 | arXiv |
+| [Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling](https://arxiv.org/abs/2605.00412) | 2026 | arXiv |
 
 </details>
 
 ### Model-Structured Learning Architectures
 
 <details open>
-<summary><b>22 entries</b> from <code>bib/model-structured.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>25 entries</b> from <code>bib/physics-encoded/model-structured-architectures.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/model-structured.bib`](bib/model-structured.bib)._
+_Source: [`bib/physics-encoded/model-structured-architectures.bib`](bib/physics-encoded/model-structured-architectures.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
+| [Cascaded Gaussian Processes for Data-efficient Robot Dynamics Learning](https://doi.org/10.1109/IROS40897.2019.8968107) | 2019 | IROS |
 | [A mental simulation approach for learning neural-network predictive control (in self-driving cars)](https://doi.org/10.1109/access.2020.3032780) | 2020 | IEEE Access |
 | [ContactNets: Learning of Discontinuous Contact Dynamics with Smooth, Implicit Representations](https://arxiv.org/abs/2009.11193) | 2020 | CoRL |
 | [Encoding Physical Constraints in Differentiable Newton-Euler Algorithm](https://arxiv.org/abs/2001.08861) | 2020 | L4DC |
@@ -331,12 +347,14 @@ _Source: [`bib/model-structured.bib`](bib/model-structured.bib)._
 | [Fast Planning and Tracking of Complex Autonomous Parking Maneuvers With Optimal Control and Pseudo-Neural Networks](https://doi.org/10.1109/ACCESS.2023.3330431) | 2023 | IEEE Access |
 | [Robust and Sample-Efficient Estimation of Vehicle Lateral Velocity Using Neural Networks With Explainable Structure Informed by Kinematic Principles](https://doi.org/10.1109/TITS.2023.3303776) | 2023 | IEEE Transactions on Intelligent Transportation Systems |
 | [Deep dynamics: Vehicle dynamics modeling with a physics-constrained neural network for autonomous racing](https://doi.org/10.1109/lra.2024.3388847) | 2024 | IEEE RA-L |
+| [Physically consistent modeling & identification of nonlinear friction with dissipative Gaussian processes](https://arxiv.org/abs/2405.17199) | 2024 | Proceedings of the 6th Annual Learning for Dynamics &… |
 | [Physics informed machine learning model for inverse dynamics in robotic manipulators](https://doi.org/10.1016/j.asoc.2024.111877) | 2024 | Applied Soft Computing |
 | [A Physics-Informed Approach for Learning Vehicle Dynamics in High-Speed Autonomy](https://doi.org/10.2514/6.2025-1726) | 2025 | AIAA SCITECH 2025 Forum |
 | [A Road Friction-Aware Anti-Lock Braking System Based on Model-Structured Neural Networks](https://doi.org/10.1109/OJITS.2025.3563347) | 2025 | IEEE Open Journal of Intelligent Transportation Systems |
 | [Fine-tuning hybrid dynamics with physics-informed neural networks for vehicle dynamics estimation](https://doi.org/10.1007/s41315-025-00452-4) | 2025 | International Journal of Intelligent Robotics and App… |
 | [Model-Structured Neural Networks to Control the Steering Dynamics of Autonomous Race Cars](https://doi.org/10.1109/ITSC60802.2025.11423721) | 2025 | 2025 IEEE 28th International Conference on Intelligen… |
 | [Modeling brake emissions using an ad hoc physics-inspired recurrent neural network](https://doi.org/10.1016/j.wear.2026.206593) | 2026 | Wear |
+| [Structure-Preserving Learning of Nonholonomic Dynamics](https://arxiv.org/abs/2603.27580) | 2026 | arXiv |
 | [Trajectory Planning and Control near the Limits: an Open Experimental Benchmark on the RoboRacer Platform](https://arxiv.org/abs/2605.19881) | 2026 | 2026 IEEE 29th International Conference on Intelligen… |
 | [Vehicle Dynamics Learning From Physics Priors With Model-Structured Neural Networks](https://doi.org/10.1109/OJITS.2026.3685078) | 2026 | IEEE Open Journal of Intelligent Transportation Systems |
 
@@ -345,13 +363,14 @@ _Source: [`bib/model-structured.bib`](bib/model-structured.bib)._
 ### Neural ODEs and Variational Integrator Networks
 
 <details open>
-<summary><b>10 entries</b> from <code>bib/neural-ode.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>12 entries</b> from <code>bib/physics-encoded/neural-odes-and-variational-integrators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/neural-ode.bib`](bib/neural-ode.bib)._
+_Source: [`bib/physics-encoded/neural-odes-and-variational-integrators.bib`](bib/physics-encoded/neural-odes-and-variational-integrators.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
 | [Variational methods, multisymplectic geometry and continuum mechanics](https://doi.org/10.1016/S0393-0440(00)00066-8) | 2001 | Journal of Geometry and Physics |
+| [Neural Ordinary Differential Equations](https://arxiv.org/abs/1806.07366) | 2019 | NeurIPS |
 | [Variational Integrator Networks for Physically Structured Embeddings](https://arxiv.org/abs/1910.09349) | 2020 | Proceedings of the Twenty Third International Confere… |
 | [Forced Variational Integrator Networks for Prediction and Control of Mechanical Systems](https://arxiv.org/abs/2106.02973) | 2021 | L4DC |
 | [KNODE-MPC: A Knowledge-Based Data-Driven Predictive Control Framework for Aerial Robots](https://doi.org/10.1109/LRA.2022.3144787) | 2022 | IEEE RA-L |
@@ -360,43 +379,17 @@ _Source: [`bib/neural-ode.bib`](bib/neural-ode.bib)._
 | [Lie group forced variational integrator networks for learning and control of robot systems](https://arxiv.org/abs/2211.16006) | 2023 | L4DC |
 | [Learning Complex Motion Plans using Neural ODEs with Safety and Stability Guarantees](https://doi.org/10.1109/ICRA57147.2024.10611584) | 2024 | ICRA |
 | [PhysORD: A Neuro-Symbolic Approach for Physics-infused Motion Prediction in Off-road Driving](https://doi.org/10.1109/IROS58592.2024.10802099) | 2024 | IROS |
+| [Vehicle single track modeling using physics guided neural differential equations](https://arxiv.org/abs/2403.11648) | 2024 | arXiv |
 | [Learning Context-Aware Neural ODE Dynamics for Adaptive Robotic Control](https://doi.org/10.1109/LRA.2026.3701574) | 2026 | IEEE RA-L |
-
-</details>
-
-### Non-NN Physics-Encoded Models (including GPR / RKHS / kernels)
-
-<details open>
-<summary><b>15 entries</b> from <code>bib/non-nn.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
-
-_Source: [`bib/non-nn.bib`](bib/non-nn.bib)._
-
-| Paper | Year | Venue |
-|:------|:-----|:------|
-| [Incremental semiparametric inverse dynamics learning](https://doi.org/10.1109/ICRA.2016.7487177) | 2016 | ICRA |
-| [Learning the Inverse Dynamics of Robotic Manipulators in Structured Reproducing Kernel Hilbert Space](https://doi.org/10.1109/TCYB.2015.2454334) | 2016 | IEEE Transactions on Cybernetics |
-| [Stable model-based control with Gaussian process regression for robot manipulators](https://doi.org/10.1016/j.ifacol.2017.08.359) | 2017 | IFAC-PapersOnLine |
-| [Cascaded Gaussian Processes for Data-efficient Robot Dynamics Learning](https://doi.org/10.1109/IROS40897.2019.8968107) | 2019 | IROS |
-| [Stable Gaussian process based tracking control of Euler–Lagrange systems](https://doi.org/10.1016/j.automatica.2019.01.023) | 2019 | Automatica |
-| [A Data-Efficient Geometrically Inspired Polynomial Kernel for Robot Inverse Dynamic](https://doi.org/10.1109/LRA.2019.2945240) | 2020 | IEEE RA-L |
-| [Advantages of a physics-embedding kernel for robot inverse dynamics identification](https://doi.org/10.1109/MED54222.2022.9837119) | 2022 | 2022 30th Mediterranean Conference on Control and Aut… |
-| [Physically Consistent Learning of Conservative Lagrangian Systems with Gaussian Processes](https://doi.org/10.1109/CDC51059.2022.9993123) | 2022 | 2022 IEEE 61st Conference on Decision and Control (CDC) |
-| [Learning Switching Port-Hamiltonian Systems with Uncertainty Quantification](https://doi.org/10.1016/j.ifacol.2023.10.1621) | 2023 | IFAC-PapersOnLine |
-| [A Black-Box Physics-Informed Estimator Based on Gaussian Process Regression for Robot Inverse Dynamics Identification](https://doi.org/10.1109/TRO.2024.3474851) | 2024 | T-RO |
-| [Learning Hamiltonian dynamics with reproducing kernel Hilbert spaces and random features](https://doi.org/10.1016/j.ejcon.2024.101128) | 2024 | European Journal of Control |
-| [Physically consistent modeling & identification of nonlinear friction with dissipative Gaussian processes](https://arxiv.org/abs/2405.17199) | 2024 | Proceedings of the 6th Annual Learning for Dynamics &… |
-| [Exponentially Stable Projector-Based Control of Lagrangian Systems With Gaussian Processes](https://doi.org/10.1109/TAC.2026.3662545) | 2026 | IEEE Transactions on Automatic Control |
-| [Learning-Based Modeling of Soft Robots via Cosserat Rod Theory](https://arxiv.org/abs/2606.20958) | 2026 | arXiv |
-| [Structure-Preserving Learning of Nonholonomic Dynamics](https://arxiv.org/abs/2603.27580) | 2026 | arXiv |
 
 </details>
 
 ### Hybrid Physics-Learning Architectures
 
 <details open>
-<summary><b>38 entries</b> from <code>bib/hybrid-physics.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>41 entries</b> from <code>bib/physics-encoded/hybrid-physics-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/hybrid-physics.bib`](bib/hybrid-physics.bib)._
+_Source: [`bib/physics-encoded/hybrid-physics-learning.bib`](bib/physics-encoded/hybrid-physics-learning.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
@@ -404,13 +397,16 @@ _Source: [`bib/hybrid-physics.bib`](bib/hybrid-physics.bib)._
 | [Hybrid Modeling of Non-Linear Mechanical Systems: The Case of a Vehicle Shock Absorber](https://doi.org/10.1115/DETC2011-48108) | 2011 | ASME 2011 International Design Engineering Technical … |
 | [Tire and Vehicle Dynamics Ed. 3](https://doi.org/10.1016/C2010-0-68548-8) | 2012 | Elsevier Science |
 | [Discovering governing equations from data by sparse identification of nonlinear dynamical systems](https://doi.org/10.1073/pnas.1517384113) | 2016 | Proceedings of the National Academy of Sciences |
+| [Incremental semiparametric inverse dynamics learning](https://doi.org/10.1109/ICRA.2016.7487177) | 2016 | ICRA |
 | [Vehicle sideslip angle measurement based on sensor data fusion using an integrated ANFIS and an Unscented Kalman Filter algorithm](https://doi.org/10.1016/j.ymssp.2015.11.003) | 2016 | Mechanical Systems and Signal Processing |
+| [Stable model-based control with Gaussian process regression for robot manipulators](https://doi.org/10.1016/j.ifacol.2017.08.359) | 2017 | IFAC-PapersOnLine |
 | [Cautious NMPC with Gaussian Process Dynamics for Autonomous Miniature Race Cars](https://doi.org/10.23919/ECC.2018.8550162) | 2018 | Proceedings of the 2018 European Control Conference (… |
 | [Teaching a vehicle to autonomously drift: A data-based approach using Neural Networks](https://doi.org/10.1016/j.knosys.2018.04.015) | 2018 | Knowledge-Based Systems |
 | [Tire lateral force estimation and grip potential identification using Neural Networks, Extended Kalman Filter, and Recursive Least Squares](https://doi.org/10.1007/s00521-017-2932-9) | 2018 | Neural Computing and Applications |
 | [An integrated artificial neural network-unscented Kalman filter vehicle sideslip angle estimation based on inertial measurement unit measurements](https://doi.org/10.1177/0954407018790646) | 2019 | Proceedings of the Institution of Mechanical Engineer… |
 | [Learning-Based Model Predictive Control for Autonomous Racing](https://doi.org/10.1109/lra.2019.2926677) | 2019 | IEEE RA-L |
 | [On tyre force virtual sensing for future Automated Vehicle-Based Objective Tyre Testing (AVBOTT)](https://doi.org/10.1080/00423114.2018.1552364) | 2019 | Vehicle System Dynamics |
+| [Stable Gaussian process based tracking control of Euler–Lagrange systems](https://doi.org/10.1016/j.automatica.2019.01.023) | 2019 | Automatica |
 | [TossingBot: Learning to Throw Arbitrary Objects with Residual Physics](https://doi.org/10.15607/rss.2019.xv.004) | 2019 | RSS |
 | [Vehicle sideslip angle estimation using deep ensemble-based adaptive Kalman filter](https://doi.org/10.1016/j.ymssp.2020.106862) | 2020 | Mechanical Systems and Signal Processing |
 | [An Integrated Deep Ensemble-Unscented Kalman Filter for Sideslip Angle Estimation With Sensor Filtering Network](https://doi.org/10.1109/ACCESS.2021.3125351) | 2021 | IEEE Access |
@@ -431,22 +427,22 @@ _Source: [`bib/hybrid-physics.bib`](bib/hybrid-physics.bib)._
 | [Physics-guided neural networks for feedforward control with input-to-state-stability guarantees](https://doi.org/10.1016/j.conengprac.2024.105851) | 2024 | Control Engineering Practice |
 | [Trajectory Tracking Control for Autonomous Vehicles with Physics-informed Neural Network Vehicle Model](https://doi.org/10.1109/DDCLS61622.2024.10606892) | 2024 | Proceedings of the 2024 IEEE 13th Data Driven Control… |
 | [Vehicle lateral dynamics-inspired hybrid model using neural network for parameter identification and error characterization](https://doi.org/10.1109/tvt.2024.3416317) | 2024 | IEEE Transactions on Vehicular Technology |
-| [Vehicle single track modeling using physics guided neural differential equations](https://arxiv.org/abs/2403.11648) | 2024 | arXiv |
 | [Combining off-white and sparse black models in multi-step physics-based systems identification](https://doi.org/10.1016/j.automatica.2025.112409) | 2025 | Automatica |
 | [Hybrid of Neural Network and Physics-Based Estimator for Vehicle Longitudinal Dynamics Modeling Using Limited Driving Data](https://doi.org/10.1109/TITS.2025.3585346) | 2025 | IEEE Transactions on Intelligent Transportation Systems |
 | [Learning-based on-track system identification for scaled autonomous racing in under a minute](https://doi.org/10.1109/lra.2025.3527336) | 2025 | IEEE RA-L |
 | [One Model to Drift Them All: Physics-Informed Conditional Diffusion Model for Driving at the Limits](https://proceedings.mlr.press/v270/djeumou25a.html) | 2025 | CoRL |
 | [Physics encoded blocks in residual neural network architectures for digital twin models](https://doi.org/10.1007/s10994-025-06808-y) | 2025 | Machine Learning |
 | [Residual Learning towards High-fidelity Vehicle Dynamics Modeling with Transformer](https://doi.org/10.1109/lra.2025.3575637) | 2025 | IEEE RA-L |
+| [ActivePusher: Active Learning and Planning with Residual Physics for Nonprehensile Manipulation](https://arxiv.org/abs/2506.04646) | 2026 | ICRA |
 
 </details>
 
 ### Physics-Encoded Topology Learning
 
 <details open>
-<summary><b>21 entries</b> from <code>bib/topology-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>21 entries</b> from <code>bib/physics-encoded/topology-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/topology-learning.bib`](bib/topology-learning.bib)._
+_Source: [`bib/physics-encoded/topology-learning.bib`](bib/physics-encoded/topology-learning.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
@@ -474,68 +470,58 @@ _Source: [`bib/topology-learning.bib`](bib/topology-learning.bib)._
 
 </details>
 
-### Neural Operators
+### Physics-Encoded Neural Operators
 
 <details open>
-<summary><b>24 entries</b> from <code>bib/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>11 entries</b> from <code>bib/physics-encoded/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/neural-operators.bib`](bib/neural-operators.bib)._
+_Source: [`bib/physics-encoded/neural-operators.bib`](bib/physics-encoded/neural-operators.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
 | [Hamiltonian Systems and Transformation in Hilbert Space](https://doi.org/10.1073/pnas.17.5.315) | 1931 | Proceedings of the National Academy of Sciences |
 | [Model-Based Control Using Koopman Operators](https://arxiv.org/abs/1709.01568) | 2017 | arXiv |
 | [Control-oriented Modeling of Soft Robotic Swimmer with Koopman Operators](https://doi.org/10.1109/AIM43001.2020.9159033) | 2020 | 2020 IEEE/ASME International Conference on Advanced I… |
-| [Derivative-Based Koopman Operators for Real-Time Control of Robotic Systems](https://doi.org/10.1109/TRO.2021.3076581) | 2021 | T-RO |
-| [Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators](https://doi.org/10.1038/s42256-021-00302-5) | 2021 | Nature Machine Intelligence |
 | [ACD-EDMD: Analytical Construction for Dictionaries of Lifting Functions in Koopman Operator-Based Nonlinear Robotic Systems](https://doi.org/10.1109/LRA.2021.3133001) | 2022 | IEEE RA-L |
-| [Koopman Operator Based Modeling for Quadrotor Control on SE(3)](https://doi.org/10.1109/LCSYS.2021.3085963) | 2022 | IEEE Control Systems Letters |
 | [Online Modeling and Control of Soft Multi-fingered Grippers via Koopman Operator Theory](https://doi.org/10.1109/CASE49997.2022.9926464) | 2022 | 2022 IEEE 18th International Conference on Automation… |
 | [Analytical Construction of Koopman EDMD Candidate Functions for Optimal Control of Ackermann-Steered Vehicles](https://doi.org/10.1016/j.ifacol.2023.12.093) | 2023 | IFAC-PapersOnLine |
-| [SE(3) Koopman-MPC: Data-driven Learning and Control of Quadrotor UAVs](https://doi.org/10.1016/j.ifacol.2023.12.091) | 2023 | IFAC-PapersOnLine |
 | [Physics-informed deep Koopman operator for Lagrangian dynamic systems](https://doi.org/10.1007/s11432-022-4050-4) | 2024 | Science China Information Sciences |
-| [Physics-Informed Graph Neural Operator for Mean Field Games on Graph: A Scalable Learning Approach](https://doi.org/10.3390/g15020012) | 2024 | Games |
 | [Physics-Informed Neural Operator for Learning Partial Differential Equations](https://doi.org/10.1145/3648506) | 2024 | ACM / IMS J. Data Sci |
 | [A Koopman Operator-based NMPC Framework for Mobile Robot Navigation under Uncertainty](https://doi.org/10.23919/ECC65951.2025.11187257) | 2025 | 2025 European Control Conference (ECC) |
-| [Data-driven predictive control of nonholonomic robots based on a bilinear Koopman realization: Data does not replace geometry](https://doi.org/10.1016/j.robot.2025.105156) | 2025 | Robotics and Autonomous Systems |
-| [Koopman-based 3-dimensional path following control for robotic flexible needles](https://doi.org/10.1002/oca.3170) | 2025 | Optimal Control Applications and Methods |
-| [Modeling vehicle dynamics with physics-informed deep operator network](https://doi.org/10.1080/00423114.2025.2526056) | 2025 | Vehicle System Dynamics |
 | [Physics-informed Machine Learning for Static Friction Modeling in Robotic Manipulators Based on Kolmogorov-Arnold Networks](https://arxiv.org/abs/2511.10079) | 2025 | arXiv |
-| [Physics-Informed Split Koopman Operators for Data-Efficient Soft Robotic Simulation](https://doi.org/10.1109/ICRA55743.2025.11127545) | 2025 | ICRA |
 | [Koopman Operators in Robot Learning](https://doi.org/10.1109/TRO.2026.3654384) | 2026 | T-RO |
-| [Physics-informed adaptive deep Koopman operator modeling for autonomous vehicle dynamics](https://doi.org/10.1016/j.aei.2025.104274) | 2026 | Advanced Engineering Informatics |
-| [Physics-informed and latent-conditioned Fourier neural operators for vector-to-spatial mapping in quadrotor crash area prediction](https://doi.org/10.1016/j.engappai.2026.113886) | 2026 | Engineering Applications of Artificial Intelligence |
-| [Physics-Informed Koopman Neural Operator for Augmented Dynamics Visual Servoing of Multirotors](https://doi.org/10.1109/TASE.2026.3661115) | 2026 | IEEE Transactions on Automation Science and Engineering |
-| [VEGA: Electric Vehicle Navigation Agent via Physics-Informed Neural Operator and Proximal Policy Optimization](https://arxiv.org/abs/2509.13386) | 2026 | arXiv |
 
 </details>
 
 ### Other Types of Physics-Encoded Architectures
 
 <details open>
-<summary><b>18 entries</b> from <code>bib/other-encoded.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>21 entries</b> from <code>bib/physics-encoded/other-architectures.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/other-encoded.bib`](bib/other-encoded.bib)._
+_Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/other-architectures.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
 | [Causal Domain Restriction for Eikonal Equations](https://doi.org/10.1137/130936531) | 2014 | SIAM Journal on Scientific Computing |
 | [Learning a Structured Neural Network Policy for a Hopping Task](https://doi.org/10.1109/LRA.2018.2861466) | 2018 | IEEE RA-L |
-| [Neural Ordinary Differential Equations](https://arxiv.org/abs/1806.07366) | 2019 | NeurIPS |
 | [MixNet: Physics Constrained Deep Neural Motion Prediction for Autonomous Racing](https://doi.org/10.1109/ACCESS.2023.3303841) | 2023 | IEEE Access |
 | [Modular Neural Network Policies for Learning In-Flight Object Catching with a Robot Hand-Arm System](https://doi.org/10.1109/IROS55552.2023.10341463) | 2023 | IROS |
 | [NTFields: Neural Time Fields for Physics-Informed Robot Motion Planning](https://arxiv.org/abs/2210.00120) | 2023 | ICLR |
 | [On discrete symmetries of robotics systems: A group-theoretic and data-driven analysis](https://doi.org/10.15607/rss.2023.xix.053) | 2023 | RSS |
 | [Progressive Learning for Physics-informed Neural Motion Planning](https://doi.org/10.15607/rss.2023.xix.063) | 2023 | RSS 2023 Workshop on Symmetries in Robot Learning |
 | [Computationally Efficient Minimum-Time Motion Primitives for Vehicle Trajectory Planning](https://doi.org/10.1109/OJITS.2024.3476540) | 2024 | IEEE Open Journal of Intelligent Transportation Systems |
+| [EquiBot: SIM(3)-Equivariant Diffusion Policy for Generalizable and Data Efficient Learning](https://arxiv.org/abs/2407.01479) | 2024 | CoRL |
+| [Equivariant Diffusion Policy](https://arxiv.org/abs/2407.01812) | 2024 | CoRL |
 | [Input-to-State Stable Coupled Oscillator Networks for Closed-form Model-based Control in Latent Space](https://doi.org/10.52202/079017-2607) | 2024 | NeurIPS |
 | [Leveraging Symmetry in RL-based Legged Locomotion Control](https://doi.org/10.1109/IROS58592.2024.10802439) | 2024 | IROS |
-| [Physics-informed Neural Motion Planning on Constraint Manifolds](https://doi.org/10.1109/ICRA57147.2024.10610883) | 2024 | ICRA |
+| [EquiContact: A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-rich Tasks](https://arxiv.org/abs/2507.10961) | 2025 | Dexterous Manipulation: Learning and Control with Div… |
+| [ET-SEED: Efficient Trajectory-Level SE(3) Equivariant Diffusion Policy](https://arxiv.org/abs/2411.03990) | 2025 | ICLR |
 | [Morphological symmetries in robotics](https://doi.org/10.1177/02783649241282422) | 2025 | IJRR |
 | [Morphological-Symmetry-Equivariant Heterogeneous Graph Neural Network for Robotic Dynamics Learning](https://arxiv.org/abs/2412.01297) | 2025 | Proceedings of the 7th Annual Learning for Dynamics &… |
 | [Morphologically Symmetric Reinforcement Learning for Ambidextrous Bimanual Manipulation](https://arxiv.org/abs/2505.05287) | 2025 | CoRL |
 | [Physics-Informed Neural Mapping and Motion Planning in Unknown Environments](https://doi.org/10.1109/TRO.2025.3548495) | 2025 | T-RO |
 | [Physics-informed Neural Time Fields for Prehensile Object Manipulation](https://doi.org/10.1109/IROS60139.2025.11246588) | 2025 | IROS |
+| [SE(3)-Equivariant Diffusion Policy in Spherical Fourier Space](https://arxiv.org/abs/2507.01723) | 2025 | ICML |
 | [A physics-informed graph neural network conserving linear and angular momentum for dynamical systems](https://doi.org/10.1038/s41467-025-67802-5) | 2026 | Nature Communications |
 
 </details>
@@ -544,12 +530,12 @@ _Source: [`bib/other-encoded.bib`](bib/other-encoded.bib)._
 
 Physics-informed approaches provide a flexible and data-efficient framework for solving forward and inverse problems governed by differential equations, by embedding physical laws as soft constraints in the training loss functions. Physics-informed components are active **only during training**: they are part of neither the architecture nor the inputs.
 
-### Physics-Informed Neural Networks and Losses
+### Physics-Informed Neural Networks
 
 <details open>
-<summary><b>19 entries</b> from <code>bib/physics-informed-losses.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>22 entries</b> from <code>bib/physics-informed/neural-networks.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/physics-informed-losses.bib`](bib/physics-informed-losses.bib)._
+_Source: [`bib/physics-informed/neural-networks.bib`](bib/physics-informed/neural-networks.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
@@ -561,6 +547,7 @@ _Source: [`bib/physics-informed-losses.bib`](bib/physics-informed-losses.bib)._
 | [EV-PINN: A Physics-Informed Neural Network for Predicting Electric Vehicle Dynamics](https://arxiv.org/abs/2411.14691) | 2024 | arXiv |
 | [Fast and accurate prediction of vehicle dynamics using physics-informed neural networks](https://doi.org/10.36227/techrxiv.173398186.65085317/v1) | 2024 | TechRxiv |
 | [Physics-Guided Deep Learning Enabled Surrogate Modeling for Pneumatic Soft Robots](https://doi.org/10.1109/LRA.2024.3490258) | 2024 | IEEE RA-L |
+| [Physics-informed Neural Motion Planning on Constraint Manifolds](https://doi.org/10.1109/ICRA57147.2024.10610883) | 2024 | ICRA |
 | [Physics-informed neural nets for control of dynamical systems](https://doi.org/10.1016/j.neucom.2024.127419) | 2024 | Neurocomputing |
 | [Physics-Informed Neural Network for Multirotor Slung Load Systems Modeling](https://doi.org/10.1109/ICRA57147.2024.10610582) | 2024 | ICRA |
 | [Physics-Informed Neural Networks for Continuum Robots: Towards Fast Approximation of Static Cosserat Rod Theory](https://doi.org/10.1109/ICRA57147.2024.10610742) | 2024 | ICRA |
@@ -570,8 +557,48 @@ _Source: [`bib/physics-informed-losses.bib`](bib/physics-informed-losses.bib)._
 | [Physics-Informed Neural Network-Based Input Shaping for Vibration Suppression of Flexible Single-Link Robots](https://doi.org/10.3390/act14010014) | 2025 | Actuators |
 | [PI-WAN: A Physics-Informed Wind-Adaptive Network for Quadrotor Dynamics Prediction in Unknown Environments](https://doi.org/10.1109/IROS60139.2025.11247234) | 2025 | IROS |
 | [When physics meets machine learning: a survey of physics-informed machine learning](https://doi.org/10.1007/s44379-025-00016-0) | 2025 | Machine Learning for Computational Science and Engine… |
+| [A Robust Physics-Informed Neural Network for Vehicle Sideslip Estimation](https://doi.org/10.1109/IV66570.2026.11623964) | 2026 | 2026 IEEE Intelligent Vehicles Symposium (IV) |
 | [MoRPI-PINN: A Physics-Informed Framework for Mobile Robot Pure Inertial Navigation](https://doi.org/10.1038/s41598-026-50630-y) | 2026 | Scientific Reports |
 | [Physics-Informed Training Strategies for Neural Estimators in ODE-governed Dynamical Systems: an Application to Vehicle Sideslip Estimation](https://doi.org/10.1109/TVT.2026.3704200) | 2026 | IEEE Transactions on Vehicular Technology |
+| [StyleVLA: Driving Style-Aware Vision Language Action Model for Autonomous Driving](https://arxiv.org/abs/2603.09482) | 2026 | arXiv |
+
+</details>
+
+### Physics-Informed Neural Operators
+
+<details open>
+<summary><b>8 entries</b> from <code>bib/physics-informed/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-informed/neural-operators.bib`](bib/physics-informed/neural-operators.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators](https://doi.org/10.1038/s42256-021-00302-5) | 2021 | Nature Machine Intelligence |
+| [Physics-Informed Graph Neural Operator for Mean Field Games on Graph: A Scalable Learning Approach](https://doi.org/10.3390/g15020012) | 2024 | Games |
+| [Modeling vehicle dynamics with physics-informed deep operator network](https://doi.org/10.1080/00423114.2025.2526056) | 2025 | Vehicle System Dynamics |
+| [Physics-Informed Split Koopman Operators for Data-Efficient Soft Robotic Simulation](https://doi.org/10.1109/ICRA55743.2025.11127545) | 2025 | ICRA |
+| [Physics-informed adaptive deep Koopman operator modeling for autonomous vehicle dynamics](https://doi.org/10.1016/j.aei.2025.104274) | 2026 | Advanced Engineering Informatics |
+| [Physics-informed and latent-conditioned Fourier neural operators for vector-to-spatial mapping in quadrotor crash area prediction](https://doi.org/10.1016/j.engappai.2026.113886) | 2026 | Engineering Applications of Artificial Intelligence |
+| [Physics-Informed Koopman Neural Operator for Augmented Dynamics Visual Servoing of Multirotors](https://doi.org/10.1109/TASE.2026.3661115) | 2026 | IEEE Transactions on Automation Science and Engineering |
+| [VEGA: Electric Vehicle Navigation Agent via Physics-Informed Neural Operator and Proximal Policy Optimization](https://arxiv.org/abs/2509.13386) | 2026 | arXiv |
+
+</details>
+
+### Other Types of Loss and Reward Functions
+
+<details open>
+<summary><b>6 entries</b> from <code>bib/physics-informed/other-loss-and-reward-functions.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-informed/other-loss-and-reward-functions.bib`](bib/physics-informed/other-loss-and-reward-functions.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Stable motion primitives via imitation and contrastive learning](https://doi.org/10.1109/tro.2023.3289597) | 2023 | T-RO |
+| [Robot Motion Diffusion Model: Motion Generation for Robotic Characters](https://doi.org/10.1145/3680528.3687626) | 2024 | SIGGRAPH Asia 2024 Conference Papers |
+| [DDAT: Diffusion Policies Enforcing Dynamically Admissible Robot Trajectories](https://doi.org/10.15607/rss.2025.xxi.078) | 2025 | RSS |
+| [MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with RL-based Physical Alignment](https://arxiv.org/abs/2512.06628) | 2025 | arXiv |
+| [Physics-Informed Learning via Diffusion Framework for System State Estimation](https://openreview.net/forum?id=dBH2EUkEk4) | 2025 | UrbanAI: Harnessing Artificial Intelligence for Smart… |
+| [RoboScape: Physics-informed Embodied World Model](https://doi.org/10.52202/085713-2138) | 2026 | NeurIPS |
 
 </details>
 
@@ -579,85 +606,131 @@ _Source: [`bib/physics-informed-losses.bib`](bib/physics-informed-losses.bib)._
 
 Physics-guided learning exploits physics priors to transform, enrich, curate, select, or correct input features, training data, and learned representations. Rather than modifying the model architecture or training objective, these methods embed physical knowledge into the inputs, data, or representations before training or as pre- or post-processing guidance at inference, while preserving the flexibility of standard ML models.
 
-### Structured Inputs, Geometric, Frequency-Domain, and World Representations
+### Physical Models as Structured Inputs to Learning Algorithms
 
 <details open>
-<summary><b>16 entries</b> from <code>bib/physics-guided-inputs.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>4 entries</b> from <code>bib/physics-guided/structured-inputs.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/physics-guided-inputs.bib`](bib/physics-guided-inputs.bib)._
+_Source: [`bib/physics-guided/structured-inputs.bib`](bib/physics-guided/structured-inputs.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
-| [Encoding human actions with a frequency domain approach](https://doi.org/10.1109/IROS.2016.7759780) | 2016 | IROS |
 | [A hybrid approach to side-slip angle estimation with recurrent neural networks and kinematic vehicle models](https://doi.org/10.1109/tiv.2018.2886687) | 2018 | IEEE Transactions on Intelligent Vehicles |
-| [Representing human motion with FADE and U-FADE: an efficient frequency-domain approach](https://doi.org/10.1007/s10514-018-9722-9) | 2019 | Autonomous Robots |
 | [Neural network augmented physics models for systems with partially unknown dynamics: Application to slider–crank mechanism](https://doi.org/10.1109/tmech.2021.3058536) | 2021 | T-Mech |
-| [Bingham policy parameterization for 3d rotations in reinforcement learning](https://arxiv.org/abs/2202.03957) | 2022 | arXiv |
-| [Learning deep robotic skills on Riemannian manifolds](https://doi.org/10.1109/access.2022.3217800) | 2022 | IEEE Access |
-| [Physics guided neural networks for modelling of non-linear dynamics](https://doi.org/10.1016/j.neunet.2022.07.023) | 2022 | Neural Networks |
-| [Geometric reinforcement learning for robotic manipulation](https://doi.org/10.1109/access.2023.3322654) | 2023 | IEEE Access |
 | [Physics-guided neural network and GPU-accelerated nonlinear model predictive control for quadcopter](https://doi.org/10.1007/s00521-022-07783-4) | 2023 | Neural Computing and Applications |
-| [Riemannian Flow Matching on General Geometries](https://arxiv.org/abs/2302.03660) | 2023 | ICLR |
-| [Stable motion primitives via imitation and contrastive learning](https://doi.org/10.1109/tro.2023.3289597) | 2023 | T-RO |
-| [Learning Robotic Manipulation Policies from Point Clouds with Conditional Flow Matching](https://arxiv.org/abs/2409.07343) | 2024 | CoRL |
+| [Physical Informed Driving World Models](https://openreview.net/forum?id=NqUHNW9qTr#discussion) | 2026 | ICLR |
+
+</details>
+
+### Physics-Guided Features & Training Data
+
+<details open>
+<summary><b>5 entries</b> from <code>bib/physics-guided/features-and-data.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-guided/features-and-data.bib`](bib/physics-guided/features-and-data.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Physics guided neural networks for modelling of non-linear dynamics](https://doi.org/10.1016/j.neunet.2022.07.023) | 2022 | Neural Networks |
 | [Physics-encoded graph neural networks for deformation prediction under contact](https://doi.org/10.1109/icra57147.2024.10610366) | 2024 | ICRA |
-| [Individualized Continuous Lower-Limb Joint Kinematics Modeling Enhanced by Discrete Cosine Transform](https://doi.org/10.1016/j.robot.2025.105226) | 2025 | Robotics and Autonomous Systems |
-| [A Robust Physics-Informed Neural Network for Vehicle Sideslip Estimation](https://doi.org/10.1109/IV66570.2026.11623964) | 2026 | 2026 IEEE Intelligent Vehicles Symposium (IV) |
+| [DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model](https://doi.org/10.1109/IROS60139.2025.11247245) | 2025 | IROS |
+| [PARC: Physics-based Augmentation with Reinforcement Learning for Character Controllers](https://doi.org/10.1145/3721238.3730616) | 2025 | Proceedings of the Special Interest Group on Computer… |
 | [Physics-informed ensemble learning for hierarchical fault diagnosis in quadruped robots](https://doi.org/10.1016/j.rineng.2026.110256) | 2026 | Results in Engineering |
 
 </details>
 
-## Generative Models with Physics Priors (Cross-Cutting)
-
-Diffusion policies, video world models, and VLAs are reviewed throughout the survey and may embed physics via any of the three routes (physics-encoded architectures, physics-informed losses, or physics-guided inputs).
-
-### Diffusion, World Models, and VLAs
+### Geometric Learning
 
 <details open>
-<summary><b>30 entries</b> from <code>bib/generative-models.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>5 entries</b> from <code>bib/physics-guided/geometric-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
-_Source: [`bib/generative-models.bib`](bib/generative-models.bib)._
+_Source: [`bib/physics-guided/geometric-learning.bib`](bib/physics-guided/geometric-learning.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Bingham policy parameterization for 3d rotations in reinforcement learning](https://arxiv.org/abs/2202.03957) | 2022 | arXiv |
+| [Learning deep robotic skills on Riemannian manifolds](https://doi.org/10.1109/access.2022.3217800) | 2022 | IEEE Access |
+| [Geometric reinforcement learning for robotic manipulation](https://doi.org/10.1109/access.2023.3322654) | 2023 | IEEE Access |
+| [Riemannian Flow Matching on General Geometries](https://arxiv.org/abs/2302.03660) | 2023 | ICLR |
+| [Learning Robotic Manipulation Policies from Point Clouds with Conditional Flow Matching](https://arxiv.org/abs/2409.07343) | 2024 | CoRL |
+
+</details>
+
+### Frequency-Domain Learning
+
+<details open>
+<summary><b>3 entries</b> from <code>bib/physics-guided/frequency-domain-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-guided/frequency-domain-learning.bib`](bib/physics-guided/frequency-domain-learning.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Encoding human actions with a frequency domain approach](https://doi.org/10.1109/IROS.2016.7759780) | 2016 | IROS |
+| [Representing human motion with FADE and U-FADE: an efficient frequency-domain approach](https://doi.org/10.1007/s10514-018-9722-9) | 2019 | Autonomous Robots |
+| [Individualized Continuous Lower-Limb Joint Kinematics Modeling Enhanced by Discrete Cosine Transform](https://doi.org/10.1016/j.robot.2025.105226) | 2025 | Robotics and Autonomous Systems |
+
+</details>
+
+### Physically Consistent World Representations
+
+<details open>
+<summary><b>8 entries</b> from <code>bib/physics-guided/world-representations.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-guided/world-representations.bib`](bib/physics-guided/world-representations.bib)._
 
 | Paper | Year | Venue |
 |:------|:-----|:------|
 | [PhysDiff: Physics-Guided Human Motion Diffusion Model](https://doi.org/10.1109/ICCV51070.2023.01467) | 2023 | 2023 IEEE/CVF International Conference on Computer Vi… |
-| [Dynamics-Guided Diffusion Model for Sensor-less Robot Manipulator Design](https://arxiv.org/abs/2402.15038) | 2024 | CoRL |
-| [EquiBot: SIM(3)-Equivariant Diffusion Policy for Generalizable and Data Efficient Learning](https://arxiv.org/abs/2407.01479) | 2024 | CoRL |
-| [Equivariant Diffusion Policy](https://arxiv.org/abs/2407.01812) | 2024 | CoRL |
-| [Hierarchical Diffusion Policy for Kinematics-Aware Multi-Task Robotic Manipulation](https://doi.org/10.1109/CVPR52733.2024.01712) | 2024 | CVPR |
-| [Robot Motion Diffusion Model: Motion Generation for Robotic Characters](https://doi.org/10.1145/3680528.3687626) | 2024 | SIGGRAPH Asia 2024 Conference Papers |
-| [DDAT: Diffusion Policies Enforcing Dynamically Admissible Robot Trajectories](https://doi.org/10.15607/rss.2025.xxi.078) | 2025 | RSS |
-| [DiffGen: Robot Demonstration Generation via Differentiable Physics Simulation, Differentiable Rendering, and Vision-Language Model](https://doi.org/10.1109/IROS60139.2025.11247245) | 2025 | IROS |
-| [DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](https://arxiv.org/abs/2506.13922) | 2025 | NeurIPS |
-| [EquiContact: A Hierarchical SE(3) Vision-to-Force Equivariant Policy for Spatially Generalizable Contact-rich Tasks](https://arxiv.org/abs/2507.10961) | 2025 | Dexterous Manipulation: Learning and Control with Div… |
-| [ET-SEED: Efficient Trajectory-Level SE(3) Equivariant Diffusion Policy](https://arxiv.org/abs/2411.03990) | 2025 | ICLR |
 | [GenieDrive: Towards Physics-Aware Driving World Model with 4D Occupancy Guided Video Generation](https://arxiv.org/abs/2512.12751) | 2025 | arXiv |
 | [Learning to Generate Object Interactions with Physics-Guided Video Diffusion](https://arxiv.org/abs/2510.02284) | 2025 | arXiv |
-| [MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with RL-based Physical Alignment](https://arxiv.org/abs/2512.06628) | 2025 | arXiv |
-| [PARC: Physics-based Augmentation with Reinforcement Learning for Character Controllers](https://doi.org/10.1145/3721238.3730616) | 2025 | Proceedings of the Special Interest Group on Computer… |
-| [Physics-Informed Learning via Diffusion Framework for System State Estimation](https://openreview.net/forum?id=dBH2EUkEk4) | 2025 | UrbanAI: Harnessing Artificial Intelligence for Smart… |
 | [PIN-WM: Learning Physics-Informed World Models for Non-Prehensile Manipulation](https://doi.org/10.15607/rss.2025.xxi.153) | 2025 | RSS |
 | [Robot Learning from a Physical World Model](https://arxiv.org/abs/2511.07416) | 2025 | arXiv |
-| [SE(3)-Equivariant Diffusion Policy in Spherical Fourier Space](https://arxiv.org/abs/2507.01723) | 2025 | ICML |
-| [$\pi$, But Make It Fly: Physics-Guided Transfer of VLA Models to Aerial Manipulation](https://arxiv.org/abs/2603.25038) | 2026 | arXiv |
-| [ActivePusher: Active Learning and Planning with Residual Physics for Nonprehensile Manipulation](https://arxiv.org/abs/2506.04646) | 2026 | ICRA |
-| [Can Vision Language Models Learn Intuitive Physics from Interaction?](https://arxiv.org/abs/2602.06033) | 2026 | ICML |
 | [ContactGaussian-WM: Learning Physics-Grounded World Model from Videos](https://arxiv.org/abs/2602.11021) | 2026 | arXiv |
 | [Ego-Dynamics-Augmented World Model for Autonomous Driving with Zero-Shot Cross-Chassis Adaptation](https://arxiv.org/abs/2607.13410) | 2026 | arXiv |
-| [Kinematics-Aware Diffusion Policy With Consistent 3D Observation and Action Space for Whole-Arm Robotic Manipulation](https://doi.org/10.1109/LRA.2026.3685437) | 2026 | IEEE RA-L |
-| [Physical Informed Driving World Models](https://openreview.net/forum?id=NqUHNW9qTr#discussion) | 2026 | ICLR |
-| [Physically Native World Models: A Hamiltonian Perspective on Generative World Modeling](https://arxiv.org/abs/2605.00412) | 2026 | arXiv |
-| [RoboScape: Physics-informed Embodied World Model](https://doi.org/10.52202/085713-2138) | 2026 | NeurIPS |
-| [StyleVLA: Driving Style-Aware Vision Language Action Model for Autonomous Driving](https://arxiv.org/abs/2603.09482) | 2026 | arXiv |
 | [Toward Physically Consistent Driving Video World Models under Challenging Trajectories](https://arxiv.org/abs/2603.24506) | 2026 | arXiv |
 
 </details>
 
-## Software, Simulators, and Libraries
+### Physics-Guided Diffusion-based Generation
+
+<details open>
+<summary><b>6 entries</b> from <code>bib/physics-guided/diffusion.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-guided/diffusion.bib`](bib/physics-guided/diffusion.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Dynamics-Guided Diffusion Model for Sensor-less Robot Manipulator Design](https://arxiv.org/abs/2402.15038) | 2024 | CoRL |
+| [Hierarchical Diffusion Policy for Kinematics-Aware Multi-Task Robotic Manipulation](https://doi.org/10.1109/CVPR52733.2024.01712) | 2024 | CVPR |
+| [DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](https://arxiv.org/abs/2506.13922) | 2025 | NeurIPS |
+| [$\pi$, But Make It Fly: Physics-Guided Transfer of VLA Models to Aerial Manipulation](https://arxiv.org/abs/2603.25038) | 2026 | arXiv |
+| [Can Vision Language Models Learn Intuitive Physics from Interaction?](https://arxiv.org/abs/2602.06033) | 2026 | ICML |
+| [Kinematics-Aware Diffusion Policy With Consistent 3D Observation and Action Space for Whole-Arm Robotic Manipulation](https://doi.org/10.1109/LRA.2026.3685437) | 2026 | IEEE RA-L |
+
+</details>
+
+### Physics-Guided Neural Operators
+
+<details open>
+<summary><b>5 entries</b> from <code>bib/physics-guided/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+
+_Source: [`bib/physics-guided/neural-operators.bib`](bib/physics-guided/neural-operators.bib)._
+
+| Paper | Year | Venue |
+|:------|:-----|:------|
+| [Derivative-Based Koopman Operators for Real-Time Control of Robotic Systems](https://doi.org/10.1109/TRO.2021.3076581) | 2021 | T-RO |
+| [Koopman Operator Based Modeling for Quadrotor Control on SE(3)](https://doi.org/10.1109/LCSYS.2021.3085963) | 2022 | IEEE Control Systems Letters |
+| [SE(3) Koopman-MPC: Data-driven Learning and Control of Quadrotor UAVs](https://doi.org/10.1016/j.ifacol.2023.12.091) | 2023 | IFAC-PapersOnLine |
+| [Data-driven predictive control of nonholonomic robots based on a bilinear Koopman realization: Data does not replace geometry](https://doi.org/10.1016/j.robot.2025.105156) | 2025 | Robotics and Autonomous Systems |
+| [Koopman-based 3-dimensional path following control for robotic flexible needles](https://doi.org/10.1002/oca.3170) | 2025 | Optimal Control Applications and Methods |
+
+</details>
+
+## Software Tools
 
 Open-source tools used to build physics-embedded robot-learning models.
 
-### Libraries and Differentiable Simulators
+### Libraries, Frameworks, and Differentiable Simulators
 
 <details open>
 <summary><b>37 entries</b> from <code>bib/software.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -721,7 +794,7 @@ _Source: [`bib/software.bib`](bib/software.bib)._
   year    = {2026},
   doi     = {10.0000/example},
   survey_kind        = {method},
-  survey_family      = {model-structured},
+  survey_family      = {physics-encoded/model-structured-architectures},
   survey_route       = {physics-encoded},
   survey_application = {dynamics-learning, control},
   survey_robot       = {manipulators},

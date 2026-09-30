@@ -134,23 +134,31 @@ KIND_HELP = {
 }
 
 # ------------------------------------------------------------------- families ---
-# One file per family under bib/.  The family fixes which file an entry lives in
-# and which survey subsection it belongs to; it does NOT fix the route, which is
-# stated per entry.
+# One file per family under bib/, grouped into a folder per embedding route and
+# named after the survey subsection it mirrors. The key is the path under bib/
+# without the .bib suffix, so the same file name may recur in two routes.
+# The family fixes which file an entry lives in; it does NOT fix the route,
+# which is stated per entry.
 FAMILIES = {
-    "lagrangian": "Lagrangian Learning Models (DeLaN / LNN)",
-    "hamiltonian": "Hamiltonian Learning Models (HNN / port-Hamiltonian)",
-    "model-structured": "Model-Structured Learning Architectures (MSNNs)",
-    "neural-ode": "Neural ODEs and Variational Integrator Networks",
-    "non-nn": "Non-NN Physics-Structured Models (GPR / RKHS / kernels)",
-    "hybrid-physics": "Hybrid Physics-Learning Architectures",
-    "topology-learning": "Physics-Encoded Topology Learning (SINDy / equation learners)",
-    "neural-operators": "Neural Operators (Koopman / DeepONet / FNO / PINO)",
-    "other-encoded": "Other Types of Physics-Encoded Architectures",
-    "physics-informed-losses": "Physics-Informed Neural Networks and Losses",
-    "physics-guided-inputs": "Structured Inputs, Geometry, Frequency Domain, World Models",
-    "generative-models": "Diffusion Models, World Models, and VLAs",
-    "software": "Libraries and Differentiable Simulators",
+    "physics-encoded/lagrangian-learning-models": "Lagrangian Learning Models",
+    "physics-encoded/hamiltonian-learning-models": "Hamiltonian Learning Models",
+    "physics-encoded/model-structured-architectures": "Model-Structured Learning Architectures",
+    "physics-encoded/neural-odes-and-variational-integrators": "Neural ODEs and Variational Integrator Networks",
+    "physics-encoded/hybrid-physics-learning": "Hybrid Physics-Learning Architectures",
+    "physics-encoded/topology-learning": "Physics-Encoded Topology Learning",
+    "physics-encoded/neural-operators": "Physics-Encoded Neural Operators",
+    "physics-encoded/other-architectures": "Other Types of Physics-Encoded Architectures",
+    "physics-informed/neural-networks": "Physics-Informed Neural Networks",
+    "physics-informed/neural-operators": "Physics-Informed Neural Operators",
+    "physics-informed/other-loss-and-reward-functions": "Other Types of Loss and Reward Functions",
+    "physics-guided/structured-inputs": "Physical Models as Structured Inputs to Learning Algorithms",
+    "physics-guided/features-and-data": "Physics-Guided Features & Training Data",
+    "physics-guided/geometric-learning": "Geometric Learning",
+    "physics-guided/frequency-domain-learning": "Frequency-Domain Learning",
+    "physics-guided/world-representations": "Physically Consistent World Representations",
+    "physics-guided/diffusion": "Physics-Guided Diffusion-based Generation",
+    "physics-guided/neural-operators": "Physics-Guided Neural Operators",
+    "software": "Software Tools",
     "surveys": "Related Surveys",
     "background": "Background and Historical References",
 }

@@ -270,7 +270,8 @@ def venue(fields: dict[str, str]) -> str:
         v = v[:53] + "…"
     return v
 
-def parse_bib_file(path: Path) -> list[dict]:
+def parse_bib_file(path: Path, file_id: str | None = None) -> list[dict]:
+    file_id = file_id or path.name
     text = path.read_text(encoding="utf-8", errors="replace")
     papers = []
     seen = set()
@@ -303,7 +304,7 @@ def parse_bib_file(path: Path) -> list[dict]:
                 ),
                 "link": paper_link(fields),
                 "code": github_link(fields),
-                "file": path.name,
+                "file": file_id,
             }
         )
     papers.sort(key=lambda p: (p["year"] is None, p["year"] or 0, p["title"].lower()))
@@ -343,7 +344,7 @@ def annotate(paper: dict, fields: dict[str, str], problems: list[str]) -> dict:
         kind = "background"
 
     family = strip_tex(fields.get("survey_family", "")).strip().lower()
-    expected = paper["file"][:-4]
+    expected = paper["file"][:-4]   # the path under bib/, without .bib
     if not family:
         bad(f"missing survey_family (expected {{{expected}}})")
         family = expected
@@ -419,24 +420,25 @@ def load(bib_dir: Path | None = None) -> tuple[dict[str, list[dict]], list[str]]
     out: dict[str, list[dict]] = {}
     seen: dict[str, str] = {}
 
-    for path in sorted(bib_dir.glob("*.bib")):
-        if path.stem not in taxonomy.FAMILIES:
+    for path in sorted(bib_dir.rglob("*.bib")):
+        file_id = path.relative_to(bib_dir).as_posix()
+        if file_id[:-4] not in taxonomy.FAMILIES:
             problems.append(
-                f"bib/{path.name}: not a known family; add it to taxonomy.FAMILIES "
+                f"bib/{file_id}: not a known family; add it to taxonomy.FAMILIES "
                 "or rename the file")
         text = path.read_text(encoding="utf-8", errors="replace")
         fields_by_key = {
             key: parse_fields(body) for _etype, key, body in split_entries(text)
         }
-        papers = parse_bib_file(path)
+        papers = parse_bib_file(path, file_id)
         for paper in papers:
             if paper["key"] in seen:
                 problems.append(
-                    f"bib/{path.name}: duplicate key @{paper['key']} "
+                    f"bib/{file_id}: duplicate key @{paper['key']} "
                     f"(already in bib/{seen[paper['key']]})")
-            seen[paper["key"]] = path.name
+            seen[paper["key"]] = file_id
             annotate(paper, fields_by_key.get(paper["key"], {}), problems)
-        out[path.name] = papers
+        out[file_id] = papers
 
     return out, problems
 

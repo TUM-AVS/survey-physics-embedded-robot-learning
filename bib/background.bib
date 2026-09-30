@@ -1,9 +1,9 @@
 % --------------------------------------------------------------------------
 % Background and Historical References
 %
-% Source of truth for the public catalog.  Bibliographic fields come from the
-% publisher; survey_* fields are the survey's own labels (see CONTRIBUTING.md).
+% Mirrors the survey subsection of the same name.
 % --------------------------------------------------------------------------
+
 
 @article{cmac_1979,
     author = {Albus, J. S.},
@@ -38,6 +38,17 @@ eprint = {
   survey_kind        = {background},
 }
 
+@article{Broomhead1988MultivariableFI,
+  title={Multivariable Functional Interpolation and Adaptive Networks},
+  author={David S. Broomhead and David Lowe},
+  journal={Complex Syst.},
+  year={1988},
+  volume={2},
+  url                = {https://content.wolfram.com/sites/13/2018/02/02-3-5.pdf},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
 @inproceedings{Pomerleau_alvinn,
  author = {Pomerleau, Dean A.},
  booktitle = {Advances in Neural Information Processing Systems},
@@ -47,17 +58,6 @@ eprint = {
  volume = {1},
  year = {1988},
   url                = {https://proceedings.neurips.cc/paper/1988/file/812b4ba287f5ee0bc9d43bbf5bbe87fb-Paper.pdf},
-  survey_family      = {background},
-  survey_kind        = {background},
-}
-
-@article{Broomhead1988MultivariableFI,
-  title={Multivariable Functional Interpolation and Adaptive Networks},
-  author={David S. Broomhead and David Lowe},
-  journal={Complex Syst.},
-  year={1988},
-  volume={2},
-  url                = {https://content.wolfram.com/sites/13/2018/02/02-3-5.pdf},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -72,6 +72,20 @@ eprint = {
   pages={753-790},
   keywords={},
   doi={10.1162/neco.1995.7.4.753},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@book{Wit1996,
+  editor    = {Canudas de Wit, C. and Siciliano, B. and Bastin G.},
+  title     = {Theory of Robot Control},
+  publisher = {Springer},
+  address   = {London, UK},
+  year      = {1996},
+  series    = {Communications and Control Engineering},
+  isbn      = {978-1-4471-1503-8},
+  doi       = {10.1007/978-1-4471-1501-4},
+  pages     = {XVI + 392},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -103,6 +117,17 @@ This chapter presents an example of the application of online neural network lea
   year={2007},
   publisher={The Royal Society},
   doi                = {10.1098/rstb.2007.2054},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@book{Abe2009,
+	author = {Abe, M.},
+	isbn = {9780080961811},
+	publisher = {Elsevier Science},
+	title = {Vehicle Handling Dynamics: Theory and Application},
+	year = {2009},
+  url={https://books.google.it/books?id=JLR8ObJp77cC},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -180,6 +205,21 @@ This chapter presents an example of the application of online neural network lea
   survey_kind        = {background},
 }
 
+@inproceedings{Vaswani2017Attention,
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  title     = {Attention is All you Need},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS 2017)},
+  editor    = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+  pages     = {5998--6008},
+  year      = {2017},
+  publisher = {Curran Associates, Inc.},
+  eprint             = {1706.03762},
+  archivePrefix      = {arXiv},
+  url                = {https://arxiv.org/abs/1706.03762},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
 @article{Weinan_resnet_as_dyn_sys_2017,
   title={A Proposal on Machine Learning via Dynamical Systems},
   author={Weinan E},
@@ -192,17 +232,13 @@ This chapter presents an example of the application of online neural network lea
   survey_kind        = {background},
 }
 
-@inproceedings{Vaswani2017Attention,
-  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
-  title     = {Attention is All you Need},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS 2017)},
-  editor    = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
-  pages     = {5998--6008},
-  year      = {2017},
-  publisher = {Curran Associates, Inc.},
-  eprint             = {1706.03762},
-  archivePrefix      = {arXiv},
-  url                = {https://arxiv.org/abs/1706.03762},
+@book{Guiggiani2018,
+	author = {Guiggiani, M.},
+	isbn = {9783030103354},
+	publisher = {Springer},
+	title = {The Science of Vehicle Dynamics: Handling, Braking, and Ride of Road and Race Cars},
+	year = {2018},
+  doi                = {10.1007/978-3-319-73220-6},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -222,13 +258,14 @@ This chapter presents an example of the application of online neural network lea
   survey_kind        = {background},
 }
 
-@book{Guiggiani2018,
-	author = {Guiggiani, M.},
-	isbn = {9783030103354},
-	publisher = {Springer},
-	title = {The Science of Vehicle Dynamics: Handling, Braking, and Ride of Road and Race Cars},
-	year = {2018},
-  doi                = {10.1007/978-3-319-73220-6},
+@misc{openai2019solvingrubikscuberobot,
+      title={Solving Rubik's Cube with a Robot Hand}, 
+      author={OpenAI and Ilge Akkaya and Marcin Andrychowicz and Maciek Chociej and Mateusz Litwin and Bob McGrew and Arthur Petron and Alex Paino and Matthias Plappert and Glenn Powell and Raphael Ribas and Jonas Schneider and Nikolas Tezak and Jerry Tworek and Peter Welinder and Lilian Weng and Qiming Yuan and Wojciech Zaremba and Lei Zhang},
+      year={2019},
+      eprint={1910.07113},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/1910.07113},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -259,18 +296,6 @@ This chapter presents an example of the application of online neural network lea
   survey_kind        = {background},
 }
 
-@misc{openai2019solvingrubikscuberobot,
-      title={Solving Rubik's Cube with a Robot Hand}, 
-      author={OpenAI and Ilge Akkaya and Marcin Andrychowicz and Maciek Chociej and Mateusz Litwin and Bob McGrew and Arthur Petron and Alex Paino and Matthias Plappert and Glenn Powell and Raphael Ribas and Jonas Schneider and Nikolas Tezak and Jerry Tworek and Peter Welinder and Lilian Weng and Qiming Yuan and Wojciech Zaremba and Lei Zhang},
-      year={2019},
-      eprint={1910.07113},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/1910.07113},
-  survey_family      = {background},
-  survey_kind        = {background},
-}
-
 @inproceedings{Brown2020_GPT3,
  author = {Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and Herbert-Voss, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel and Wu, Jeffrey and Winter, Clemens and Hesse, Chris and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
  booktitle = {Advances in Neural Information Processing Systems},
@@ -283,6 +308,19 @@ This chapter presents an example of the application of online neural network lea
   eprint             = {2005.14165},
   archivePrefix      = {arXiv},
   url                = {https://arxiv.org/abs/2005.14165},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{plebe2020road,
+  title={On the road with 16 neurons: Towards interpretable and manipulable latent representations for visual predictions in driving scenarios},
+  author={Plebe, Alice and Da~Lio, Mauro},
+  journal={IEEE Access},
+  volume={8},
+  pages={179716--179734},
+  year={2020},
+  publisher={IEEE},
+  doi                = {10.1109/access.2020.3028185},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -303,15 +341,16 @@ This chapter presents an example of the application of online neural network lea
   survey_kind        = {background},
 }
 
-@article{plebe2020road,
-  title={On the road with 16 neurons: Towards interpretable and manipulable latent representations for visual predictions in driving scenarios},
-  author={Plebe, Alice and Da~Lio, Mauro},
-  journal={IEEE Access},
-  volume={8},
-  pages={179716--179734},
-  year={2020},
+@article{dalio2021biasing,
+  title={The biasing of action selection produces emergent human-robot interactions in autonomous driving},
+  author={Da~Lio, Mauro and Don{\`a}, Riccardo and Rosati~Papini, Gastone Pietro and Plebe, Alice},
+  journal={IEEE Robotics and Automation Letters},
+  volume={7},
+  number={2},
+  pages={1254--1261},
+  year={2021},
   publisher={IEEE},
-  doi                = {10.1109/access.2020.3028185},
+  doi                = {10.1109/lra.2021.3136646},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -342,33 +381,6 @@ This chapter presents an example of the application of online neural network lea
   survey_kind        = {background},
 }
 
-@article{dalio2021biasing,
-  title={The biasing of action selection produces emergent human-robot interactions in autonomous driving},
-  author={Da~Lio, Mauro and Don{\`a}, Riccardo and Rosati~Papini, Gastone Pietro and Plebe, Alice},
-  journal={IEEE Robotics and Automation Letters},
-  volume={7},
-  number={2},
-  pages={1254--1261},
-  year={2021},
-  publisher={IEEE},
-  doi                = {10.1109/lra.2021.3136646},
-  survey_family      = {background},
-  survey_kind        = {background},
-}
-
-@article{plebe2023bio,
-  title={Bio-inspired circular latent spaces to estimate objects' rotations},
-  author={Plebe, Alice and Da Lio, Mauro},
-  journal={Frontiers in Computational Neuroscience},
-  volume={17},
-  pages={1268116},
-  year={2023},
-  publisher={Frontiers Media SA},
-  doi                = {10.3389/fncom.2023.1268116},
-  survey_family      = {background},
-  survey_kind        = {background},
-}
-
 @article{dalio2023complex,
   title={Complex self-driving behaviors emerging from affordance competition in layered control architectures},
   author={Da~Lio, Mauro and Cherubini, Antonello and Rosati~Papini, Gastone Pietro and Plebe, Alice},
@@ -390,6 +402,33 @@ This chapter presents an example of the application of online neural network lea
     ADDRESS   = {Daegu, Republic of Korea}, 
     MONTH     = {July}, 
     DOI       = {10.15607/RSS.2023.XIX.026},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{plebe2023bio,
+  title={Bio-inspired circular latent spaces to estimate objects' rotations},
+  author={Plebe, Alice and Da Lio, Mauro},
+  journal={Frontiers in Computational Neuroscience},
+  volume={17},
+  pages={1268116},
+  year={2023},
+  publisher={Frontiers Media SA},
+  doi                = {10.3389/fncom.2023.1268116},
+  survey_family      = {background},
+  survey_kind        = {background},
+}
+
+@article{Amato2025,
+author = {Nancy M. Amato  and Seth Hutchinson  and Animesh Garg  and Aude Billard  and Daniela Rus  and Russ Tedrake  and Frank Park  and Ken Goldberg },
+title = {“Data will solve robotics and automation: True or false?”: A debate},
+journal = {Science Robotics},
+volume = {10},
+number = {105},
+pages = {eaea7897},
+year = {2025},
+doi = {10.1126/scirobotics.aea7897},
+eprint = {https://www.science.org/doi/pdf/10.1126/scirobotics.aea7897},
   survey_family      = {background},
   survey_kind        = {background},
 }
@@ -423,20 +462,6 @@ eprint = {https://www.science.org/doi/pdf/10.1126/scirobotics.aea7390},
   survey_kind        = {background},
 }
 
-@article{Amato2025,
-author = {Nancy M. Amato  and Seth Hutchinson  and Animesh Garg  and Aude Billard  and Daniela Rus  and Russ Tedrake  and Frank Park  and Ken Goldberg },
-title = {“Data will solve robotics and automation: True or false?”: A debate},
-journal = {Science Robotics},
-volume = {10},
-number = {105},
-pages = {eaea7897},
-year = {2025},
-doi = {10.1126/scirobotics.aea7897},
-eprint = {https://www.science.org/doi/pdf/10.1126/scirobotics.aea7897},
-  survey_family      = {background},
-  survey_kind        = {background},
-}
-
 @ARTICLE{Jahncke2026,
   author={Jahncke, Felix and Zarrouki, Baha and Piccinini, Mattia and D'sa, Jovin and Isele, David and Bae, Sangjae and Betz, Johannes},
   journal={IEEE Robotics and Automation Letters}, 
@@ -446,31 +471,6 @@ eprint = {https://www.science.org/doi/pdf/10.1126/scirobotics.aea7897},
   number={3},
   pages={3724-3731},
   doi={10.1109/LRA.2026.3662644},
-  survey_family      = {background},
-  survey_kind        = {background},
-}
-
-@book{Wit1996,
-  editor    = {Canudas de Wit, C. and Siciliano, B. and Bastin G.},
-  title     = {Theory of Robot Control},
-  publisher = {Springer},
-  address   = {London, UK},
-  year      = {1996},
-  series    = {Communications and Control Engineering},
-  isbn      = {978-1-4471-1503-8},
-  doi       = {10.1007/978-1-4471-1501-4},
-  pages     = {XVI + 392},
-  survey_family      = {background},
-  survey_kind        = {background},
-}
-
-@book{Abe2009,
-	author = {Abe, M.},
-	isbn = {9780080961811},
-	publisher = {Elsevier Science},
-	title = {Vehicle Handling Dynamics: Theory and Application},
-	year = {2009},
-  url={https://books.google.it/books?id=JLR8ObJp77cC},
   survey_family      = {background},
   survey_kind        = {background},
 }

@@ -1,9 +1,10 @@
 % --------------------------------------------------------------------------
-% Libraries and Differentiable Simulators
+% Software Tools
 %
-% Source of truth for the public catalog.  Bibliographic fields come from the
-% publisher; survey_* fields are the survey's own labels (see CONTRIBUTING.md).
+% Every library, framework and differentiable simulator reviewed in the
+% survey's Software Tools section, kept in one file.
 % --------------------------------------------------------------------------
+
 
 @article{Rackauckas2019DiffEqFlux,
   author        = {Rackauckas, Chris and Innes, Mike and Ma, Yingbo and Bettencourt, Jesse and White, Lyndon and Dixit, Vaibhav},
@@ -32,20 +33,6 @@
   survey_kind        = {software},
 }
 
-@article{Hennigh2020NVIDIA,
-  author        = {Hennigh, Oliver and Narasimhan, Susheela and Nabian, Mohammad Amin and Subramaniam, Akshay and Tangsali, Kaustubh and Rietmann, Max and del Aguila Ferrandis, Jose and Byeon, Wonmin and Fang, Zhiwei and Choudhry, Sanjay},
-  title         = {{NVIDIA} SimNet\textsuperscript{TM}: an {AI}-accelerated multi-physics simulation framework},
-  journal       = {arXiv},
-  year          = {2020},
-  eprint        = {2012.07938},
-  archivePrefix = {arXiv},
-  primaryClass  = {physics.flu-dyn},
-  doi           = {10.48550/arXiv.2012.07938},
-  url           = {https://arxiv.org/abs/2012.07938},
-  survey_family      = {software},
-  survey_kind        = {software},
-}
-
 @article{deSilva2020PySINDy,
   author  = {de Silva, Brian M. and Champion, Kathleen and Quade, Markus and Loiseau, Jean-Christophe and Kutz, J. Nathan and Brunton, Steven L.},
   title   = {PySINDy: A Python package for the sparse identification of nonlinear dynamical systems from data},
@@ -56,6 +43,20 @@
   pages   = {2104},
   doi     = {10.21105/joss.02104},
   url     = {https://joss.theoj.org/papers/10.21105/joss.02104},
+  survey_family      = {software},
+  survey_kind        = {software},
+}
+
+@article{Hennigh2020NVIDIA,
+  author        = {Hennigh, Oliver and Narasimhan, Susheela and Nabian, Mohammad Amin and Subramaniam, Akshay and Tangsali, Kaustubh and Rietmann, Max and del Aguila Ferrandis, Jose and Byeon, Wonmin and Fang, Zhiwei and Choudhry, Sanjay},
+  title         = {{NVIDIA} SimNet\textsuperscript{TM}: an {AI}-accelerated multi-physics simulation framework},
+  journal       = {arXiv},
+  year          = {2020},
+  eprint        = {2012.07938},
+  archivePrefix = {arXiv},
+  primaryClass  = {physics.flu-dyn},
+  doi           = {10.48550/arXiv.2012.07938},
+  url           = {https://arxiv.org/abs/2012.07938},
   survey_family      = {software},
   survey_kind        = {software},
 }
@@ -102,6 +103,18 @@
   survey_kind        = {software},
 }
 
+@inproceedings{Beintema2021Nonlinear,
+  author    = {Beintema, Gerben and T{\'o}th, Roland and Schoukens, Maarten},
+  title     = {Nonlinear state-space identification using deep encoder networks},
+  booktitle = {Proceedings of the 3rd Conference on Learning for Dynamics and Control (L4DC)},
+  series    = {Proceedings of Machine Learning Research},
+  year      = {2021},
+  pages     = {241--250},
+  url       = {https://proceedings.mlr.press/v144/beintema21a.html},
+  survey_family      = {software},
+  survey_kind        = {software},
+}
+
 @article{Freeman2021Brax,
   author        = {Freeman, C. Daniel and Frey, Erik and Raichuk, Anton and Girgin, Sertan and Mordatch, Igor and Bachem, Olivier},
   title         = {Brax -- A Differentiable Physics Engine for Large Scale Rigid Body Simulation},
@@ -112,6 +125,21 @@
   primaryClass  = {cs.RO},
   doi           = {10.48550/arXiv.2106.13281},
   url           = {https://arxiv.org/abs/2106.13281},
+  survey_family      = {software},
+  survey_kind        = {software},
+}
+
+@article{Heiden2021NeuralSim,
+  author        = {Heiden, Eric and Millard, David and Coumans, Erwin and Sheng, Yizhou and Sukhatme, Gaurav S.},
+  title         = {NeuralSim: Augmenting Differentiable Simulators with Neural Networks},
+  journal       = {arXiv},
+  year          = {2021},
+  eprint        = {2011.04217},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  doi           = {10.48550/arXiv.2011.04217},
+  url           = {https://arxiv.org/abs/2011.04217},
+  note          = {Accepted at IEEE International Conference on Robotics and Automation (ICRA) 2021.},
   survey_family      = {software},
   survey_kind        = {software},
 }
@@ -171,33 +199,6 @@
   survey_kind        = {software},
 }
 
-@article{Heiden2021NeuralSim,
-  author        = {Heiden, Eric and Millard, David and Coumans, Erwin and Sheng, Yizhou and Sukhatme, Gaurav S.},
-  title         = {NeuralSim: Augmenting Differentiable Simulators with Neural Networks},
-  journal       = {arXiv},
-  year          = {2021},
-  eprint        = {2011.04217},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.RO},
-  doi           = {10.48550/arXiv.2011.04217},
-  url           = {https://arxiv.org/abs/2011.04217},
-  note          = {Accepted at IEEE International Conference on Robotics and Automation (ICRA) 2021.},
-  survey_family      = {software},
-  survey_kind        = {software},
-}
-
-@inproceedings{Beintema2021Nonlinear,
-  author    = {Beintema, Gerben and T{\'o}th, Roland and Schoukens, Maarten},
-  title     = {Nonlinear state-space identification using deep encoder networks},
-  booktitle = {Proceedings of the 3rd Conference on Learning for Dynamics and Control (L4DC)},
-  series    = {Proceedings of Machine Learning Research},
-  year      = {2021},
-  pages     = {241--250},
-  url       = {https://proceedings.mlr.press/v144/beintema21a.html},
-  survey_family      = {software},
-  survey_kind        = {software},
-}
-
 @article{Beintema2023Deep,
   author  = {Beintema, Gerben I. and Schoukens, Maarten and T{\'o}th, Roland},
   title   = {Deep subspace encoders for nonlinear system identification},
@@ -223,6 +224,17 @@
   survey_kind        = {software},
 }
 
+@inproceedings{Macklin2024Warp,
+  author    = {Macklin, Miles and Capens, Nicolas and Zong, Zeshun and Ma, Pingchuan and Chen, Peter Yichen and Kl{\'a}r, Gergely},
+  title     = {Warp: Differentiable Spatial Computing for Python},
+  booktitle = {ACM SIGGRAPH 2024 Courses},
+  year      = {2024},
+  doi       = {10.1145/3664475.3664543},
+  url       = {https://dl.acm.org/doi/10.1145/3664475.3664543},
+  survey_family      = {software},
+  survey_kind        = {software},
+}
+
 @article{Newbury2024Review,
   author        = {Newbury, Rhys and Collins, Jack and He, Kerry and Pan, Jiahe and Posner, Ingmar and Howard, David and Cosgun, Akansel},
   title         = {A Review of Differentiable Simulators},
@@ -237,77 +249,6 @@
   survey_kind        = {software},
 }
 
-@inproceedings{Macklin2024Warp,
-  author    = {Macklin, Miles and Capens, Nicolas and Zong, Zeshun and Ma, Pingchuan and Chen, Peter Yichen and Kl{\'a}r, Gergely},
-  title     = {Warp: Differentiable Spatial Computing for Python},
-  booktitle = {ACM SIGGRAPH 2024 Courses},
-  year      = {2024},
-  doi       = {10.1145/3664475.3664543},
-  url       = {https://dl.acm.org/doi/10.1145/3664475.3664543},
-  survey_family      = {software},
-  survey_kind        = {software},
-}
-
-@misc{Google2026Brax,
-  author       = {{Google}},
-  title        = {Brax Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/google/brax},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/google/brax},
-}
-
-@misc{Schoukens2026deepSI,
-  author       = {Schoukens, Maarten},
-  title        = {deepSI Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/MaartenSchoukens/deepSI},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/MaartenSchoukens/deepSI},
-}
-
-@misc{DeeptimeML2026Deeptime,
-  author       = {deeptime-ml},
-  title        = {Deeptime Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/deeptime-ml/deeptime},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/deeptime-ml/deeptime},
-}
-
-@misc{Lu2026DeepXDE,
-  author       = {Lu, Lu},
-  title        = {DeepXDE Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/lululxvi/deepxde},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/lululxvi/deepxde},
-}
-
-@misc{DiffEqFlux2026SciML,
-  author       = {{SciML Developers}},
-  title        = {DiffEqFlux.jl},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/SciML/DiffEqFlux.jl},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/SciML/DiffEqFlux.jl},
-}
-
 @misc{Chen2026Differentiable,
   author       = {Chen, Ricky T. Q.},
   title        = {Differentiable {ODE} Solvers with Full {GPU} Support and {O}(1)-Memory Backpropagation (torchdiffeq)},
@@ -318,126 +259,6 @@
   survey_family      = {software},
   survey_kind        = {software},
   survey_code        = {https://github.com/rtqichen/torchdiffeq},
-}
-
-@misc{Dojo2026,
-  author       = {{dojo-sim}},
-  title        = {Dojo.jl Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/dojo-sim/Dojo.jl},
-  note         = {Accessed: 2026-08-09},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/dojo-sim/Dojo.jl},
-}
-
-@misc{JAXFluids2026,
-  author       = {{JAX-Fluids Contributors}},
-  title        = {JAX-Fluids Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/tumaer/JAXFLUIDS},
-  note         = {Accessed: 2026-08-09},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/tumaer/JAXFLUIDS},
-}
-
-@misc{Rosati2026Neural,
-  author       = {Rosati Papini, Gastone Pietro},
-  title        = {Neural Network Framework for Modelling, Control, and Estimation of Physical Systems (nnodely)},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/tonegas/nnodely},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/tonegas/nnodely},
-}
-
-@misc{SciML2026NeuralPDE,
-  author       = {SciML},
-  title        = {NeuralPDE.jl Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/SciML/NeuralPDE.jl},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/SciML/NeuralPDE.jl},
-}
-
-@misc{NeuroDiffGym2026neurodiffeq,
-  author       = {NeuroDiffGym},
-  title        = {neurodiffeq},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/NeuroDiffGym/neurodiffeq},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/NeuroDiffGym/neurodiffeq},
-}
-
-@misc{Drgona2026NeuroMANCER,
-  author       = {Drgona, Jan and Tuor, Aaron and Koch, James and Shapiro, Madelyn and Vrabie, Draguna and Contributors},
-  title        = {NeuroMANCER: Neural Modules with Adaptive Nonlinear Constraints and Efficient Regularizations},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/pnnl/neuromancer},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/pnnl/neuromancer},
-}
-
-@misc{Werling2026Nimble,
-  author       = {Werling, Keenon},
-  title        = {nimblephysics Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/keenon/nimblephysics},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/keenon/nimblephysics},
-}
-
-@misc{NVIDIA2026PhysicsNeMo,
-  author       = {{NVIDIA}},
-  title        = {PhysicsNeMo: Open-source Physics-{ML} framework (formerly {NVIDIA} Modulus)},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/NVIDIA/physicsnemo},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/NVIDIA/physicsnemo},
-}
-
-@misc{dynamicslab2026PySINDy,
-  author       = {dynamicslab},
-  title        = {PySINDy Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/dynamicslab/pysindy},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/dynamicslab/pysindy},
-}
-
-@misc{LacerdaJunior2026SysIdentPy,
-  author       = {Lacerda Junior, Wilson Rocha},
-  title        = {SysIdentPy Repository},
-  year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/wilsonrljr/sysidentpy},
-  note         = {Accessed: 2026-04-13},
-  survey_family      = {software},
-  survey_kind        = {software},
-  survey_code        = {https://github.com/wilsonrljr/sysidentpy},
 }
 
 @misc{Coumans2026Tiny,
@@ -452,6 +273,30 @@
   survey_code        = {https://github.com/erwincoumans/tiny-differentiable-simulator},
 }
 
+@misc{DeeptimeML2026Deeptime,
+  author       = {deeptime-ml},
+  title        = {Deeptime Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/deeptime-ml/deeptime},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/deeptime-ml/deeptime},
+}
+
+@misc{DiffEqFlux2026SciML,
+  author       = {{SciML Developers}},
+  title        = {DiffEqFlux.jl},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/SciML/DiffEqFlux.jl},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/SciML/DiffEqFlux.jl},
+}
+
 @misc{DiffEqML2026TorchDyn,
   author       = {DiffEqML},
   title        = {TorchDyn Repository},
@@ -464,6 +309,114 @@
   survey_code        = {https://github.com/DiffEqML/torchdyn},
 }
 
+@misc{Dojo2026,
+  author       = {{dojo-sim}},
+  title        = {Dojo.jl Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/dojo-sim/Dojo.jl},
+  note         = {Accessed: 2026-08-09},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/dojo-sim/Dojo.jl},
+}
+
+@misc{Drgona2026NeuroMANCER,
+  author       = {Drgona, Jan and Tuor, Aaron and Koch, James and Shapiro, Madelyn and Vrabie, Draguna and Contributors},
+  title        = {NeuroMANCER: Neural Modules with Adaptive Nonlinear Constraints and Efficient Regularizations},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/pnnl/neuromancer},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/pnnl/neuromancer},
+}
+
+@misc{dynamicslab2026PySINDy,
+  author       = {dynamicslab},
+  title        = {PySINDy Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/dynamicslab/pysindy},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/dynamicslab/pysindy},
+}
+
+@misc{Google2026Brax,
+  author       = {{Google}},
+  title        = {Brax Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/google/brax},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/google/brax},
+}
+
+@misc{JAXFluids2026,
+  author       = {{JAX-Fluids Contributors}},
+  title        = {JAX-Fluids Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/tumaer/JAXFLUIDS},
+  note         = {Accessed: 2026-08-09},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/tumaer/JAXFLUIDS},
+}
+
+@misc{LacerdaJunior2026SysIdentPy,
+  author       = {Lacerda Junior, Wilson Rocha},
+  title        = {SysIdentPy Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/wilsonrljr/sysidentpy},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/wilsonrljr/sysidentpy},
+}
+
+@misc{Lu2026DeepXDE,
+  author       = {Lu, Lu},
+  title        = {DeepXDE Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/lululxvi/deepxde},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/lululxvi/deepxde},
+}
+
+@misc{NeuroDiffGym2026neurodiffeq,
+  author       = {NeuroDiffGym},
+  title        = {neurodiffeq},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/NeuroDiffGym/neurodiffeq},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/NeuroDiffGym/neurodiffeq},
+}
+
+@misc{NVIDIA2026PhysicsNeMo,
+  author       = {{NVIDIA}},
+  title        = {PhysicsNeMo: Open-source Physics-{ML} framework (formerly {NVIDIA} Modulus)},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/NVIDIA/physicsnemo},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/NVIDIA/physicsnemo},
+}
+
 @misc{NVIDIA2026Warp,
   author       = {{NVIDIA}},
   title        = {Warp Repository},
@@ -474,4 +427,52 @@
   survey_family      = {software},
   survey_kind        = {software},
   survey_code        = {https://github.com/NVIDIA/warp},
+}
+
+@misc{Rosati2026Neural,
+  author       = {Rosati Papini, Gastone Pietro},
+  title        = {Neural Network Framework for Modelling, Control, and Estimation of Physical Systems (nnodely)},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/tonegas/nnodely},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/tonegas/nnodely},
+}
+
+@misc{Schoukens2026deepSI,
+  author       = {Schoukens, Maarten},
+  title        = {deepSI Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/MaartenSchoukens/deepSI},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/MaartenSchoukens/deepSI},
+}
+
+@misc{SciML2026NeuralPDE,
+  author       = {SciML},
+  title        = {NeuralPDE.jl Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/SciML/NeuralPDE.jl},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/SciML/NeuralPDE.jl},
+}
+
+@misc{Werling2026Nimble,
+  author       = {Werling, Keenon},
+  title        = {nimblephysics Repository},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/keenon/nimblephysics},
+  note         = {Accessed: 2026-04-13},
+  survey_family      = {software},
+  survey_kind        = {software},
+  survey_code        = {https://github.com/keenon/nimblephysics},
 }

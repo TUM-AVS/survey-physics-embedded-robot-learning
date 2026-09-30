@@ -41,6 +41,9 @@ FLOW_HEADING = ":twisted_rightwards_arrows: Classification flow"
 # Linked from the very first lines, so a reader sees how to contribute immediately.
 CONTRIB_HEADING = "Contributing"
 
+# Mirrors the manuscript: one entry per survey section, one sub-entry per
+# survey subsection, with the same titles and the same order. Changing a
+# subsection title in the paper means renaming the matching bib file here.
 SECTIONS = [
     (
         "Physics-Encoded Architectures",
@@ -51,15 +54,14 @@ SECTIONS = [
         "domain knowledge. \n"
         "The largest body of work, and therefore reviewed first.",
         [
-            ("Lagrangian Learning Models", "lagrangian.bib"),
-            ("Hamiltonian Learning Models", "hamiltonian.bib"),
-            ("Model-Structured Learning Architectures", "model-structured.bib"),
-            ("Neural ODEs and Variational Integrator Networks", "neural-ode.bib"),
-            ("Non-NN Physics-Encoded Models (including GPR / RKHS / kernels)", "non-nn.bib"),
-            ("Hybrid Physics-Learning Architectures", "hybrid-physics.bib"),
-            ("Physics-Encoded Topology Learning", "topology-learning.bib"),
-            ("Neural Operators", "neural-operators.bib"),
-            ("Other Types of Physics-Encoded Architectures", "other-encoded.bib"),
+            ("Lagrangian Learning Models", "physics-encoded/lagrangian-learning-models.bib"),
+            ("Hamiltonian Learning Models", "physics-encoded/hamiltonian-learning-models.bib"),
+            ("Model-Structured Learning Architectures", "physics-encoded/model-structured-architectures.bib"),
+            ("Neural ODEs and Variational Integrator Networks", "physics-encoded/neural-odes-and-variational-integrators.bib"),
+            ("Hybrid Physics-Learning Architectures", "physics-encoded/hybrid-physics-learning.bib"),
+            ("Physics-Encoded Topology Learning", "physics-encoded/topology-learning.bib"),
+            ("Physics-Encoded Neural Operators", "physics-encoded/neural-operators.bib"),
+            ("Other Types of Physics-Encoded Architectures", "physics-encoded/other-architectures.bib"),
         ],
     ),
     (
@@ -71,7 +73,9 @@ SECTIONS = [
         "components are active **only during training**: they are part of neither the "
         "architecture nor the inputs.",
         [
-            ("Physics-Informed Neural Networks and Losses", "physics-informed-losses.bib"),
+            ("Physics-Informed Neural Networks", "physics-informed/neural-networks.bib"),
+            ("Physics-Informed Neural Operators", "physics-informed/neural-operators.bib"),
+            ("Other Types of Loss and Reward Functions", "physics-informed/other-loss-and-reward-functions.bib"),
         ],
     ),
     (
@@ -84,32 +88,27 @@ SECTIONS = [
         "post-processing guidance at inference, while preserving the flexibility of standard "
         "ML models.",
         [
-            ("Structured Inputs, Geometric, Frequency-Domain, and World Representations", "physics-guided-inputs.bib"),
+            ("Physical Models as Structured Inputs to Learning Algorithms", "physics-guided/structured-inputs.bib"),
+            ("Physics-Guided Features & Training Data", "physics-guided/features-and-data.bib"),
+            ("Geometric Learning", "physics-guided/geometric-learning.bib"),
+            ("Frequency-Domain Learning", "physics-guided/frequency-domain-learning.bib"),
+            ("Physically Consistent World Representations", "physics-guided/world-representations.bib"),
+            ("Physics-Guided Diffusion-based Generation", "physics-guided/diffusion.bib"),
+            ("Physics-Guided Neural Operators", "physics-guided/neural-operators.bib"),
         ],
     ),
     (
-        "Generative Models with Physics Priors (Cross-Cutting)",
-        "generative",
-        "Diffusion policies, video world models, and VLAs are reviewed throughout the survey "
-        "and may embed physics via any of the three routes (physics-encoded architectures, "
-        "physics-informed losses, or physics-guided inputs).",
-        [
-            ("Diffusion, World Models, and VLAs", "generative-models.bib"),
-        ],
-    ),
-    (
-        "Software, Simulators, and Libraries",
+        "Software Tools",
         "software",
         "Open-source tools used to build physics-embedded robot-learning models.",
+        # The survey splits this section into five subsections; the catalog keeps
+        # them in one table, since the entries are tools rather than papers.
         [
-            ("Libraries and Differentiable Simulators", "software.bib"),
+            ("Libraries, Frameworks, and Differentiable Simulators", "software.bib"),
         ],
     ),
 ]
 
-# Cited, but deliberately not tabulated in the README: related surveys and the
-# background/historical citations are part of the manuscript's narrative rather
-# than the catalog of reviewed methods. They stay in bib/ and in every count.
 UNLISTED_BIB = ("surveys.bib", "background.bib")
 
 SEARCH_KEYWORDS = {
@@ -713,7 +712,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "  year    = {2026},\n"
         "  doi     = {10.0000/example},\n"
         "  survey_kind        = {method},\n"
-        "  survey_family      = {model-structured},\n"
+        "  survey_family      = {physics-encoded/model-structured-architectures},\n"
         "  survey_route       = {physics-encoded},\n"
         "  survey_application = {dynamics-learning, control},\n"
         "  survey_robot       = {manipulators},\n"

@@ -80,7 +80,7 @@ a plain bibliography if you want to cite the corpus yourself.
   year    = {{2026}},
   doi     = {{10.0000/example}},
   survey_kind        = {{method}},
-  survey_family      = {{model-structured}},
+  survey_family      = {{physics-encoded/model-structured-architectures}},
   survey_route       = {{physics-encoded}},
   survey_application = {{dynamics-learning, control}},
   survey_robot       = {{manipulators}},
@@ -96,7 +96,7 @@ README can link the paper.
 
 Pick the file under `bib/` matching the method family. The family only decides
 where the entry lives and which README section it appears under; the *route* is
-stated per entry, so a paper in `hybrid-physics.bib` can still be labelled
+stated per entry, so a paper in `hybrid-physics-learning.bib` can still be labelled
 physics-informed.
 
 | file in `bib/` | Method family |
@@ -137,9 +137,14 @@ with no specific platform.
 
 ### `survey_family` (required)
 
-Must match the file name, e.g. `hybrid-physics` in `bib/hybrid-physics.bib`.
-It is stated explicitly so a misfiled entry is caught rather than silently
-counted under the wrong heading.
+Which file the entry lives in. Each file mirrors one subsection of the survey,
+so pick the subsection that would discuss the paper. It is stated explicitly in
+the entry as well, so a misfiled paper is caught rather than silently counted
+under the wrong heading.
+
+| File | Survey subsection |
+| --- | --- |
+{families}
 
 ### `survey_code` (optional)
 
