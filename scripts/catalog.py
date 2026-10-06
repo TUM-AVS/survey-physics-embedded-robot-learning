@@ -401,6 +401,13 @@ def annotate(paper: dict, fields: dict[str, str], problems: list[str]) -> dict:
         bad(f"survey_family = {{{family}}} is split into subsections; "
             "survey_group is required (one of: " + ", ".join(sorted(allowed)) + ")")
 
+    # Papers added after the survey was published carry the date they were added;
+    # entries without it are the manuscript's own references.
+    added = strip_tex(fields.get("survey_added", "")).strip()
+    if added and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", added):
+        bad(f"survey_added = {{{added}}} must be a date, YYYY-MM-DD")
+        added = ""
+
     if not paper.get("code"):
         code = strip_tex(fields.get("survey_code", "")).strip()
         if code:
@@ -410,6 +417,7 @@ def annotate(paper: dict, fields: dict[str, str], problems: list[str]) -> dict:
         kind=kind,
         family=family,
         group=group,
+        added=added,
         routes=routes,
         apps=apps,
         robots=robots,

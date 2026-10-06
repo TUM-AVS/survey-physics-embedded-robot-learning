@@ -17,7 +17,7 @@ Year Guided Encoded Informed Cumulative
 2023 5 26 2 107
 2024 4 34 10 155
 2025 10 29 8 202
-2026 8 15 9 234
+2026 8 46 21 277
 }\PPdata
 
 \begin{tikzpicture}[font=\fontsize{13}{15.6}\selectfont]
@@ -33,7 +33,7 @@ Year Guided Encoded Informed Cumulative
     ylabel={Number of papers}, xlabel={Publication year},
     legend style={at={(0.02,0.98)}, anchor=north west, draw=none,
                   legend columns=1, cells={anchor=west}, font=\fontsize{13}{15.6}\selectfont},
-    axis y line*=left, ymin=0, ymax=50,
+    axis y line*=left, ymin=0, ymax=80,
 ]
 \addplot[fill=fillguided, draw=routeguided] table[x=Year, y=Guided] {\PPdata};
 \addlegendentry{Physics-guided}
@@ -50,7 +50,7 @@ Year Guided Encoded Informed Cumulative
 \begin{axis}[
     width=\linewidth, height=8cm,
     axis x line=none, axis y line*=right,
-    ymin=0, ymax=250, ylabel={Cumulative paper count},
+    ymin=0, ymax=300, ylabel={Cumulative paper count},
     label style={font=\fontsize{13}{15.6}\selectfont},
     tick label style={font=\fontsize{13}{15.6}\selectfont},
     enlarge x limits=0.04, xtick=\empty,

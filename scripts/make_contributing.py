@@ -146,6 +146,12 @@ under the wrong heading.
 | --- | --- |
 {families}
 
+### `survey_added` (for papers added after the survey)
+
+The date the entry was added, as `YYYY-MM-DD`, e.g. `survey_added = {{2026-10-06}}`. Every paper
+that is not in the published survey must carry it. The README uses it to keep the survey's own
+references apart from later additions, and marks those additions :new:.
+
 ### `survey_code` (optional)
 
 Link to the paper's open-source implementation. A `url` field pointing at

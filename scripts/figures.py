@@ -403,6 +403,8 @@ def write_all(all_papers: dict[str, list[dict]], catalog_root: Path,
                     if (figures / f"{n}.png").exists()]
 
     n_pre = sum(1 for p in papers if p.get("year") and p["year"] < TIMELINE_START)
+    # Recently added papers can carry next year's volume date.
+    n_post = sum(1 for p in papers if p.get("year") and p["year"] > TIMELINE_END)
     # Primary-route totals over every reviewed method, so shares sum to 100%.
     primary = Counter(classify.primary_route(p) for p in papers)
     return {
@@ -415,6 +417,7 @@ def write_all(all_papers: dict[str, list[dict]], catalog_root: Path,
         "n_method": len(papers),
         "n_timeline": cumulative[-1] if cumulative else 0,
         "n_pre": n_pre,
+        "n_post": n_post,
         "pdfs": pdfs,
         "previews": previews,
     }

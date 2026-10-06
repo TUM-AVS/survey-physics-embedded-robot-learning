@@ -12,7 +12,7 @@
     label style={font=\fontsize{13}{15.6}\selectfont},
     tick label style={font=\fontsize{13}{15.6}\selectfont},
     width=0.72\linewidth, height=5cm,
-    xmin=0, xmax=101,
+    xmin=0, xmax=112,
     ytick={0,1,2,3,4},
     yticklabels={Control, Dynamics Learning, Planning \& Prediction, Estimation, Others},
     y dir=reverse,
@@ -25,16 +25,16 @@
                   draw=none, /tikz/every even column/.append style={column sep=0.35cm},
                   font=\fontsize{13}{15.6}\selectfont},
 ]
-\addplot[fill=fillguided, draw=routeguided] coordinates {(11,0) (5,1) (16,2) (8,3) (1,4)};
+\addplot[fill=fillguided, draw=routeguided] coordinates {(11,0) (6,1) (16,2) (8,3) (1,4)};
 \addlegendentry{Physics-guided}
-\addplot[fill=fillencoded, draw=routeencoded] coordinates {(66,0) (63,1) (27,2) (18,3) (0,4)};
+\addplot[fill=fillencoded, draw=routeencoded] coordinates {(77,0) (76,1) (34,2) (25,3) (0,4)};
 \addlegendentry{Physics-encoded}
-\addplot[fill=fillinformed, draw=routeinformed] coordinates {(9,0) (11,1) (9,2) (8,3) (0,4)};
+\addplot[fill=fillinformed, draw=routeinformed] coordinates {(12,0) (16,1) (13,2) (14,3) (0,4)};
 \addlegendentry{Physics-informed}
-\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:86,0) {86};
-\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:79,1) {79};
-\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:52,2) {52};
-\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:34,3) {34};
+\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:100,0) {100};
+\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:98,1) {98};
+\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:63,2) {63};
+\node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:47,3) {47};
 \node[anchor=west, font=\fontsize{13}{15.6}\selectfont\bfseries] at (axis cs:1,4) {1};
 \end{axis}
 \end{tikzpicture}

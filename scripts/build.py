@@ -11,6 +11,7 @@ entries and re-run rather than editing the output by hand.
 from __future__ import annotations
 
 import argparse
+import datetime as _dt
 import csv
 import re
 import sys
@@ -32,8 +33,6 @@ CSV_OUT = ROOT / "exports" / "papers.csv"
 # Announced in the abstract of main.tex.
 REPO_URL = "https://github.com/TUM-AVS/survey-physics-embedded-robot-learning"
 SURVEY_TITLE = "Embedding Physics Priors in Robot Learning: A Survey"
-# Literature cut-off stated in Sec. "Scope of the Considered Literature".
-CUTOFF = "August 2026"
 
 # Heading of the decision-flow section, which the survey (Sec. "Classification
 # Flow" and Sec. "Scope of the Considered Literature") promises this repo hosts.
@@ -322,6 +321,8 @@ def table_row(p: dict) -> str:
         paper = f"[{title}]({p['link']})"
     else:
         paper = title
+    if p.get("added"):
+        paper += " :new:"
     year = str(p["year"] or p["year_raw"] or "—")
     venue = md_escape(p["venue"])
     return f"| {paper} | {year} | {venue} |"
@@ -337,6 +338,22 @@ def _figure(name: str, alt: str, caption: str) -> list[str]:
     ]
 
 
+def _outside_timeline(figs: dict) -> str:
+    """Name the methods the timeline leaves out, so its total adds up."""
+    parts = []
+    if figs["n_pre"]:
+        parts.append(f"{figs['n_pre']} earlier")
+    if figs.get("n_post"):
+        parts.append(f"{figs['n_post']} dated {timeline.TIMELINE_END + 1} or later")
+    return f" ({' and '.join(parts)} are listed in the tables below)" if parts else ""
+
+
+def _partial_year_note() -> str:
+    """Footnote for the timeline's final year, which is still being filled."""
+    return (f"\\*{timeline.PDF_PARTIAL_YEAR} is still in progress; its count grows "
+            f"as new papers are added to the catalog.")
+
+
 def _timeline_md(figs: dict) -> str:
     """Yearly counts as a Markdown table (GitHub cannot render the PDF inline)."""
     head = "| Year | " + " | ".join(
@@ -345,9 +362,8 @@ def _timeline_md(figs: dict) -> str:
     rows = []
     for i, year in enumerate(figs["years"]):
         vals = [figs["series"][r][i] for r in classify.ROUTES]
-        # The final year is only partially covered by the literature cut-off.
-        label = (f"{year} (up to {CUTOFF.split()[0]})"
-                 if year == timeline.PDF_PARTIAL_YEAR else str(year))
+        # The final year is incomplete; the figure caption above explains the marker.
+        label = f"{year}\\*" if year == timeline.PDF_PARTIAL_YEAR else str(year)
         rows.append(f"| {label} | " + " | ".join(str(v) for v in vals)
                     + f" | **{sum(vals)}** | {figs['cumulative'][i]} |")
     return "\n".join([head, rule, *rows])
@@ -412,13 +428,28 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("")
     lines.append("## :fire: Updates")
     lines.append("")
+    # Newest first: one bullet per month in which post-survey papers were added.
+    every = [p for ps in all_papers.values() for p in ps]
+    added = [p for p in every if p.get("added")]
+    by_month = {}
+    for p in added:
+        by_month.setdefault(p["added"][:7], []).append(p)
+    for ym in sorted(by_month, reverse=True):
+        ps = by_month[ym]
+        n_m = sum(1 for p in ps if p["is_method"])
+        month = _dt.date(int(ym[:4]), int(ym[5:7]), 1).strftime("%b. %Y")
+        lines.append(
+            f"- **{month}** – Added **{len(ps)}** new papers ({n_m} methods), "
+            f"marked :new: in the tables below."
+        )
     lines.append(
         f"- **Sep. 2026** – Repository initialized from the survey bibliography: "
-        f"all **{total}** references cited in the manuscript."
+        f"all **{total - len(added)}** references cited in the manuscript."
     )
     lines.append(
-        f"- Of these, **{figs['n_method']}** are physics-embedded robot learning methods "
-        f"(the rest are related surveys, software, and background references)."
+        f"- The catalog now lists **{total}** references, of which **{figs['n_method']}** are "
+        f"physics-embedded robot learning methods (the rest are related surveys, software, "
+        f"and background references)."
     )
     prim = figs["primary"]
     n_prim = sum(prim.values()) or 1
@@ -652,10 +683,9 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "paper_timeline", "Paper counts by year and route",
         f"{timeline.TIMELINE_START}–{timeline.TIMELINE_END}, "
         f"{figs['n_timeline']} of the {figs['n_method']} reviewed methods"
-        + (f" ({figs['n_pre']} earlier ones are listed in the tables below)"
-           if figs["n_pre"] else "")
+        + _outside_timeline(figs)
         + ". Each paper is counted once, under its primary route. "
-        "\\*2026 covers publications up to August 2026 only.",
+        + _partial_year_note(),
     ))
     lines.append(_timeline_md(figs))
     lines.append("")
@@ -697,10 +727,11 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("")
     lines.append(
         f"The literature on physics-embedded robot learning does not follow a unified "
-        f"terminology, so no single query retrieves it. Papers were collected up to "
-        f"**{CUTOFF}** through keyword searches on Google Scholar across the categories of "
+        f"terminology, so no single query retrieves it. Papers were collected "
+        f"through keyword searches on Google Scholar across the categories of "
         f"physics embedding, complemented by backward and forward citation tracking from "
-        f"the works found and by the authors' knowledge of the field. We include "
+        f"the works found and by the authors' knowledge of the field. The catalog is "
+        f"continuously updated with new papers (see [Updates](#fire-updates)). We include "
         f"peer-reviewed journal and conference contributions, plus a few arXiv preprints "
         f"that may not yet be peer-reviewed but contribute significantly to the state of the art."
     )
