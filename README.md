@@ -2,6 +2,8 @@
 
 This repository hosts the review paper *Embedding Physics Priors in Robot Learning: A Survey*, with a living catalog of the reviewed papers, classification and search methods, summary tables, and open-source software list. 
 
+:page_facing_up: The survey is available as a preprint on arXiv: [https://arxiv.org/abs/2609.22319](https://arxiv.org/abs/2609.22319)
+
 We welcome contributions from the **whole community** to keep this survey up to date! See [**how to contribute**](#contributing).  
 
 The catalog mirrors the taxonomy of the survey: 
@@ -14,6 +16,7 @@ Within each route, the survey groups papers by application: *dynamics learning*,
 ## :fire: Updates
 
 - **Oct. 2026** – Added **44** new papers (44 methods), marked :new: in the tables below.
+- **Sep. 2026** – Survey preprint released on [arXiv](https://arxiv.org/abs/2609.22319).
 - **Sep. 2026** – Repository initialized from the survey bibliography: all **331** references cited in the manuscript.
 - The catalog now lists **375** references, of which **282** are physics-embedded robot learning methods (the rest are related surveys, software, and background references).
 - By taxonomy route (each method counted once, under its primary route): **13%** physics-guided (36), **72%** physics-encoded (202), **16%** physics-informed (44).
@@ -971,7 +974,7 @@ This repository is released under the [Apache 2.0 license](LICENSE).
 
 ## 🤝 Citation
 
-The survey manuscript *Embedding Physics Priors in Robot Learning: A Survey* is under submission. If you use this catalog, please cite:
+The survey *Embedding Physics Priors in Robot Learning: A Survey* is available as a preprint on [arXiv](https://arxiv.org/abs/2609.22319). If you use this survey or catalog, please cite:
 
 ```BibTeX
 @article{piccinini2026physicspriors,
@@ -981,8 +984,11 @@ The survey manuscript *Embedding Physics Priors in Robot Learning: A Survey* is 
              and Arenz, Oleg and Zarrouki, Baha and Wang, Dingrui
              and Sch{\"a}fer, Finn Rasmus and Peters, Jan and Betz, Johannes
              and Rosati Papini, Gastone Pietro},
+  journal = {arXiv preprint arXiv:2609.22319},
   year    = {2026},
-  note    = {Under review},
-  url     = {https://github.com/TUM-AVS/survey-physics-embedded-robot-learning}
+  eprint  = {2609.22319},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url     = {https://arxiv.org/abs/2609.22319}
 }
 ```

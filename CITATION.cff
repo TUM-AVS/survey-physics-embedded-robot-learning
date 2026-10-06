@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this catalog, please cite the survey."
+message: "If you use this survey or catalog, please cite the arXiv preprint."
 title: "Embedding Physics Priors in Robot Learning: A Survey"
 abstract: >-
   A living catalog of robot-learning methods that embed physics priors,
@@ -42,3 +42,40 @@ authors:
     given-names: Johannes
   - family-names: Rosati Papini
     given-names: Gastone Pietro
+preferred-citation:
+  type: article
+  title: "Embedding Physics Priors in Robot Learning: A Survey"
+  journal: "arXiv preprint arXiv:2609.22319"
+  year: 2026
+  url: "https://arxiv.org/abs/2609.22319"
+  identifiers:
+    - type: url
+      value: "https://arxiv.org/abs/2609.22319"
+      description: arXiv preprint
+  authors:
+    - family-names: Piccinini
+      given-names: Mattia
+    - family-names: Schulze
+      given-names: Lucas
+    - family-names: Plebe
+      given-names: Alice
+    - family-names: Saveriano
+      given-names: Matteo
+    - family-names: Beckers
+      given-names: Thomas
+    - family-names: Gao
+      given-names: Yuan
+    - family-names: Arenz
+      given-names: Oleg
+    - family-names: Zarrouki
+      given-names: Baha
+    - family-names: Wang
+      given-names: Dingrui
+    - family-names: Schäfer
+      given-names: Finn Rasmus
+    - family-names: Peters
+      given-names: Jan
+    - family-names: Betz
+      given-names: Johannes
+    - family-names: Rosati Papini
+      given-names: Gastone Pietro

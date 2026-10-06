@@ -33,6 +33,9 @@ CSV_OUT = ROOT / "exports" / "papers.csv"
 # Announced in the abstract of main.tex.
 REPO_URL = "https://github.com/TUM-AVS/survey-physics-embedded-robot-learning"
 SURVEY_TITLE = "Embedding Physics Priors in Robot Learning: A Survey"
+# arXiv preprint of the survey (v1 posted 15 Sep 2026, cs.RO).
+ARXIV_ID = "2609.22319"
+ARXIV_URL = f"https://arxiv.org/abs/{ARXIV_ID}"
 
 # Heading of the decision-flow section, which the survey (Sec. "Classification
 # Flow" and Sec. "Scope of the Considered Literature") promises this repo hosts.
@@ -409,6 +412,8 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         f"*{SURVEY_TITLE}*, with a living catalog of the reviewed papers, "
         "classification and search methods, summary tables, and open-source software list. \n"
         "\n"
+        f":page_facing_up: The survey is available as a preprint on arXiv: [{ARXIV_URL}]({ARXIV_URL})\n"
+        "\n"
         "We welcome contributions from the **whole community** to keep this survey up to date! "
         f"See [**how to contribute**](#{gh_anchor(CONTRIB_HEADING)}).  "
     )
@@ -442,6 +447,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
             f"- **{month}** – Added **{len(ps)}** new papers ({n_m} methods), "
             f"marked :new: in the tables below."
         )
+    lines.append(f"- **Sep. 2026** – Survey preprint released on [arXiv]({ARXIV_URL}).")
     lines.append(
         f"- **Sep. 2026** – Repository initialized from the survey bibliography: "
         f"all **{total - len(added)}** references cited in the manuscript."
@@ -909,8 +915,8 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("## 🤝 Citation")
     lines.append("")
     lines.append(
-        f"The survey manuscript *{SURVEY_TITLE}* is under submission. "
-        "If you use this catalog, please cite:"
+        f"The survey *{SURVEY_TITLE}* is available as a preprint on "
+        f"[arXiv]({ARXIV_URL}). If you use this survey or catalog, please cite:"
     )
     lines.append("")
     lines.append("```BibTeX")
@@ -921,9 +927,12 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("             and Arenz, Oleg and Zarrouki, Baha and Wang, Dingrui")
     lines.append("             and Sch{\\\"a}fer, Finn Rasmus and Peters, Jan and Betz, Johannes")
     lines.append("             and Rosati Papini, Gastone Pietro},")
+    lines.append(f"  journal = {{arXiv preprint arXiv:{ARXIV_ID}}},")
     lines.append("  year    = {2026},")
-    lines.append("  note    = {Under review},")
-    lines.append(f"  url     = {{{REPO_URL}}}")
+    lines.append(f"  eprint  = {{{ARXIV_ID}}},")
+    lines.append("  archivePrefix = {arXiv},")
+    lines.append("  primaryClass  = {cs.RO},")
+    lines.append(f"  url     = {{{ARXIV_URL}}}")
     lines.append("}")
     lines.append("```")
     lines.append("")
