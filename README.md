@@ -13,9 +13,9 @@ Within each route, the survey groups papers by application: *dynamics learning*,
 
 ## :fire: Updates
 
-- **Sep. 2026** – Repository initialized from the survey bibliography: all **329** references cited in the manuscript.
-- Of these, **237** are physics-embedded robot learning methods (the rest are related surveys, software, and background references).
-- By taxonomy route (each method counted once, under its primary route): **15%** physics-guided (36), **72%** physics-encoded (170), **13%** physics-informed (31).
+- **Sep. 2026** – Repository initialized from the survey bibliography: all **331** references cited in the manuscript.
+- Of these, **238** are physics-embedded robot learning methods (the rest are related surveys, software, and background references).
+- By taxonomy route (each method counted once, under its primary route): **15%** physics-guided (36), **72%** physics-encoded (171), **13%** physics-informed (31).
 
 ## :page_with_curl: Introduction
 
@@ -112,7 +112,7 @@ How the reviewed literature evolved over time, by taxonomy route.
 
 [![Paper counts by year and route](figures/paper_timeline.png)](figures/paper_timeline.pdf)
 
-*2016–2026, 233 of the 237 reviewed methods (4 earlier ones are listed in the tables below). Each paper is counted once, under its primary route. \*2026 covers publications up to August 2026 only. Vector version: [`paper_timeline.pdf`](figures/paper_timeline.pdf).*
+*2016–2026, 234 of the 238 reviewed methods (4 earlier ones are listed in the tables below). Each paper is counted once, under its primary route. \*2026 covers publications up to August 2026 only. Vector version: [`paper_timeline.pdf`](figures/paper_timeline.pdf).*
 
 | Year | Physics-guided | Physics-encoded | Physics-informed | Total | Cumulative |
 |:---|---:|---:|---:|---:|---:|
@@ -123,14 +123,14 @@ How the reviewed literature evolved over time, by taxonomy route.
 | 2020 | 0 | 15 | 0 | **15** | 41 |
 | 2021 | 2 | 14 | 0 | **16** | 57 |
 | 2022 | 4 | 11 | 2 | **17** | 74 |
-| 2023 | 5 | 25 | 2 | **32** | 106 |
-| 2024 | 4 | 34 | 10 | **48** | 154 |
-| 2025 | 10 | 29 | 8 | **47** | 201 |
-| 2026 (up to August) | 8 | 15 | 9 | **32** | 233 |
+| 2023 | 5 | 26 | 2 | **33** | 107 |
+| 2024 | 4 | 34 | 10 | **48** | 155 |
+| 2025 | 10 | 29 | 8 | **47** | 202 |
+| 2026 (up to August) | 8 | 15 | 9 | **32** | 234 |
 
 ## :bar_chart: Coverage by application and platform
 
-The tables below break the 237 reviewed methods down by application category and by robot platform. Unlike the timeline, a paper that embeds physics through several routes is counted in **each** matching column, which is why row totals can exceed the number of distinct papers.
+The tables below break the 238 reviewed methods down by application category and by robot platform. Unlike the timeline, a paper that embeds physics through several routes is counted in **each** matching column, which is why row totals can exceed the number of distinct papers.
 
 [![Papers by application and robot platform](figures/papers_by_application_and_robot.png)](figures/papers_by_application_and_robot.pdf)
 
@@ -138,9 +138,9 @@ The tables below break the 237 reviewed methods down by application category and
 
 | Application | Physics-guided | Physics-encoded | Physics-informed | Total |
 |:---|---:|---:|---:|---:|
-| Dynamics Learning | 5 | 62 | 11 | **78** |
+| Dynamics Learning | 5 | 63 | 11 | **79** |
 | Planning & Prediction | 16 | 27 | 9 | **52** |
-| Control | 11 | 65 | 9 | **85** |
+| Control | 11 | 66 | 9 | **86** |
 | Estimation | 8 | 18 | 8 | **34** |
 | Others | 1 | 0 | 0 | **1** |
 
@@ -152,7 +152,7 @@ The tables below break the 237 reviewed methods down by application category and
 | Legged robots | 3 | 11 | 2 | **16** |
 | Aerial robots | 3 | 10 | 10 | **23** |
 | Underwater robots | 1 | 3 | 0 | **4** |
-| Soft & continuum robots | 1 | 9 | 4 | **14** |
+| Soft & continuum robots | 1 | 10 | 4 | **15** |
 | Collaborative robots | 2 | 2 | 1 | **5** |
 | Canonical mechanical systems | 2 | 18 | 1 | **21** |
 | Other | 3 | 7 | 2 | **12** |
@@ -219,14 +219,14 @@ To classify a new paper, walk the [classification flow](#twisted_rightwards_arro
 
 ## Table of contents
 
-- [Physics-Encoded Architectures](#physics-encoded-architectures) (180)
+- [Physics-Encoded Architectures](#physics-encoded-architectures) (181)
   - [Lagrangian Learning Models](#lagrangian-learning-models) (29)
   - [Hamiltonian Learning Models](#hamiltonian-learning-models) (15)
   - [Model-Structured Learning Architectures](#model-structured-learning-architectures) (25)
   - [Neural ODEs and Variational Integrator Networks](#neural-odes-and-variational-integrator-networks) (12)
   - [Hybrid Physics-Learning Architectures](#hybrid-physics-learning-architectures) (41)
   - [Physics-Encoded Topology Learning](#physics-encoded-topology-learning) (21)
-  - [Physics-Encoded Neural Operators](#physics-encoded-neural-operators) (11)
+  - [Physics-Encoded Neural Operators](#physics-encoded-neural-operators) (12)
   - [Other Types of Physics-Encoded Architectures](#other-types-of-physics-encoded-architectures) (26)
 - [Physics-Informed Loss Functions](#physics-informed-loss-functions) (36)
   - [Physics-Informed Neural Networks](#physics-informed-neural-networks) (22)
@@ -257,7 +257,7 @@ The largest body of work, and therefore reviewed first.
 
 ### Lagrangian Learning Models
 
-Methods that build the Euler-Lagrange equations into the model, learning the Lagrangian (or its inertia and potential terms) rather than the dynamics directly. A positive-definite inertia matrix and other properties can be enforced by construction.
+Methods that build the Euler-Lagrange equations into the model, learning the Lagrangian (or its inertia and potential terms) rather than the dynamics directly. Energy conservation and a positive-definite inertia matrix hold by construction.
 
 <details open>
 <summary><b>29 entries</b> from <code>bib/physics-encoded/lagrangian-learning-models.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -329,7 +329,7 @@ _Source: [`bib/physics-encoded/hamiltonian-learning-models.bib`](bib/physics-enc
 
 ### Model-Structured Learning Architectures
 
-Learning architectures whose layers, internal connections, or constraints are derived from physical principles.
+Architectures whose layers, internal connections, or constraints are derived from physical principles, without committing to a full analytical-mechanics formalism. The family also covers non-network models built the same way.
 
 <details open>
 <summary><b>25 entries</b> from <code>bib/physics-encoded/model-structured-architectures.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -398,7 +398,7 @@ Modular combinations in which a physics-based model and a learned component rema
 
 #### Learning Complex Subsystems
 
-A learned model replaces one hard-to-parameterize subsystem (e.g., tire forces, friction, contact), while the rest of the system keeps its analytical description.
+A learned model replaces one hard-to-parameterize subsystem - tire forces, friction, contact - while the rest of the system keeps its analytical description.
 
 <details open>
 <summary><b>14 entries</b> from <code>bib/physics-encoded/hybrid-physics-learning.bib &middot; Learning Complex Subsystems</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -460,7 +460,7 @@ _Source: [`bib/physics-encoded/hybrid-physics-learning.bib`](bib/physics-encoded
 
 #### Learning-Based Sensor Pre-Processing for Physics-Based Models
 
-A network pre-processes raw sensor measurements, and its output feeds a physics-based model. The learned pre-processing can denoise, filter, or extract features from the raw measurements, while the physics model is used unchanged.
+A network pre-processes raw sensor measurements, and its output feeds a physics-based estimator such as a Kalman filter.
 
 <details open>
 <summary><b>7 entries</b> from <code>bib/physics-encoded/hybrid-physics-learning.bib &middot; Learning-Based Sensor Pre-Processing for Physics-Based Models</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -481,7 +481,7 @@ _Source: [`bib/physics-encoded/hybrid-physics-learning.bib`](bib/physics-encoded
 
 ### Physics-Encoded Topology Learning
 
-Methods that learn the *structure* of the model (which terms, operators, or connections appear) by assembling a library of candidate primitives under sparsity or physical constraints, as in SINDy and equation learners.
+Methods that learn the *structure* of the model - which terms, operators, or connections appear - by assembling a library of candidate primitives under sparsity or physical constraints, as in SINDy and equation learners.
 
 <details open>
 <summary><b>21 entries</b> from <code>bib/physics-encoded/topology-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -516,10 +516,10 @@ _Source: [`bib/physics-encoded/topology-learning.bib`](bib/physics-encoded/topol
 
 ### Physics-Encoded Neural Operators
 
-Operators between function spaces, rather than fixed-dimensional maps, with governing equations or physical structure built into the operator itself (Koopman lifting, DeepONet, FNO, and others).
+Operators between function spaces, rather than fixed-dimensional maps, with governing equations or physical structure built into the operator itself (Koopman lifting, DeepONet, FNO).
 
 <details open>
-<summary><b>11 entries</b> from <code>bib/physics-encoded/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
+<summary><b>12 entries</b> from <code>bib/physics-encoded/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
 
 _Source: [`bib/physics-encoded/neural-operators.bib`](bib/physics-encoded/neural-operators.bib)._
 
@@ -531,6 +531,7 @@ _Source: [`bib/physics-encoded/neural-operators.bib`](bib/physics-encoded/neural
 | [ACD-EDMD: Analytical Construction for Dictionaries of Lifting Functions in Koopman Operator-Based Nonlinear Robotic Systems](https://doi.org/10.1109/LRA.2021.3133001) | 2022 | IEEE RA-L |
 | [Online Modeling and Control of Soft Multi-fingered Grippers via Koopman Operator Theory](https://doi.org/10.1109/CASE49997.2022.9926464) | 2022 | 2022 IEEE 18th International Conference on Automation… |
 | [Analytical Construction of Koopman EDMD Candidate Functions for Optimal Control of Ackermann-Steered Vehicles](https://doi.org/10.1016/j.ifacol.2023.12.093) | 2023 | IFAC-PapersOnLine |
+| [Control of soft robots with inertial dynamics](https://doi.org/10.1126/scirobotics.add6864) | 2023 | Science Robotics |
 | [Physics-informed deep Koopman operator for Lagrangian dynamic systems](https://doi.org/10.1007/s11432-022-4050-4) | 2024 | Science China Information Sciences |
 | [Physics-Informed Neural Operator for Learning Partial Differential Equations](https://doi.org/10.1145/3648506) | 2024 | ACM / IMS J. Data Sci |
 | [A Koopman Operator-based NMPC Framework for Mobile Robot Navigation under Uncertainty](https://doi.org/10.23919/ECC65951.2025.11187257) | 2025 | 2025 European Control Conference (ECC) |
@@ -541,11 +542,11 @@ _Source: [`bib/physics-encoded/neural-operators.bib`](bib/physics-encoded/neural
 
 ### Other Types of Physics-Encoded Architectures
 
-Architectures that embed physics or domain knowledge in ways the categories above do not cover: motion planning-specific output layers, bio-inspired structure, and symmetry groups as inductive biases.
+Architectures that embed physics or domain knowledge in ways the categories above do not cover: planning-specific output layers, bio-inspired structure, and symmetry groups as inductive biases.
 
 #### Architectures for Robot Motion Planning
 
-Network architectures tailored to motion planning and prediction tasks.
+Network architectures tailored to planning and prediction, with output layers that enforce dynamic feasibility or smoothness of the generated trajectories.
 
 <details open>
 <summary><b>10 entries</b> from <code>bib/physics-encoded/other-architectures.bib &middot; Architectures for Robot Motion Planning</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -588,7 +589,7 @@ _Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/oth
 
 #### Symmetry-Aware Architectures
 
-Architectures built around the symmetry groups of the robot, possibly linking invariance to conservation laws through Noether's theorem.
+Architectures built around the symmetry groups of the robot, linking invariance to conservation laws through Noether's theorem.
 
 <details open>
 <summary><b>11 entries</b> from <code>bib/physics-encoded/other-architectures.bib &middot; Symmetry-Aware Architectures</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -613,11 +614,11 @@ _Source: [`bib/physics-encoded/other-architectures.bib`](bib/physics-encoded/oth
 
 ## Physics-Informed Loss Functions
 
-Physics-informed approaches provide a flexible and data-efficient framework for solving forward and inverse problems governed by differential equations, by embedding physical laws as soft constraints in the training loss functions. Physics-informed components are active **only during training**: they are part of neither the architecture nor the inputs of the model. 
+Physics-informed approaches provide a flexible and data-efficient framework for solving forward and inverse problems governed by differential equations, by embedding physical laws as soft constraints in the training loss functions. Physics-informed components are active **only during training**: they are part of neither the architecture nor the inputs.
 
 ### Physics-Informed Neural Networks
 
-Training with a residual loss derived from the governing ODEs or PDEs.
+Conventional architectures trained with a residual loss derived from the governing ODEs or PDEs. The physics constrains the optimization only: at inference the model is an ordinary network.
 
 <details open>
 <summary><b>22 entries</b> from <code>bib/physics-informed/neural-networks.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -653,7 +654,7 @@ _Source: [`bib/physics-informed/neural-networks.bib`](bib/physics-informed/neura
 
 ### Physics-Informed Neural Operators
 
-Neural operators trained with physics-based residual losses, used where measured data alone are too sparse to train the operator.
+Neural operators trained with physics-based residual losses, used where measured data alone are too sparse to identify the operator.
 
 <details open>
 <summary><b>8 entries</b> from <code>bib/physics-informed/neural-operators.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -675,7 +676,7 @@ _Source: [`bib/physics-informed/neural-operators.bib`](bib/physics-informed/neur
 
 ### Other Types of Loss and Reward Functions
 
-Objectives other than PDE residuals that encode physical requirements (e.g., contact and friction consistency, stability, dynamic admissibility) including physics-shaped rewards in reinforcement learning.
+Objectives other than PDE residuals that encode physical requirements - contact and friction consistency, stability, dynamic admissibility - including physics-shaped rewards in reinforcement learning.
 
 <details open>
 <summary><b>6 entries</b> from <code>bib/physics-informed/other-loss-and-reward-functions.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -699,7 +700,7 @@ Physics-guided learning exploits physics priors to transform, enrich, curate, se
 
 ### Physical Models as Structured Inputs to Learning Algorithms
 
-A physics-based model computes features that are fed to a downstream learner, so the ML model sees physically meaningful quantities instead of raw signals.
+A physics-based model computes features that are fed to a downstream learner, so the network sees physically meaningful quantities instead of raw signals.
 
 <details open>
 <summary><b>4 entries</b> from <code>bib/physics-guided/structured-inputs.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -717,7 +718,7 @@ _Source: [`bib/physics-guided/structured-inputs.bib`](bib/physics-guided/structu
 
 ### Physics-Guided Features & Training Data
 
-Physics priors employed to choose input features or to design and curate the training data itself, including excitation trajectories matched to the system's dynamics.
+Physics priors used to choose input features or to design and curate the training data itself, including excitation trajectories matched to the system's dynamics.
 
 <details open>
 <summary><b>5 entries</b> from <code>bib/physics-guided/features-and-data.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -736,7 +737,7 @@ _Source: [`bib/physics-guided/features-and-data.bib`](bib/physics-guided/feature
 
 ### Geometric Learning
 
-Inputs and outputs mapped so that the geometry of the data (e.g., rotations, manifolds, SPD matrices) is preserved through learning.
+Inputs and outputs mapped so that the non-Euclidean geometry of the data - rotations, manifolds, SPD matrices - is preserved through learning.
 
 <details open>
 <summary><b>5 entries</b> from <code>bib/physics-guided/geometric-learning.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -772,7 +773,7 @@ _Source: [`bib/physics-guided/frequency-domain-learning.bib`](bib/physics-guided
 
 ### Physically Consistent World Representations
 
-World and video generation models built with explicit mechanisms (e.g., occupancy, 3D structure, state conditioning) that keep the generated representation physically consistent.
+World and video models built with explicit mechanisms - occupancy, 3D structure, state conditioning - that keep the generated representation physically consistent.
 
 <details open>
 <summary><b>8 entries</b> from <code>bib/physics-guided/world-representations.bib</code> &nbsp;<sub>(click to collapse)</sub></summary>
@@ -911,7 +912,7 @@ _Source: [`bib/software.bib`](bib/software.bib)._
 
 Use the [classification flow](#twisted_rightwards_arrows-classification-flow) above to choose the route; a paper may carry more than one. `bib/*.bib` is the **only** source of truth: this README, `exports/papers.csv`, and the figures are all generated, so please do not edit them by hand.
 
-Maintainers and contributors can regenerate everything with:
+Maintainers regenerate everything with:
 
 ```bash
 python3 scripts/validate.py           # check the catalog
@@ -925,12 +926,16 @@ This repository is released under the [Apache 2.0 license](LICENSE).
 
 ## 🤝 Citation
 
-The survey manuscript *Embedding Physics Priors in Robot Learning: A Survey* is currently under review. Please cite as:
+The survey manuscript *Embedding Physics Priors in Robot Learning: A Survey* is under submission. If you use this catalog, please cite:
 
 ```BibTeX
 @article{piccinini2026physicspriors,
   title   = {Embedding Physics Priors in Robot Learning: A Survey},
-  author  = {Piccinini, Mattia and Schulze, Lucas and Plebe, Alice and Saveriano, Matteo and Beckers, Thomas and Gao, Yuan and Arenz, Oleg and Zarrouki, Baha and Wang, Dingrui and Sch{\"a}fer, Finn Rasmus and Peters, Jan and Betz, Johannes and Rosati Papini, Gastone Pietro},
+  author  = {Piccinini, Mattia and Schulze, Lucas and Plebe, Alice
+             and Saveriano, Matteo and Beckers, Thomas and Gao, Yuan
+             and Arenz, Oleg and Zarrouki, Baha and Wang, Dingrui
+             and Sch{\"a}fer, Finn Rasmus and Peters, Jan and Betz, Johannes
+             and Rosati Papini, Gastone Pietro},
   year    = {2026},
   note    = {Under review},
   url     = {https://github.com/TUM-AVS/survey-physics-embedded-robot-learning}
