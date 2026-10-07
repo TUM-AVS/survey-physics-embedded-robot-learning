@@ -611,8 +611,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append(f"## {FLOW_HEADING}")
     lines.append("")
     lines.append(
-        "The decision flow below mirrors the one in the survey "
-        "(Fig. *Decision flow to classify physics-embedded robot learning approaches*). "
+        "The decision flow below mirrors the one in our survey paper. "
         "A **scope gate** comes first: a method that embeds only generic mathematical "
         "structure, or that is not applied to a robotic system, falls outside the survey. "
         "The three labels are then **not mutually exclusive** — every criterion is "

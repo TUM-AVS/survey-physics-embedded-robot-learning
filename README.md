@@ -76,7 +76,7 @@ While many reviewed works employ **neural networks**, our survey also covers **G
 
 ## :twisted_rightwards_arrows: Classification flow
 
-The decision flow below mirrors the one in the survey (Fig. *Decision flow to classify physics-embedded robot learning approaches*). A **scope gate** comes first: a method that embeds only generic mathematical structure, or that is not applied to a robotic system, falls outside the survey. The three labels are then **not mutually exclusive** — every criterion is evaluated in sequence and each *Yes* is kept, so a paper may be physics-guided **and** physics-encoded **and** physics-informed.
+The decision flow below mirrors the one in our survey paper. A **scope gate** comes first: a method that embeds only generic mathematical structure, or that is not applied to a robotic system, falls outside the survey. The three labels are then **not mutually exclusive** — every criterion is evaluated in sequence and each *Yes* is kept, so a paper may be physics-guided **and** physics-encoded **and** physics-informed.
 
 ```mermaid
 flowchart TD
