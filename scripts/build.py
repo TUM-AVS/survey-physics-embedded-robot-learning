@@ -407,6 +407,15 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines = []
     lines.append(f"# {SURVEY_TITLE}")
     lines.append("")
+    # Badge row, as in TUM-AVS/FM-AD-Survey: paper PDF, stars, forks, license.
+    repo = REPO_URL.removeprefix("https://github.com/")
+    lines.append('<div align="center">')
+    lines.append(f'<a href="https://arxiv.org/pdf/{ARXIV_ID}"><img src="https://img.shields.io/badge/Paper-PDF-red.svg" alt="Paper PDF"/></a>')
+    lines.append(f'<a href="{REPO_URL}/stargazers"><img src="https://img.shields.io/github/stars/{repo}" alt="GitHub stars"/></a>')
+    lines.append(f'<a href="{REPO_URL}/network/members"><img src="https://img.shields.io/github/forks/{repo}" alt="GitHub forks"/></a>')
+    lines.append(f'<a href="LICENSE"><img src="https://img.shields.io/github/license/{repo}" alt="License"/></a>')
+    lines.append("</div>")
+    lines.append("")
     lines.append(
         "This repository hosts the review paper "
         f"*{SURVEY_TITLE}*, with a living catalog of the reviewed papers, "
@@ -416,19 +425,6 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "\n"
         "We welcome contributions from the **whole community** to keep this survey up to date! "
         f"See [**how to contribute**](#{gh_anchor(CONTRIB_HEADING)}).  "
-    )
-    lines.append("")
-    lines.append("The catalog mirrors the taxonomy of the survey: ")
-    lines.append("- **physics-guided** inputs / data / representations,")
-    lines.append("- **physics-encoded** model architectures,")
-    lines.append("- **physics-informed** training losses. ")
-    lines.append("")
-    lines.append(
-        "Within each route, the survey groups papers by application: "
-        # "Planning & Prediction" reads better spelled out in prose.
-        + ", ".join(f"*{PROSE_APPLICATION.get(a, a.lower())}*"
-                    for a in APPLICATIONS if a != "Others")
-        + "."
     )
     lines.append("")
     lines.append("## :fire: Updates")
@@ -475,6 +471,41 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "and safety requirements. **Physics priors** can act as robotics-specific inductive biases "
         "that complement rather than replace data-driven learning. This repository collects the "
         "papers reviewed in the survey, grouped by *how* physics is embedded."
+    )
+    lines.append("")
+    lines.append("## :compass: Taxonomy")
+    lines.append("")
+    lines.append(
+        "Three complementary routes (adapted from Faroughi et al., 2024, specialised to robot learning):"
+    )
+    lines.append("")
+    lines.extend(_figure(
+        "overview_physics_injection", "Levels of embedding physics priors",
+        "The three levels at which physics priors enter a learning pipeline: "
+        "(a) physics-guided inputs, data, and representations; (b) physics-encoded "
+        "architectures; (c) physics-informed loss functions.",
+    ))
+    lines.append(
+        "1. **Physics-guided** — physics priors select, pre-process, or compute input features, "
+        "generate or curate training data, or enforce physically consistent representations. "
+        "Applied at data curation, or as a pre-processing module whose learnable parts are "
+        "pre-trained or frozen; may stay in the pipeline at training and inference."
+    )
+    lines.append(
+        "2. **Physics-encoded** — the model architecture itself enforces physics via tailored "
+        "structures, layers, topologies, energy or conservation principles, symmetries, or "
+        "architectural constraints. Active during both training and inference."
+    )
+    lines.append(
+        "3. **Physics-informed** — the training objective penalises violations of governing "
+        "equations, typically through residual or regularization terms. Formally active only "
+        "during training: no effect at inference, since it is part of neither the architecture nor "
+        "the inputs."
+    )
+    lines.append("")
+    lines.append(
+        "Most existing works use a single route. Jointly using complementary routes may enable a "
+        "richer exploitation of prior physical knowledge, but systematic comparisons remain limited."
     )
     lines.append("")
     lines.append("### Types of physics priors")
@@ -564,41 +595,6 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "safety constraints, and simulator or environment augmentation), which are reviewed by "
         "Banerjee et al. RL methods are *included* whenever physics is embedded through one of "
         "the three taxonomy routes below."
-    )
-    lines.append("")
-    lines.append("## :compass: Taxonomy")
-    lines.append("")
-    lines.append(
-        "Three complementary routes (adapted from Faroughi et al., 2024, specialised to robot learning):"
-    )
-    lines.append("")
-    lines.extend(_figure(
-        "overview_physics_injection", "Levels of embedding physics priors",
-        "The three levels at which physics priors enter a learning pipeline: "
-        "(a) physics-guided inputs, data, and representations; (b) physics-encoded "
-        "architectures; (c) physics-informed loss functions.",
-    ))
-    lines.append(
-        "1. **Physics-guided** — physics priors select, pre-process, or compute input features, "
-        "generate or curate training data, or enforce physically consistent representations. "
-        "Applied at data curation, or as a pre-processing module whose learnable parts are "
-        "pre-trained or frozen; may stay in the pipeline at training and inference."
-    )
-    lines.append(
-        "2. **Physics-encoded** — the model architecture itself enforces physics via tailored "
-        "structures, layers, topologies, energy or conservation principles, symmetries, or "
-        "architectural constraints. Active during both training and inference."
-    )
-    lines.append(
-        "3. **Physics-informed** — the training objective penalises violations of governing "
-        "equations, typically through residual or regularization terms. Formally active only "
-        "during training: no effect at inference, since it is part of neither the architecture nor "
-        "the inputs."
-    )
-    lines.append("")
-    lines.append(
-        "Most existing works use a single route. Jointly using complementary routes may enable a "
-        "richer exploitation of prior physical knowledge, but systematic comparisons remain limited."
     )
     lines.append("")
     lines.append("### Lifecycle of physics priors")

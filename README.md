@@ -1,17 +1,17 @@
 # Embedding Physics Priors in Robot Learning: A Survey
 
+<div align="center">
+<a href="https://arxiv.org/pdf/2609.22319"><img src="https://img.shields.io/badge/Paper-PDF-red.svg" alt="Paper PDF"/></a>
+<a href="https://github.com/TUM-AVS/survey-physics-embedded-robot-learning/stargazers"><img src="https://img.shields.io/github/stars/TUM-AVS/survey-physics-embedded-robot-learning" alt="GitHub stars"/></a>
+<a href="https://github.com/TUM-AVS/survey-physics-embedded-robot-learning/network/members"><img src="https://img.shields.io/github/forks/TUM-AVS/survey-physics-embedded-robot-learning" alt="GitHub forks"/></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/TUM-AVS/survey-physics-embedded-robot-learning" alt="License"/></a>
+</div>
+
 This repository hosts the review paper *Embedding Physics Priors in Robot Learning: A Survey*, with a living catalog of the reviewed papers, classification and search methods, summary tables, and open-source software list. 
 
 :page_facing_up: The survey is available as a preprint on arXiv: [https://arxiv.org/abs/2609.22319](https://arxiv.org/abs/2609.22319)
 
 We welcome contributions from the **whole community** to keep this survey up to date! See [**how to contribute**](#contributing).  
-
-The catalog mirrors the taxonomy of the survey: 
-- **physics-guided** inputs / data / representations,
-- **physics-encoded** model architectures,
-- **physics-informed** training losses. 
-
-Within each route, the survey groups papers by application: *dynamics learning*, *trajectory planning & prediction*, *control*, *estimation*.
 
 ## :fire: Updates
 
@@ -24,6 +24,20 @@ Within each route, the survey groups papers by application: *dynamics learning*,
 ## :page_with_curl: Introduction
 
 Robot learning is constrained by scarce real-world data, complex contact dynamics, and safety requirements. **Physics priors** can act as robotics-specific inductive biases that complement rather than replace data-driven learning. This repository collects the papers reviewed in the survey, grouped by *how* physics is embedded.
+
+## :compass: Taxonomy
+
+Three complementary routes (adapted from Faroughi et al., 2024, specialised to robot learning):
+
+[![Levels of embedding physics priors](figures/overview_physics_injection.png)](figures/overview_physics_injection.pdf)
+
+*The three levels at which physics priors enter a learning pipeline: (a) physics-guided inputs, data, and representations; (b) physics-encoded architectures; (c) physics-informed loss functions. Vector version: [`overview_physics_injection.pdf`](figures/overview_physics_injection.pdf).*
+
+1. **Physics-guided** — physics priors select, pre-process, or compute input features, generate or curate training data, or enforce physically consistent representations. Applied at data curation, or as a pre-processing module whose learnable parts are pre-trained or frozen; may stay in the pipeline at training and inference.
+2. **Physics-encoded** — the model architecture itself enforces physics via tailored structures, layers, topologies, energy or conservation principles, symmetries, or architectural constraints. Active during both training and inference.
+3. **Physics-informed** — the training objective penalises violations of governing equations, typically through residual or regularization terms. Formally active only during training: no effect at inference, since it is part of neither the architecture nor the inputs.
+
+Most existing works use a single route. Jointly using complementary routes may enable a richer exploitation of prior physical knowledge, but systematic comparisons remain limited.
 
 ### Types of physics priors
 
@@ -53,20 +67,6 @@ Robot platforms include manipulators, mobile robots, vehicles, legged robots (qu
 While many reviewed works employ **neural networks**, our survey also covers **Gaussian process regression**, **kernel methods**, **sparse identification** and **symbolic regression**, **equation learning**, **Koopman models**, **neural operators**, **variational integrator networks**, and **generative models** (diffusion models, vision-language-action models, and video world models), whenever they employ mechanisms to embed physics priors.
 
 **Reinforcement learning** is *excluded* when physics is incorporated exclusively through RL-specific mechanisms (state or action space design, exploration strategies, safety constraints, and simulator or environment augmentation), which are reviewed by Banerjee et al. RL methods are *included* whenever physics is embedded through one of the three taxonomy routes below.
-
-## :compass: Taxonomy
-
-Three complementary routes (adapted from Faroughi et al., 2024, specialised to robot learning):
-
-[![Levels of embedding physics priors](figures/overview_physics_injection.png)](figures/overview_physics_injection.pdf)
-
-*The three levels at which physics priors enter a learning pipeline: (a) physics-guided inputs, data, and representations; (b) physics-encoded architectures; (c) physics-informed loss functions. Vector version: [`overview_physics_injection.pdf`](figures/overview_physics_injection.pdf).*
-
-1. **Physics-guided** — physics priors select, pre-process, or compute input features, generate or curate training data, or enforce physically consistent representations. Applied at data curation, or as a pre-processing module whose learnable parts are pre-trained or frozen; may stay in the pipeline at training and inference.
-2. **Physics-encoded** — the model architecture itself enforces physics via tailored structures, layers, topologies, energy or conservation principles, symmetries, or architectural constraints. Active during both training and inference.
-3. **Physics-informed** — the training objective penalises violations of governing equations, typically through residual or regularization terms. Formally active only during training: no effect at inference, since it is part of neither the architecture nor the inputs.
-
-Most existing works use a single route. Jointly using complementary routes may enable a richer exploitation of prior physical knowledge, but systematic comparisons remain limited.
 
 ### Lifecycle of physics priors
 
