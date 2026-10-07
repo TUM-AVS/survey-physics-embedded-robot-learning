@@ -39,7 +39,7 @@ Three complementary routes (adapted from Faroughi et al., 2024, specialised to r
 
 Most existing works use a single route. Jointly using complementary routes may enable a richer exploitation of prior physical knowledge, but systematic comparisons remain limited.
 
-### Types of physics priors
+### ⚛️ Types of physics priors
 
 The survey considers the following non-mutually-exclusive families of physics priors:
 
@@ -51,7 +51,7 @@ The survey considers the following non-mutually-exclusive families of physics pr
 
 > Generic mathematical representations alone are not considered physics priors unless they explicitly encode physical knowledge.
 
-### Robotics applications and platforms
+### 🤖 Robotics applications and platforms
 
 The survey groups the reviewed methods into four application categories:
 
@@ -62,13 +62,13 @@ The survey groups the reviewed methods into four application categories:
 
 Robot platforms include manipulators, mobile robots, vehicles, legged robots (quadrupeds and humanoids), soft and continuum robots, collaborative robots, and underwater and aerial robots. *Canonical mechanical systems* (including pendulums, cart-poles, acrobots and mechanical oscillators) are reported separately.
 
-### Machine learning models and methods
+### 🧠 Machine learning models and methods
 
 While many reviewed works employ **neural networks**, our survey also covers **Gaussian process regression**, **kernel methods**, **sparse identification** and **symbolic regression**, **equation learning**, **Koopman models**, **neural operators**, **variational integrator networks**, and **generative models** (diffusion models, vision-language-action models, and video world models), whenever they employ mechanisms to embed physics priors.
 
 **Reinforcement learning** is *excluded* when physics is incorporated exclusively through RL-specific mechanisms (state or action space design, exploration strategies, safety constraints, and simulator or environment augmentation), which are reviewed by Banerjee et al. RL methods are *included* whenever physics is embedded through one of the three taxonomy routes below.
 
-### Lifecycle of physics priors
+### 🔄 Lifecycle of physics priors
 
 [![Lifecycle of physics priors](figures/lifecycle.png)](figures/lifecycle.pdf)
 
