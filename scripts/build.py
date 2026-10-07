@@ -36,6 +36,9 @@ SURVEY_TITLE = "Embedding Physics Priors in Robot Learning: A Survey"
 # arXiv preprint of the survey (v1 posted 15 Sep 2026, cs.RO).
 ARXIV_ID = "2609.22319"
 ARXIV_URL = f"https://arxiv.org/abs/{ARXIV_ID}"
+# Source of the three-route taxonomy (J. Comput. Inf. Sci. Eng. 24(4):040802, 2024).
+FAROUGHI_URL = ("https://asmedigitalcollection.asme.org/computingengineering/article/24/4/"
+                "040802/1193884/Physics-Guided-Physics-Informed-and-Physics")
 
 # Heading of the decision-flow section, which the survey (Sec. "Classification
 # Flow" and Sec. "Scope of the Considered Literature") promises this repo hosts.
@@ -437,10 +440,9 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         by_month.setdefault(p["added"][:7], []).append(p)
     for ym in sorted(by_month, reverse=True):
         ps = by_month[ym]
-        n_m = sum(1 for p in ps if p["is_method"])
         month = _dt.date(int(ym[:4]), int(ym[5:7]), 1).strftime("%b. %Y")
         lines.append(
-            f"- **{month}** – Added **{len(ps)}** new papers ({n_m} methods), "
+            f"- **{month}** – Added **{len(ps)}** new papers, "
             f"marked :new: in the tables below."
         )
     lines.append(f"- **Sep. 2026** – Survey preprint released on [arXiv]({ARXIV_URL}).")
@@ -476,7 +478,8 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
     lines.append("## :compass: Taxonomy")
     lines.append("")
     lines.append(
-        "Three complementary routes (adapted from Faroughi et al., 2024, specialised to robot learning):"
+        "Three complementary routes to embedding physics priors (adapted from "
+        f"[Faroughi et al., 2024]({FAROUGHI_URL}), specialised to robot learning):"
     )
     lines.append("")
     lines.extend(_figure(
@@ -508,7 +511,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "richer exploitation of prior physical knowledge, but systematic comparisons remain limited."
     )
     lines.append("")
-    lines.append("### Types of physics priors")
+    lines.append("### ⚛️ Types of physics priors")
     lines.append("")
     lines.append(
         "The survey considers the following non-mutually-exclusive families of "
@@ -546,7 +549,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "they explicitly encode physical knowledge."
     )
     lines.append("")
-    lines.append("### Robotics applications and platforms")
+    lines.append("### 🤖 Robotics applications and platforms")
     lines.append("")
     lines.append(
         "The survey groups the reviewed methods into four application categories:"
@@ -578,7 +581,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "cart-poles, acrobots and mechanical oscillators) are reported separately."
     )
     lines.append("")
-    lines.append("### Machine learning models and methods")
+    lines.append("### 🧠 Machine learning models and methods")
     lines.append("")
     lines.append(
         "While many reviewed works employ **neural networks**, our survey also covers **Gaussian "
@@ -597,7 +600,7 @@ def build_readme(all_papers: dict[str, list[dict]], figs: dict) -> str:
         "the three taxonomy routes below."
     )
     lines.append("")
-    lines.append("### Lifecycle of physics priors")
+    lines.append("### 🔄 Lifecycle of physics priors")
     lines.append("")
     lines.extend(_figure(
         "lifecycle", "Lifecycle of physics priors",

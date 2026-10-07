@@ -27,7 +27,7 @@ Robot learning is constrained by scarce real-world data, complex contact dynamic
 
 ## :compass: Taxonomy
 
-Three complementary routes (adapted from Faroughi et al., 2024, specialised to robot learning):
+Three complementary routes to embedding physics priors (adapted from [Faroughi et al., 2024](https://asmedigitalcollection.asme.org/computingengineering/article/24/4/040802/1193884/Physics-Guided-Physics-Informed-and-Physics), specialised to robot learning):
 
 [![Levels of embedding physics priors](figures/overview_physics_injection.png)](figures/overview_physics_injection.pdf)
 
