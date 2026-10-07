@@ -15,7 +15,7 @@ We welcome contributions from the **whole community** to keep this survey up to 
 
 ## :fire: Updates
 
-- **Oct. 2026** – Added **44** new papers (44 methods), marked :new: in the tables below.
+- **Oct. 2026** – Added **44** new papers, marked :new: in the tables below.
 - **Sep. 2026** – Survey preprint released on [arXiv](https://arxiv.org/abs/2609.22319).
 - **Sep. 2026** – Repository initialized from the survey bibliography: all **331** references cited in the manuscript.
 - The catalog now lists **375** references, of which **282** are physics-embedded robot learning methods (the rest are related surveys, software, and background references).
